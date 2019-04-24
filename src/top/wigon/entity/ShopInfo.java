@@ -8,7 +8,7 @@ package top.wigon.entity;
 public class ShopInfo {
     private int id;
     private int shopId;
-    private String Desc;
+    private String desc;
     private String logoPath;
     private String createTime;
 
@@ -18,7 +18,7 @@ public class ShopInfo {
     public ShopInfo(int id, int shopId, String desc, String logoPath, String createTime) {
         this.id = id;
         this.shopId = shopId;
-        Desc = desc;
+        desc = desc;
         this.logoPath = logoPath;
         this.createTime = createTime;
     }
@@ -40,11 +40,11 @@ public class ShopInfo {
     }
 
     public String getDesc() {
-        return Desc;
+        return desc;
     }
 
     public void setDesc(String desc) {
-        Desc = desc;
+        desc = desc;
     }
 
     public String getLogoPath() {

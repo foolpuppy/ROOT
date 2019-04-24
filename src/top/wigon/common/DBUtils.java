@@ -1,20 +1,14 @@
 package top.wigon.common;
+import com.sun.istack.internal.Nullable;
 
+import java.sql.*;
+import java.util.*;
+import java.util.regex.Pattern;
 /**
  * @author L
  * @version 1.0
  * @date 2019/4/18 15:28
  * Created by yuandl on 2016-12-16.
- **/
-
-import com.sun.istack.internal.Nullable;
-
-import java.sql.*;
-import java.time.LocalDateTime;
-import java.util.*;
-import java.util.regex.Pattern;
-
-/**
  * 数据库JDBC连接工具类
  */
 public class DBUtils {
@@ -315,13 +309,7 @@ public class DBUtils {
             while (iterator.hasNext()) {
                 String key = iterator.next();
                 whereClause += (i == 0 ? "" : " AND ");
-                if (key.equals("reg_time")) {
-                    whereClause += (key + " >= ?");
-                } else if (key.equals("reg_end_time")) {
-                    whereClause += (" reg_time <= ?");
-                } else {
-                    whereClause += (key + " = ? ");
-                }
+                whereClause += (key + " = ? ");
                 whereArgs[i] = whereMap.get(key);
                 i++;
             }
@@ -587,7 +575,6 @@ public class DBUtils {
      * @return 返回 YYYY-MM-DD HH-MM-SS 字符串
      */
     public static String getCurrDateTime() {
-        //return LocalDateTime.now().toString();
         return new java.sql.Timestamp(new java.util.Date().getTime()).toString();
     }
 
