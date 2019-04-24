@@ -397,7 +397,7 @@ public class DBUtils {
                     preparedStatement.setObject(i + 1, bindArgs[i]);
                 }
             }
-            System.out.println("拼接完的SQL为: "+getExecSQL(sql, bindArgs));
+            System.out.println("拼接完的SQL为: " + getExecSQL(sql, bindArgs));
             /**执行sql语句，获取结果集**/
             resultSet = preparedStatement.executeQuery();
             datas = getDatas(resultSet);
@@ -575,7 +575,7 @@ public class DBUtils {
         if (bindArgs != null && bindArgs.length > 0) {
             int index = 0;
             for (int i = 0; i < bindArgs.length; i++) {
-                System.out.println("第 " + i+1 + " 个参数为" + bindArgs[i]);
+                System.out.println("第 " + i + 1 + " 个参数为" + bindArgs[i]);
                 index = sb.indexOf("?", index);
                 sb.replace(index, index + 1, String.valueOf(bindArgs[i]));
             }
@@ -584,10 +584,11 @@ public class DBUtils {
     }
 
     /**
-     *
      * @return 返回 YYYY-MM-DD HH-MM-SS 字符串
      */
-    public static String getCurrDateTime(){
-        return LocalDateTime.now().toString();
+    public static String getCurrDateTime() {
+        //return LocalDateTime.now().toString();
+        return new java.sql.Timestamp(new java.util.Date().getTime()).toString();
     }
+
 }

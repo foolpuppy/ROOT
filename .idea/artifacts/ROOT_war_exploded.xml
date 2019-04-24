@@ -11,6 +11,10 @@
           <element id="file-copy" path="$PROJECT_DIR$/lib/druid-1.1.9.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/log4j-1.2.17.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-8.0.13.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jackson-core-2.9.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jackson-databind-2.9.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jackson-annotations-2.9.8.jar" />
+          <element id="library" level="module" name="JUnit5.3" module-name="ROOT" />
         </element>
       </element>
     </root>

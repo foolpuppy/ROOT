@@ -95,4 +95,18 @@ public class Item implements Serializable {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                ", state=" + state +
+                ", shopId=" + shopId +
+                ", createTime='" + createTime + '\'' +
+                '}';
+    }
 }
