@@ -1,5 +1,6 @@
 package top.wigon.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -7,7 +8,7 @@ import java.math.BigDecimal;
  * @version 1.0
  * @date 2019/4/24 19:15
  **/
-public class Item {
+public class Item implements Serializable {
     String id;
     String title;
     String catefory;
