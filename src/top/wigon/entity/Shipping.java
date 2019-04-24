@@ -8,16 +8,32 @@ import java.io.Serializable;
  * @date 2019/4/24 21:39
  **/
 public class Shipping implements Serializable {
-    String id;
-    String orderId;
-    String receiverName;
-    String receiverTel;
-    String receiverState;
-    String receiverCity;
-    String receiverDistrict;
-    String receiverAddress;
-    String receiverZip;
-    String createTime;
+    private String id;
+    private String orderId;
+    private String receiverName;
+    private String receiverTel;
+    private String receiverState;
+    private String receiverCity;
+    private String receiverDistrict;
+    private String receiverAddress;
+    private String receiverZip;
+    private String createTime;
+
+    public Shipping() {
+    }
+
+    public Shipping(String id, String orderId, String receiverName, String receiverTel, String receiverState, String receiverCity, String receiverDistrict, String receiverAddress, String receiverZip, String createTime) {
+        this.id = id;
+        this.orderId = orderId;
+        this.receiverName = receiverName;
+        this.receiverTel = receiverTel;
+        this.receiverState = receiverState;
+        this.receiverCity = receiverCity;
+        this.receiverDistrict = receiverDistrict;
+        this.receiverAddress = receiverAddress;
+        this.receiverZip = receiverZip;
+        this.createTime = createTime;
+    }
 
     public String getId() {
         return id;

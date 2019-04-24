@@ -9,21 +9,42 @@ import java.math.BigDecimal;
  * @date 2019/4/24 21:29
  **/
 public class Order implements Serializable {
-    String orderId;
-    String userId;
-    BigDecimal payment;
-    int paymentType;
-    BigDecimal postFee;
-    int orderState;
-    String orderCreateTime;
-    String paymentTime;
-    String consignTime;
-    String receiveTime;
-    String endTime;
-    String closeTime;
-    String shippingName;
-    String shipingCode;
-    String createTime;
+    private String orderId;
+    private String userId;
+    private BigDecimal payment;
+    private int paymentType;
+    private BigDecimal postFee;
+    private int orderState;
+    private String orderCreateTime;
+    private String paymentTime;
+    private String consignTime;
+    private String receiveTime;
+    private String endTime;
+    private String closeTime;
+    private String shippingName;
+    private String shipingCode;
+    private String createTime;
+
+    public Order() {
+    }
+
+    public Order(String orderId, String userId, BigDecimal payment, int paymentType, BigDecimal postFee, int orderState, String orderCreateTime, String paymentTime, String consignTime, String receiveTime, String endTime, String closeTime, String shippingName, String shipingCode, String createTime) {
+        this.orderId = orderId;
+        this.userId = userId;
+        this.payment = payment;
+        this.paymentType = paymentType;
+        this.postFee = postFee;
+        this.orderState = orderState;
+        this.orderCreateTime = orderCreateTime;
+        this.paymentTime = paymentTime;
+        this.consignTime = consignTime;
+        this.receiveTime = receiveTime;
+        this.endTime = endTime;
+        this.closeTime = closeTime;
+        this.shippingName = shippingName;
+        this.shipingCode = shipingCode;
+        this.createTime = createTime;
+    }
 
     public String getOrderId() {
         return orderId;

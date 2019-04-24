@@ -6,13 +6,26 @@ package top.wigon.entity;
  * @date 2019/4/24 18:48
  **/
 public class User {
-    String userId;
-    String userName;
-    String tel;
-    String email;
-    String avatarPath;
-    String roleType;
-    String createTime;
+    private String userId;
+    private String userName;
+    private String tel;
+    private String email;
+    private String avatarPath;
+    private String roleType;
+    private String createTime;
+
+    public User() {
+    }
+
+    public User(String userId, String userName, String tel, String email, String avatarPath, String roleType, String createTime) {
+        this.userId = userId;
+        this.userName = userName;
+        this.tel = tel;
+        this.email = email;
+        this.avatarPath = avatarPath;
+        this.roleType = roleType;
+        this.createTime = createTime;
+    }
 
     public String getUserId() {
         return userId;

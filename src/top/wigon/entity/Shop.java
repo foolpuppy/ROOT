@@ -8,10 +8,20 @@ import java.io.Serializable;
  * @date 2019/4/24 21:28
  **/
 public class Shop implements Serializable {
-    String shopId;
-    String userId;
-    String shopName;
-    String createTime;
+    private String shopId;
+    private String userId;
+    private String shopName;
+    private String createTime;
+
+    public Shop() {
+    }
+
+    public Shop(String shopId, String userId, String shopName, String createTime) {
+        this.shopId = shopId;
+        this.userId = userId;
+        this.shopName = shopName;
+        this.createTime = createTime;
+    }
 
     public String getShopId() {
         return shopId;

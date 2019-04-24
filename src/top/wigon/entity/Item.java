@@ -9,14 +9,28 @@ import java.math.BigDecimal;
  * @date 2019/4/24 19:15
  **/
 public class Item implements Serializable {
-    String id;
-    String title;
-    String catefory;
-    BigDecimal price;
-    int stock;
-    int state;
-    int shopId;
-    String createTime;
+    private String id;
+    private String title;
+    private String category;
+    private BigDecimal price;
+    private int stock;
+    private int state;
+    private int shopId;
+    private String createTime;
+
+    public Item() {
+    }
+
+    public Item(String id, String title, String category, BigDecimal price, int stock, int state, int shopId, String createTime) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
+        this.price = price;
+        this.stock = stock;
+        this.state = state;
+        this.shopId = shopId;
+        this.createTime = createTime;
+    }
 
     public String getId() {
         return id;
@@ -35,11 +49,11 @@ public class Item implements Serializable {
     }
 
     public String getCatefory() {
-        return catefory;
+        return category;
     }
 
-    public void setCatefory(String catefory) {
-        this.catefory = catefory;
+    public void setCatefory(String category) {
+        this.category = category;
     }
 
     public BigDecimal getPrice() {
