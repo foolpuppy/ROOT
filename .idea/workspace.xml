@@ -6,35 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb5cedd-4c10-47a9-a33f-db0af82db90a" name="Default Changelist" comment="updated+用户登录注册">
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/AliPayDetailDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/ItemDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/ItemDescDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/OrderDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/OrderItemDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/ShippingDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/ShopDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/ShopInfoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/servlet/payment/PaymentServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/BaseDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/BaseDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/impl/UserDaoIpml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/impl/UserDaoIpml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/user/UserLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/user/UserLoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/BaseDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/BaseDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/UserDaoIpml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/UserDaoIpml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/user/UserLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/user/UserLoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/DAO/BaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/DAO/BaseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/DAO/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/DAO/impl/UserDaoIpml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/DAO/impl/UserDAOIpml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/entity/OrderId.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserLoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserRegistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserRegistServlet.java" afterDir="false" />
-    </list>
+    <list default="true" id="9cb5cedd-4c10-47a9-a33f-db0af82db90a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/UserDAOIpml.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+            <state relative-caret-position="224">
+              <caret line="60" column="29" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,11 +69,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/top/wigon/common/DBUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="154" column="50" selection-start-line="154" selection-start-column="47" selection-end-line="154" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/BaseDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+            <state relative-caret-position="175">
+              <caret line="43" column="34" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -507,7 +488,7 @@
       <workItem from="1556154884687" duration="14992000" />
       <workItem from="1556173025723" duration="7837000" />
       <workItem from="1556181023030" duration="1881000" />
-      <workItem from="1556188086148" duration="4554000" />
+      <workItem from="1556188086148" duration="5348000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1556113865905</created>
@@ -572,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556179659951</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="updated+用户登录注册">
+      <created>1556192710173</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556192710173</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -581,13 +569,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46205000" />
+    <option name="totallyTimeSpent" value="46999000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18498659" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18498659" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -596,7 +584,7 @@
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.40441176" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.24411765" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" visible="true" weight="0.2529412" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.43088236" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -605,7 +593,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32941177" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32941177" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067025" side_tool="true" weight="0.42058823" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32941177" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32941177" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.30147058" />
@@ -1006,20 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/BaseDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/common/DBUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="154" column="75" selection-start-line="154" selection-start-column="67" selection-end-line="154" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
@@ -1030,13 +1004,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/BaseDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/UserDAOIpml.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        <state relative-caret-position="224">
+          <caret line="60" column="29" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/common/DBUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="154" column="50" selection-start-line="154" selection-start-column="47" selection-end-line="154" selection-end-column="50" />
         </state>
       </provider>
     </entry>
