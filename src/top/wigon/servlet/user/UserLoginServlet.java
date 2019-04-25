@@ -3,6 +3,7 @@ package top.wigon.servlet.user;
 import top.wigon.entity.User;
 import top.wigon.service.impl.UserServiceImpl;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,9 +28,10 @@ public class UserLoginServlet extends HttpServlet {
         UserServiceImpl userService = new UserServiceImpl();
         boolean login = userService.userLoginByphone(user);
         if (login) {
-            resp.sendRedirect("index.html");
+            req.getRequestDispatcher("index.html").forward(req,resp);
         } else {
 
+            resp.sendRedirect("login.html");
         }
 
     }

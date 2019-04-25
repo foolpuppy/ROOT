@@ -1,5 +1,7 @@
 package top.wigon.DAO;
 
+import java.util.Map;
+
 /**
  * @author L
  * @version 1.0
@@ -18,6 +20,34 @@ public interface BaseDAO<T> {
      *
      * @return
      */
-    Boolean add(T t);
+    Boolean addEntity(T t);
+
+    /**
+     * 添加实体
+     * @param t
+     * @return
+     */
+    boolean updateEntity(T t);
+
+    /**
+     * 删除实体
+     * @param t
+     * @return
+     */
+    boolean deleteEntity(T t);
+
+    /**
+     * 获取插入值的map
+     * @param t
+     * @return
+     */
+    Map<String, Object>  getValMap(T t);
+
+    /**
+     * 获得位移ID
+     * @param t
+     * @return
+     */
+    Map<String, Object>  getPrimaryKey(T t);
 
 }
