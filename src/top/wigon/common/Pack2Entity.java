@@ -21,13 +21,21 @@ public class Pack2Entity {
      */
     public static User pack2user(List<Map<String, Object>> result) {
         User user = new User();
-        user.setUserId(result.get(0).get("user_id").toString());
-        user.setUserName(result.get(0).get("username").toString());
-        user.setPassword(result.get(0).get("password").toString());
-        user.setTel(result.get(0).get("tel").toString());
-        user.setEmail(result.get(0).get("email").toString());
-        user.setAvatarPath(result.get(0).get("avatar_path").toString());
-        user.setCreateTime(result.get(0).get("gmt_create").toString());
+        if (result.size() > 0) {
+            /*
+            如果表列名对应实体属性可以使用：*/
+            for (Map<String, Object> list : result) {
+                list.forEach((k, v) -> System.out.println(k + " " + v));
+            }
+            /**/
+            user.setUserId(result.get(0).get("user_id").toString());
+            user.setUserName(result.get(0).get("username").toString());
+            user.setPassword(result.get(0).get("password").toString());
+            user.setTel(result.get(0).get("tel").toString());
+            user.setEmail(result.get(0).get("email").toString());
+            user.setAvatarPath(String.valueOf(result.get(0).get("avatar_path")));
+            user.setCreateTime(result.get(0).get("gmt_create").toString());
+        }
         return user;
     }
 

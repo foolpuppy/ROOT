@@ -12,5 +12,5 @@ public interface UserService {
      * 用户登录成功与否
      * @return
      */
-    Boolean userLogin(User user);
+    Boolean userLoginByphone(User user);
 }

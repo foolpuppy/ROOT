@@ -1,8 +1,5 @@
 package top.wigon.service.impl;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import top.wigon.DAO.BaseDAO;
-import top.wigon.DAO.UserDao;
 import top.wigon.DAO.impl.UserDaoIpml;
 import top.wigon.entity.User;
 import top.wigon.service.UserService;
@@ -14,8 +11,12 @@ import top.wigon.service.UserService;
  **/
 public class UserServiceImpl implements UserService {
     @Override
-    public Boolean userLogin(User user) {
+    public Boolean userLoginByphone(User user) {
         UserDaoIpml dao = new UserDaoIpml();
-        return user.getPassword().equals(dao.findByEntity(user).getPassword());
+        //比对Tel
+        if (dao.findByEntity(user).getTel() != null) {
+            return user.getPassword().equals(dao.findByEntity(user).getPassword());
+        }
+        return false;
     }
 }

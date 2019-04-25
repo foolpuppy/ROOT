@@ -18,21 +18,23 @@ public class UserDaoIpml implements UserDao {
     @Override
     public User findByEntity(User user) {
         Map<String, Object> wheremap = new HashMap<>();
-        wheremap.put("user_id", user.getUserId());
+        //通过手机号查询用户
+        wheremap.put("tel", user.getTel());
         List<Map<String, Object>> result = null;
         try {
-            result = DBUtils.query("tel", wheremap);
+            result = DBUtils.query("tb_user", wheremap);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (result!=null){
-        return Pack2Entity.pack2user(result);}
-        else {
+        if (result != null) {
+            return Pack2Entity.pack2user(result);
+        } else {
             return new User();
         }
 
     }
+
     @Override
     public Boolean insertEntity(User user) {
         return null;
