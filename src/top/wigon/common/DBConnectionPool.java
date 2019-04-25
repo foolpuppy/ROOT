@@ -42,15 +42,6 @@ public class DBConnectionPool {
     }
 
     /**
-     * 获取数据库连接
-     *
-     * @return Connection
-     */
-    public Connection getConnection() throws SQLException {
-        return dataSource.getConnection();
-    }
-
-    /**
      * 获得实例
      *
      * @return
@@ -60,6 +51,15 @@ public class DBConnectionPool {
             dbConnection = new DBConnectionPool();
         }
         return dbConnection;
+    }
+
+    /**
+     * 获取数据库连接
+     *
+     * @return Connection
+     */
+    public Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
     }
 
     /**

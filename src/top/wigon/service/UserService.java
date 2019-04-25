@@ -10,7 +10,16 @@ import top.wigon.entity.User;
 public interface UserService {
     /**
      * 用户登录成功与否
+     *
      * @return
      */
     Boolean userLoginByphone(User user);
+
+    /**
+     * 添加用户返回成功与否
+     *
+     * @param user
+     * @return
+     */
+    Boolean userAdd(User user);
 }

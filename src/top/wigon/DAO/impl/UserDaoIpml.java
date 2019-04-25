@@ -36,7 +36,7 @@ public class UserDaoIpml implements UserDao {
     }
 
     @Override
-    public Boolean insertEntity(User user) {
+    public Boolean add(User user) {
         return null;
     }
 }

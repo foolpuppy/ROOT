@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class OrderId {
     private int id;
     private String itemId;
-    private  String orderId;
+    private String orderId;
     private int num;
     private String title;
     private BigDecimal price;

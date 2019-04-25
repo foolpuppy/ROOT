@@ -1,9 +1,11 @@
 package top.wigon.common;
+
 import com.sun.istack.internal.Nullable;
 
 import java.sql.*;
 import java.util.*;
 import java.util.regex.Pattern;
+
 /**
  * @author L
  * @version 1.0
@@ -12,6 +14,12 @@ import java.util.regex.Pattern;
  * 数据库JDBC连接工具类
  */
 public class DBUtils {
+
+    /**
+     * the pattern of limit
+     */
+    private static final Pattern sLimitPattern =
+            Pattern.compile("\\s*\\d+\\s*(,\\s*\\d+\\s*)?");
 
     /**
      * 执行数据库插入操作
@@ -319,6 +327,7 @@ public class DBUtils {
 
     /**
      * 执行sql条件参数绑定形式的查询
+     *
      * @param tableName   表名
      * @param whereClause where条件的sql
      * @param whereArgs   where条件中占位符中的值
@@ -405,7 +414,6 @@ public class DBUtils {
         return datas;
     }
 
-
     /**
      * 将结果集对象封装成List<Map<String, Object>> 对象
      *
@@ -431,7 +439,6 @@ public class DBUtils {
         }
         return datas;
     }
-
 
     /**
      * Build an SQL query string from the given clauses.
@@ -545,12 +552,6 @@ public class DBUtils {
     }
 
     /**
-     * the pattern of limit
-     */
-    private static final Pattern sLimitPattern =
-            Pattern.compile("\\s*\\d+\\s*(,\\s*\\d+\\s*)?");
-
-    /**
      * After the execution of the complete SQL statement, not necessarily the actual implementation of the SQL statement
      *
      * @param sql      SQL statement
@@ -562,7 +563,7 @@ public class DBUtils {
         if (bindArgs != null && bindArgs.length > 0) {
             int index = 0;
             for (int i = 0; i < bindArgs.length; i++) {
-                System.out.println("第 " + i + 1 + " 个参数为" + bindArgs[i]);
+                System.out.println("第 " + (i + 1) + " 个参数为" + bindArgs[i]);
                 index = sb.indexOf("?", index);
                 sb.replace(index, index + 1, String.valueOf(bindArgs[i]));
             }
