@@ -1,4 +1,4 @@
-package top.wigon.servlet;
+package top.wigon.servlet.common;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

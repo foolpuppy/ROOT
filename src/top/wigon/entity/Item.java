@@ -48,11 +48,11 @@ public class Item implements Serializable {
         this.title = title;
     }
 
-    public String getCatefory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCatefory(String category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 

@@ -8,6 +8,7 @@ package top.wigon.entity;
 public class User {
     private String userId;
     private String userName;
+    private String password;
     private String tel;
     private String email;
     private String avatarPath;
@@ -17,14 +18,23 @@ public class User {
     public User() {
     }
 
-    public User(String userId, String userName, String tel, String email, String avatarPath, String roleType, String createTime) {
+    public User(String userId, String userName, String password, String tel, String email, String avatarPath, String roleType, String createTime) {
         this.userId = userId;
         this.userName = userName;
+        this.password = password;
         this.tel = tel;
         this.email = email;
         this.avatarPath = avatarPath;
         this.roleType = roleType;
         this.createTime = createTime;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUserId() {

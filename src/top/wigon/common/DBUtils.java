@@ -319,7 +319,6 @@ public class DBUtils {
 
     /**
      * 执行sql条件参数绑定形式的查询
-     *
      * @param tableName   表名
      * @param whereClause where条件的sql
      * @param whereArgs   where条件中占位符中的值
