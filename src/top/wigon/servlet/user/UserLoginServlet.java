@@ -27,9 +27,9 @@ public class UserLoginServlet extends HttpServlet {
         UserServiceImpl userService = new UserServiceImpl();
         boolean login = userService.userLoginByphone(user);
         if (login) {
-            resp.getWriter().println("HELLO");
+            resp.sendRedirect("index.html");
         } else {
-            resp.getWriter().println("NOPE");
+
         }
 
     }
