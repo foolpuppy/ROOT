@@ -18,6 +18,7 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public Order findByEntity(Order order) {
+
         return null;
     }
 
@@ -29,7 +30,7 @@ public class OrderDAOImpl implements OrderDAO {
             flag = DBUtils.insert(tableName, valueMap) > 0;
         } catch (SQLException e) {
             e.printStackTrace();
-            System.err.println("商品添加失败");
+            System.err.println("订单添加失败");
         }
         return flag;
     }
