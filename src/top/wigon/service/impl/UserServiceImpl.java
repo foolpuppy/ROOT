@@ -32,8 +32,6 @@ public class UserServiceImpl implements UserService {
         valueMap.put("password", user.getPassword());
         valueMap.put("tel", user.getTel());
         valueMap.put("email", user.getEmail());
-        valueMap.forEach((k, v) -> System.out.println("k: " + k + ",v: " + v)
-        );
         boolean flag = false;
         try {
             flag = DBUtils.insert("tb_user", valueMap) > 0;
