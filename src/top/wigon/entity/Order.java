@@ -15,12 +15,31 @@ public class Order implements Serializable {
     private int paymentType;
     private BigDecimal postFee;
     private int orderState;
+    /**
+     *  订单创建时间
+     */
+
     private String orderCreateTime;
+    /**
+     * 订单支付时间
+     */
     private String paymentTime;
+    /**
+     * 发货时间
+     */
     private String consignTime;
     private String receiveTime;
+    /**
+     * 订单结束时间
+     */
     private String endTime;
+    /**
+     * 订单关闭时间
+     */
     private String closeTime;
+    /**
+     * 物流公司以及物流号
+     */
     private String shippingName;
     private String shipingCode;
     private String createTime;

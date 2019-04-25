@@ -16,11 +16,13 @@ import java.util.Map;
  * @date 2019/4/25 19:13
  **/
 public class ItemDAOImpl implements ItemDAO {
+    private final String tableName = "tb_item";
+
     @Override
     public Item findByEntity(Item item) {
         List<Map<String, Object>> result = null;
         try {
-            result = DBUtils.query("tb_user", getPrimaryKey(item));
+            result = DBUtils.query(tableName, getPrimaryKey(item));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -37,7 +39,7 @@ public class ItemDAOImpl implements ItemDAO {
         Map<String, Object> valueMap = getValMap(item);
         boolean flag = false;
         try {
-            flag = DBUtils.insert("tb_item", valueMap) > 0;
+            flag = DBUtils.insert(tableName, valueMap) > 0;
         } catch (SQLException e) {
             e.printStackTrace();
             System.err.println("商品添加失败");
@@ -50,7 +52,7 @@ public class ItemDAOImpl implements ItemDAO {
     public boolean updateEntity(Item item) {
         boolean flag = false;
         try {
-            flag = DBUtils.update("tb_item", getValMap(item), getPrimaryKey(item)) == 1;
+            flag = DBUtils.update(tableName, getValMap(item), getPrimaryKey(item)) == 1;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -61,7 +63,7 @@ public class ItemDAOImpl implements ItemDAO {
     public boolean deleteEntity(Item item) {
         boolean flag = false;
         try {
-            flag = DBUtils.delete("tb_item", getPrimaryKey(item)) == 1;
+            flag = DBUtils.delete(tableName, getPrimaryKey(item)) == 1;
         } catch (SQLException e) {
             e.printStackTrace();
         }

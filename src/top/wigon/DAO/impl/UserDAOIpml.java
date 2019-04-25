@@ -16,6 +16,14 @@ import java.util.Map;
  * @date 2019/4/25 9:45
  **/
 public class UserDAOIpml implements UserDAO {
+    private final String tableName = "tb_user";
+
+    /**
+     * 特殊处理 用手机号唯一标识用户
+     *
+     * @param user
+     * @return
+     */
     @Override
     public User findByEntity(User user) {
         Map<String, Object> wheremap = new HashMap<>();
@@ -23,7 +31,7 @@ public class UserDAOIpml implements UserDAO {
         wheremap.put("tel", user.getTel());
         List<Map<String, Object>> result = null;
         try {
-            result = DBUtils.query("tb_user", wheremap);
+            result = DBUtils.query(tableName, wheremap);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -45,7 +53,7 @@ public class UserDAOIpml implements UserDAO {
         valueMap.put("email", user.getEmail());
         boolean flag = false;
         try {
-            flag = DBUtils.insert("tb_user", valueMap) > 0;
+            flag = DBUtils.insert(tableName, valueMap) > 0;
         } catch (SQLException e) {
             e.printStackTrace();
             System.err.println("用户添加失败");
@@ -58,7 +66,7 @@ public class UserDAOIpml implements UserDAO {
     public boolean updateEntity(User user) {
         boolean flag = false;
         try {
-            flag = DBUtils.update("tb_user", getValMap(user), getPrimaryKey(user)) == 1;
+            flag = DBUtils.update(tableName, getValMap(user), getPrimaryKey(user)) == 1;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -69,7 +77,7 @@ public class UserDAOIpml implements UserDAO {
     public boolean deleteEntity(User user) {
         boolean flag = false;
         try {
-            flag = DBUtils.delete("tb_user", getPrimaryKey(user)) == 1;
+            flag = DBUtils.delete(tableName, getPrimaryKey(user)) == 1;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -89,10 +97,15 @@ public class UserDAOIpml implements UserDAO {
         return valueMap;
     }
 
+    /**
+     *
+     * @param user
+     * @return
+     */
     @Override
     public Map<String, Object> getPrimaryKey(User user) {
         Map<String, Object> pk = new HashMap<>();
-        pk.put("item_id", user.getUserId());
+        pk.put("user_id", user.getUserId());
         return pk;
     }
 }

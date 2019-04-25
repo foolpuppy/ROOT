@@ -11,7 +11,8 @@ public interface BaseDAO<T> {
     /**
      * 通过实体查找，返回该实体
      *
-     * @return
+     * @param t
+     * @return T
      */
     T findByEntity(T t);
 
@@ -24,6 +25,7 @@ public interface BaseDAO<T> {
 
     /**
      * 添加实体
+     *
      * @param t
      * @return
      */
@@ -31,6 +33,7 @@ public interface BaseDAO<T> {
 
     /**
      * 删除实体
+     *
      * @param t
      * @return
      */
@@ -38,16 +41,18 @@ public interface BaseDAO<T> {
 
     /**
      * 获取插入值的map
+     *
      * @param t
      * @return
      */
-    Map<String, Object>  getValMap(T t);
+    Map<String, Object> getValMap(T t);
 
     /**
      * 获得位移ID
+     *
      * @param t
      * @return
      */
-    Map<String, Object>  getPrimaryKey(T t);
+    Map<String, Object> getPrimaryKey(T t);
 
 }
