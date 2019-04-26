@@ -19,6 +19,8 @@ public class Item implements Serializable {
 //    private String createTime;
 
     public Item() {
+        this.price=new BigDecimal(0);
+
     }
 
     public Item(String id, String title, String category, BigDecimal price, int stock, int state, int shopId) {

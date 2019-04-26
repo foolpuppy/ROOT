@@ -37,7 +37,8 @@ public class UserDAOIpml implements UserDAO {
             e.printStackTrace();
         }
         if (result != null) {
-            return Pack2Entity.pack2user(result);
+            //单用户查找返回一个
+            return Pack2Entity.pack2user(result).get(0);
         } else {
             return new User();
         }

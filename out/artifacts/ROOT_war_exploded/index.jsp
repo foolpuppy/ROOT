@@ -39,5 +39,10 @@
     <input type="text" name="name" placeholder="订单名称">
     <button type="submit">提交</button>
 </form>
+<form action="findItemByConditions" method="post">
+    <input type="text" name="item_title" placeholder="产品标题">
+    <input type="text" name="item_category" placeholder="产品分类">
+    <button type="submit">提交</button>
+</form>
 </body>
 </html>

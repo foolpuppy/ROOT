@@ -6,6 +6,7 @@ import top.wigon.common.Pack2Entity;
 import top.wigon.entity.Item;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +29,8 @@ public class ItemDAOImpl implements ItemDAO {
             e.printStackTrace();
         }
         if (result != null) {
-            return Pack2Entity.pack2item(result);
+            //通过唯一ID查找 返回第一个
+            return Pack2Entity.pack2items(result).get(0);
         } else {
             return new Item();
         }
@@ -89,5 +91,36 @@ public class ItemDAOImpl implements ItemDAO {
         pk.put("item_id", item.getId());
         return pk;
     }
+
+    public List<Item> findByCondition(Map<String, Object> keyword) {
+        List<Item> items = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.queryLike(tableName, keyword);
+
+            items = Pack2Entity.pack2items(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
+
+    /**
+     * 获取条件查询的MAP
+     *
+     * @param item
+     * @return
+     */
+    public Map<String, Object> getConditionValMap(Item item) {
+        Map<String, Object> vmap = new HashMap<>();
+        if (!item.getTitle().isEmpty() && item.getTitle() != null) {
+            vmap.put("item_title", item.getTitle());
+        }
+        if (!item.getCategory().isEmpty() && item.getCategory() != null) {
+            vmap.put("item_category", item.getCategory());
+        }
+        return vmap;
+
+    }
+
 
 }

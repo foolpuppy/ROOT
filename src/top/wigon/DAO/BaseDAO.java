@@ -48,7 +48,7 @@ public interface BaseDAO<T> {
     Map<String, Object> getValMap(T t);
 
     /**
-     * 获得位移ID
+     * 获得唯一ID
      *
      * @param t
      * @return

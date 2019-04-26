@@ -4,6 +4,7 @@ import top.wigon.entity.Item;
 import top.wigon.entity.User;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,15 +20,11 @@ public class Pack2Entity {
      * @param result
      * @return
      */
-    public static User pack2user(List<Map<String, Object>> result) {
-        User user = new User();
-        if (result.size() > 0) {
-            /*
-            如果表列名对应实体属性可以使用：*/
-            for (Map<String, Object> list : result) {
-                list.forEach((k, v) -> System.out.println(k + " " + v));
-            }
-            /**/
+    public static List<User> pack2user(List<Map<String, Object>> result) {
+        List<User> list = new ArrayList<>();
+        User user;
+        for (int i = 0; i < result.size(); i++) {
+            user = new User();
             user.setUserId(result.get(0).get("user_id").toString());
             user.setUserName(result.get(0).get("username").toString());
             user.setPassword(result.get(0).get("password").toString());
@@ -35,20 +32,34 @@ public class Pack2Entity {
             user.setEmail(result.get(0).get("email").toString());
             user.setAvatarPath(String.valueOf(result.get(0).get("avatar_path")));
             user.setCreateTime(result.get(0).get("gmt_create").toString());
+            list.add(user);
         }
-        return user;
+        return list;
     }
 
-    public static Item pack2item(List<Map<String, Object>> result) {
-        Item item = new Item();
-        item.setId(result.get(0).get("item_id").toString());
-        item.setCategory(result.get(0).get("item_category").toString());
-        item.setTitle(result.get(0).get("item_title").toString());
-        item.setPrice(new BigDecimal(result.get(0).get("price").toString()));
-        item.setStock(Integer.parseInt(result.get(0).get("item_stock").toString()));
-        item.setState(Integer.parseInt(result.get(0).get("item_state").toString()));
-        item.setShopId(Integer.parseInt(result.get(0).get("shop_id").toString()));
-        return item;
+    /**
+     * 返回集合
+     *
+     * @param result
+     * @return
+     */
+    public static List<Item> pack2items(List<Map<String, Object>> result) {
+        List<Item> list = new ArrayList<>();
+        Item item;
+
+        for (int i = 0; i < result.size(); i++) {
+            item = new Item();
+            item.setId(result.get(1).get("item_id").toString());
+            item.setCategory(result.get(i).get("item_category").toString());
+            item.setTitle(result.get(i).get("item_title").toString());
+            item.setPrice(new BigDecimal(String.valueOf(result.get(i).get("price") == null ? 0 : result.get(i).get("price"))));
+            item.setStock(Integer.parseInt(result.get(i).get("item_stock").toString()));
+            item.setState(Integer.parseInt(result.get(i).get("item_state").toString()));
+            item.setShopId(Integer.parseInt(result.get(i).get("shop_id").toString()));
+            list.add(item);
+
+        }
+        return list;
     }
 
 }

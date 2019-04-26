@@ -2,6 +2,8 @@ package top.wigon.service;
 
 import top.wigon.entity.Item;
 
+import java.util.List;
+
 /**
  * @author L
  * @version 1.0
@@ -10,6 +12,7 @@ import top.wigon.entity.Item;
 public interface ItemService {
     /**
      * 添加商品
+     *
      * @param item
      * @return
      */
@@ -17,9 +20,10 @@ public interface ItemService {
 
     /**
      * 关键字商品标题模糊查询
-     * @param keyword
+     *
+     * @param item
      * @return
      */
-    Item[] findItemsByName(String keyword);
+    List<Item> findItemsByName(Item item);
 
 }

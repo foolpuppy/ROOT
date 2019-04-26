@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  * @date 2019/4/26 9:49
  **/
 @WebServlet("/addItem")
-public class addItemServlet extends HttpServlet {
+public class AddItemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
