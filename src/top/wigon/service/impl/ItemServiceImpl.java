@@ -26,4 +26,10 @@ public class ItemServiceImpl implements ItemService {
         return dao.findByCondition(keyword);
     }
 
+    @Override
+    public List<Item> getAll() {
+
+        return dao.getAllItems();
+    }
+
 }

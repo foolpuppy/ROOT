@@ -35,6 +35,6 @@ layui.define(['jquery','element','laytpl','carousel','laypage'],function(exports
 	            result      = template.render(data);
 	        return result;
 	    }
-	}
+	};
   exports('mm',_mm)
 });

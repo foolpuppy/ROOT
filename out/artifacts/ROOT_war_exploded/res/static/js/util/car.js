@@ -14,7 +14,7 @@ var car = {
       var checkAll = document.getElementsByClassName('check-all'); //全选框
       var SelectedPieces = document.getElementsByClassName('Selected-pieces')[0];//总件数
       var piecesTotal = document.getElementsByClassName('pieces-total')[0];//总价
-      var batchdeletion = document.getElementsByClassName('batch-deletion')[0]//批量删除按钮
+      var batchdeletion = document.getElementsByClassName('batch-deletion')[0];//批量删除按钮
       //计算
       function getTotal(){
           var seleted = 0,price = 0;
@@ -35,7 +35,7 @@ var car = {
       function getSubTotal(ul){
         var unitprice = parseFloat(ul.getElementsByClassName('th-su')[0].innerHTML);
         var count = parseInt(ul.getElementsByClassName('Quantity-input')[0].value);
-        var SubTotal = parseFloat(unitprice*count)
+        var SubTotal = parseFloat(unitprice*count);
         ul.getElementsByClassName('sum')[0].innerHTML = SubTotal.toFixed(2);
       }
 
@@ -67,21 +67,21 @@ var car = {
           switch(cls){
             case 'add layui-btn':
               input.value = val + 1;
-              getSubTotal(this)
+              getSubTotal(this);
               break;
             case 'less layui-btn':
               if(val > 1){
                 input.value = val - 1;
               }
-              getSubTotal(this)
+              getSubTotal(this);
               break;
             case 'dele-btn':
               layer.confirm('你确定要删除吗',{
                 yes:function(index,layero){
-                  layer.close(index)
+                  layer.close(index);
                   that.parentNode.removeChild(that);
                 }
-              })
+              });
               break;
           }
           getTotal()
@@ -91,7 +91,7 @@ var car = {
         if(SelectedPieces.innerHTML != 0){
           layer.confirm('你确定要删除吗',{
             yes:function(index,layero){
-              layer.close(index)
+              layer.close(index);
               for(var i = 0;i < uls.length;i++){
                 var input = uls[i].getElementsByTagName('input')[0];
                 if(input.checked){
@@ -107,12 +107,12 @@ var car = {
           layer.msg('请选择商品')
         }
         
-      }
+      };
         checkAll[0].checked = true;
         checkAll[0].onclick();
   	  }  	
 
-  }
+  };
 
 
   exports('car',car)

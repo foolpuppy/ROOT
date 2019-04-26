@@ -26,4 +26,9 @@ public interface ItemService {
      */
     List<Item> findItemsByName(Item item);
 
+    /**
+     * 获得所有商品
+     * @return
+     */
+    List<Item> getAll();
 }

@@ -38,7 +38,7 @@ public class UserDAOIpml implements UserDAO {
         }
         if (result != null) {
             //单用户查找返回一个
-            return Pack2Entity.pack2user(result).get(0);
+            return Pack2Entity.pack2users(result).get(0);
         } else {
             return new User();
         }

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author L
@@ -27,13 +28,13 @@ public class PaymentServlet extends HttpServlet {
 //        alipayRequest.setNotifyUrl(AlipayConfig.notify_url);
 
         //商户订单号，商户网站订单系统中唯一订单号，必填
-        String out_trade_no = new String(req.getParameter("order_id").getBytes("ISO-8859-1"), "UTF-8");
+        String out_trade_no = new String(req.getParameter("order_id").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         //付款金额，必填
-        String total_amount = new String(req.getParameter("money").getBytes("ISO-8859-1"), "UTF-8");
+        String total_amount = new String(req.getParameter("money").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         //订单名称，必填
-        String subject = new String(req.getParameter("name").getBytes("ISO-8859-1"), "UTF-8");
+        String subject = new String(req.getParameter("name").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         //商品描述，可空
-        String body = new String(req.getParameter("name").getBytes("ISO-8859-1"), "UTF-8");
+        String body = new String(req.getParameter("name").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         System.out.println(out_trade_no + " " + total_amount + " " + subject + " " + body);
 //        alipayRequest.setBizContent("{\"out_trade_no\":\"" + out_trade_no + "\","
 //                + "\"total_amount\":\"" + total_amount + "\","

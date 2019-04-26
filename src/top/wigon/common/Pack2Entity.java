@@ -15,12 +15,12 @@ import java.util.Map;
  **/
 public class Pack2Entity {
     /**
-     * 结果集转为User实体
+     * 结果集转为User实体实体
      *
      * @param result
      * @return
      */
-    public static List<User> pack2user(List<Map<String, Object>> result) {
+    public static List<User> pack2users(List<Map<String, Object>> result) {
         List<User> list = new ArrayList<>();
         User user;
         for (int i = 0; i < result.size(); i++) {
@@ -38,7 +38,7 @@ public class Pack2Entity {
     }
 
     /**
-     * 返回集合
+     * 返回Item实体集合
      *
      * @param result
      * @return

@@ -28,7 +28,7 @@ public class FindItemServlet extends HttpServlet {
         item.setTitle(item_title);
         item.setCategory(item_category);
         ItemServiceImpl itemService = new ItemServiceImpl();
-        //返回的商品集合
+        //返回模糊查询的商品集合
         List<Item> items = itemService.findItemsByName(item);
         boolean login = items.size() > 0;
         if (login) {

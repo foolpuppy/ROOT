@@ -25,4 +25,15 @@ public class UserServiceImpl implements UserService {
     public Boolean userAdd(User user) {
         return dao.addEntity(user);
     }
+
+    /**
+     * 修改用户名 邮箱和  密码
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public Boolean userEdit(User user) {
+        return dao.updateEntity(user);
+    }
 }

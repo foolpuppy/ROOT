@@ -1,5 +1,6 @@
 package top.wigon.DAO.impl;
 
+import org.junit.jupiter.api.Test;
 import top.wigon.DAO.ItemDAO;
 import top.wigon.common.DBUtils;
 import top.wigon.common.Pack2Entity;
@@ -97,6 +98,18 @@ public class ItemDAOImpl implements ItemDAO {
         try {
             List<Map<String, Object>> result = DBUtils.queryLike(tableName, keyword);
 
+            items = Pack2Entity.pack2items(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
+
+    @Test
+    public List<Item> getAllItems() {
+        List<Item> items = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.query(tableName, null);
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {
             e.printStackTrace();

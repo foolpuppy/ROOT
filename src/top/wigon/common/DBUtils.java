@@ -392,7 +392,6 @@ public class DBUtils {
                                                   String orderBy,
                                                   String limit) throws SQLException {
         String sql = buildQueryString(distinct, tableName, columns, selection, groupBy, having, orderBy, limit);
-        System.err.println(sql);
         return executeQuery(sql, selectionArgs);
 
     }

@@ -44,5 +44,12 @@
     <input type="text" name="item_category" placeholder="产品分类">
     <button type="submit">提交</button>
 </form>
+<form action="userEdit" method="post">
+    <input type="text" name="user_id" placeholder="user_id" readonly value="100002">
+    <input type="text" name="username" placeholder="用户名">
+    <input type="text" name="email" placeholder="用户邮箱">
+    <input type="text" name="password" placeholder="用户密码">
+    <button type="submit">提交</button>
+</form>
 </body>
 </html>
