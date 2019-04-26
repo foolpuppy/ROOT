@@ -57,7 +57,6 @@
               <a href="commodity.html">所有商品</a>
               <a href="buytoday.html" class="active">今日团购</a>
               <a href="information.html">母婴资讯</a>
-              <a href="about.html">关于我们</a>
             </div>
           </div>
         </div>
@@ -68,8 +67,8 @@
       <div class="product-list-box">
         <div class="product-list w1200">  
           <div class="tab-title">
-            <a href="javascript:" class="active tuang" data-content="tuangou">今日团购</a>
-            <a href="javascript:" data-content="yukao">明日预告</a>
+            <a href="javascript:;" class="active tuang" data-content="tuangou">今日团购</a>
+            <a href="javascript:;" data-content="yukao">明日预告</a>
           </div>
           <div class="list-cont" cont = 'tuangou'>
             <div class="item-box layui-clear">
@@ -644,11 +643,11 @@
 
 
       $('body').on('click','*[data-content]',function(){
-        $(this).addClass('active').siblings().removeClass('active');
+        $(this).addClass('active').siblings().removeClass('active')
         var dataConte = $(this).attr('data-content');
         $('*[cont]').each(function(i,item){
           var itemCont = $(item).attr('cont');
-          console.log(item);
+          console.log(item)
           if(dataConte === itemCont){
             $(item).removeClass('layui-hide');
           }else{

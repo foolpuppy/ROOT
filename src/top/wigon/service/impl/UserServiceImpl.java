@@ -36,4 +36,15 @@ public class UserServiceImpl implements UserService {
     public Boolean userEdit(User user) {
         return dao.updateEntity(user);
     }
+
+    /**
+     * 删除用户通过Uid
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public Boolean userDel(User user) {
+        return dao.deleteEntity(user);
+    }
 }

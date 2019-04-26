@@ -395,11 +395,11 @@ legend{font-size: 20px; color: #323232; text-align: center; padding:50px 0;}
 }
 
 .icon-dingdan {
-	color: green;
+	color: #8BC34A;
 }
 
 .icon-kuaidi {
-	color: blue;
+	color: #2196F3;
 }
 
 .icon-dianpu {
@@ -419,6 +419,53 @@ legend{font-size: 20px; color: #323232; text-align: center; padding:50px 0;}
 }
 
 /*end-consumer_center*/
+
+
+/*consumer_info*/
+.layui-tab-wrap {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	background-color: #F5F5F5;
+}
+
+.layui-tab-brief {
+	display: inline-block;
+	width: 60%;
+	height: 690px;
+	background-color: #fff;
+}
+
+.layui-tab-item {
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.layui-tab-item1>div>img {
+	width: 140px;
+	height: 140px;
+	border-radius: 70px;
+}
+
+.layui-tab-item1-info {
+	margin-top: 50px;
+}
+
+.layui-tab-item2-info
+{
+	width: 80%;
+}
+
+.layui-tab-item2-info>div {
+	text-align: left;
+}
+
+.item2-info-time {
+	color: gray;
+}
+/*end-consumer_info*/
+
 
 
 /*shopcart-content*/

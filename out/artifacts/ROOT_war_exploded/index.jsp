@@ -51,5 +51,9 @@
     <input type="text" name="password" placeholder="用户密码">
     <button type="submit">提交</button>
 </form>
+<form action="UserDel" method="post">
+    <input type="text" name="user_id" placeholder="user_id">
+    <button type="submit">提交</button>
+</form>
 </body>
 </html>

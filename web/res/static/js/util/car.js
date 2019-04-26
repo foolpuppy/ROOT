@@ -1,8 +1,4 @@
-/*
-*@Name: 母婴商城
-*@Author: xuzhiwen
-*@Copyright:layui.com
-*/
+
 
 layui.define(['layer'],function(exports){
 	var layer = layui.layer;
@@ -14,7 +10,7 @@ var car = {
       var checkAll = document.getElementsByClassName('check-all'); //全选框
       var SelectedPieces = document.getElementsByClassName('Selected-pieces')[0];//总件数
       var piecesTotal = document.getElementsByClassName('pieces-total')[0];//总价
-      var batchdeletion = document.getElementsByClassName('batch-deletion')[0];//批量删除按钮
+      var batchdeletion = document.getElementsByClassName('batch-deletion')[0]//批量删除按钮
       //计算
       function getTotal(){
           var seleted = 0,price = 0;
@@ -28,15 +24,27 @@ var car = {
           piecesTotal.innerHTML = '￥' + price.toFixed(2);
       }
 
+
       function fn1(){
         alert(1)
       }
       // 小计
       function getSubTotal(ul){
+        var goodsid = ul.getElementsByClassName('goodsid')[0].innerHTML;
         var unitprice = parseFloat(ul.getElementsByClassName('th-su')[0].innerHTML);
-        var count = parseInt(ul.getElementsByClassName('Quantity-input')[0].value);
+        var count = parseInt(ul.getElementsByClassName('Quantity-input')[0].value);/*加减后的数量*/
         var SubTotal = parseFloat(unitprice*count);
         ul.getElementsByClassName('sum')[0].innerHTML = SubTotal.toFixed(2);
+        /*将修改后的值传入*/
+        $.ajax({
+              url : "#",
+              type : "post",
+              data : {"goodsid":goodsid , "unitprice":unitprice , "count":count},
+              success : function(data) {
+
+             }
+          });
+
       }
 
       for(var i = 0;i < checkInputs.length;i++){
@@ -62,36 +70,49 @@ var car = {
           var cls = el.className;
           var input = this.getElementsByClassName('Quantity-input')[0];
           var less = this.getElementsByClassName('less')[0];
+          var goodsid = this.getElementsByClassName('goodsid')[0].innerHTML;
           var val = parseInt(input.value);
           var that = this;
           switch(cls){
             case 'add layui-btn':
               input.value = val + 1;
-              getSubTotal(this);
+              getSubTotal(this)
               break;
             case 'less layui-btn':
               if(val > 1){
                 input.value = val - 1;
               }
-              getSubTotal(this);
+              getSubTotal(this)
               break;
             case 'dele-btn':
               layer.confirm('你确定要删除吗',{
                 yes:function(index,layero){
-                  layer.close(index);
+
+                   /*删除此条数据*/
+                  alert(goodsid);
+                  $.ajax({
+                        url : "#",
+                        type : "post",
+                        data : {"goodsid":goodsid },
+                        success : function(data) {
+
+                       }
+                    });
+                  layer.close(index)
                   that.parentNode.removeChild(that);
                 }
-              });
+              })
               break;
           }
           getTotal()
+
         }
       }
       batchdeletion.onclick = function(){
         if(SelectedPieces.innerHTML != 0){
           layer.confirm('你确定要删除吗',{
             yes:function(index,layero){
-              layer.close(index);
+              layer.close(index)
               for(var i = 0;i < uls.length;i++){
                 var input = uls[i].getElementsByTagName('input')[0];
                 if(input.checked){
@@ -107,12 +128,46 @@ var car = {
           layer.msg('请选择商品')
         }
         
-      };
+      }
+
+
         checkAll[0].checked = true;
         checkAll[0].onclick();
-  	  }  	
 
-  };
+
+        $(function(){
+            $("#layui-btn-settlement").click(function(){
+              var uls = document.getElementById('list-cont').getElementsByTagName('ul');//每一行
+              var list=new Array();
+              var flag = 0;
+              for(var i = 0; i < uls.length;i++){
+                if(uls[i].getElementsByTagName('input')[0].checked){
+                  list[flag] = [
+                    uls[i].getElementsByClassName('goodsid')[0].innerHTML,
+                    parseInt(uls[i].getElementsByClassName('Quantity-input')[0].value)
+                  ]
+                  flag += 1;
+                }
+              }
+              var fee = $(".pieces-total").html();
+              var goods = { goods:list , totalfee:fee};
+              alert(goods.totalfee);
+
+              $.ajax({
+                  url : "#",
+                  type : "post",
+                  data : {"goods":goods },
+                  success : function(data) {
+
+                  }
+              });
+            })
+          })  
+  	  } 
+
+
+  }
+
 
 
   exports('car',car)

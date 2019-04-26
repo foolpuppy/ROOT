@@ -25,8 +25,17 @@ public interface UserService {
 
     /**
      * 用户信息修改
+     *
      * @param user
      * @return
      */
     Boolean userEdit(User user);
+
+    /**
+     * 删除用户
+     *
+     * @param user
+     * @return
+     */
+    Boolean userDel(User user);
 }
