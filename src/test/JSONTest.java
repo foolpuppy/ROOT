@@ -17,7 +17,7 @@ import java.util.Map;
  **/
 public class JSONTest {
     public static void main(String[] args) throws IOException {
-        Item item = new Item("0000001", "小米10", "电子产品", new BigDecimal(9999), 100, 1, 100001, DBUtils.getCurrDateTime());
+        Item item = new Item("0000001", "小米10", "电子产品", new BigDecimal(9999), 100, 1, 100001);
         ObjectMapper objectMapper = new ObjectMapper();
         String JSON = objectMapper.writeValueAsString(item);
         System.out.println(JSON);

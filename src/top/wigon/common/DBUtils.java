@@ -326,6 +326,33 @@ public class DBUtils {
     }
 
     /**
+     * 执行sql通过 Map<String, Object>限定查询条件模糊查询
+     *
+     * @param tableName 表名
+     * @param whereMap  where条件
+     * @return List<Map < String, Object>>
+     * @throws SQLException
+     */
+    public static List<Map<String, Object>> queryLike(String tableName,
+                                                      Map<String, Object> whereMap) throws Exception {
+        StringBuffer SQL = new StringBuffer();
+        SQL.append("SELECT * FROM " + tableName);
+        if (whereMap != null && whereMap.size() > 0) {
+            Iterator<String> iterator = whereMap.keySet().iterator();
+            int i = 0;
+            while (iterator.hasNext()) {
+                String key = iterator.next();
+                SQL.append(i == 0 ? " where " : " ");
+                SQL.append(i == 0 ? " " : " AND ");
+                SQL.append(key + " like '%" + whereMap.get(key) + "%'");
+                i++;
+            }
+        }
+
+        return query(SQL.toString());
+    }
+
+    /**
      * 执行sql条件参数绑定形式的查询
      *
      * @param tableName   表名
@@ -365,6 +392,7 @@ public class DBUtils {
                                                   String orderBy,
                                                   String limit) throws SQLException {
         String sql = buildQueryString(distinct, tableName, columns, selection, groupBy, having, orderBy, limit);
+        System.err.println(sql);
         return executeQuery(sql, selectionArgs);
 
     }

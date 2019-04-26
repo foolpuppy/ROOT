@@ -16,12 +16,12 @@ public class Item implements Serializable {
     private int stock;
     private int state;
     private int shopId;
-    private String createTime;
+//    private String createTime;
 
     public Item() {
     }
 
-    public Item(String id, String title, String category, BigDecimal price, int stock, int state, int shopId, String createTime) {
+    public Item(String id, String title, String category, BigDecimal price, int stock, int state, int shopId) {
         this.id = id;
         this.title = title;
         this.category = category;
@@ -29,7 +29,6 @@ public class Item implements Serializable {
         this.stock = stock;
         this.state = state;
         this.shopId = shopId;
-        this.createTime = createTime;
     }
 
     public String getId() {
@@ -88,25 +87,4 @@ public class Item implements Serializable {
         this.shopId = shopId;
     }
 
-    public String getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id='" + id + '\'' +
-                ", title='" + title + '\'' +
-                ", category='" + category + '\'' +
-                ", price=" + price +
-                ", stock=" + stock +
-                ", state=" + state +
-                ", shopId=" + shopId +
-                ", createTime='" + createTime + '\'' +
-                '}';
-    }
 }

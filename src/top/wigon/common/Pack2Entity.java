@@ -48,7 +48,6 @@ public class Pack2Entity {
         item.setStock(Integer.parseInt(result.get(0).get("item_stock").toString()));
         item.setState(Integer.parseInt(result.get(0).get("item_state").toString()));
         item.setShopId(Integer.parseInt(result.get(0).get("shop_id").toString()));
-        item.setCreateTime(result.get(0).get("gmt_create").toString());
         return item;
     }
 
