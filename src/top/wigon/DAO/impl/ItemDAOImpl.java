@@ -1,6 +1,5 @@
 package top.wigon.DAO.impl;
 
-import org.junit.jupiter.api.Test;
 import top.wigon.DAO.ItemDAO;
 import top.wigon.common.DBUtils;
 import top.wigon.common.Pack2Entity;
@@ -105,7 +104,6 @@ public class ItemDAOImpl implements ItemDAO {
         return items;
     }
 
-    @Test
     public List<Item> getAllItems() {
         List<Item> items = new ArrayList<>();
         try {

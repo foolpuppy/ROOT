@@ -602,7 +602,7 @@ public class DBUtils {
      * @return 返回 YYYY-MM-DD HH-MM-SS 字符串
      */
     public static String getCurrDateTime() {
-        return new java.sql.Timestamp(new java.util.Date().getTime()).toString();
+        return new Timestamp(new java.util.Date().getTime()).toString();
     }
 
 }
