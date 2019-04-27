@@ -6,6 +6,7 @@ import top.wigon.common.Pack2Entity;
 import top.wigon.entity.User;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -56,7 +57,7 @@ public class UserDAOIpml implements UserDAO {
         try {
             flag = DBUtils.insert(tableName, valueMap) > 0;
         } catch (SQLException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             System.err.println("用户添加失败");
         }
         return flag;
@@ -99,7 +100,6 @@ public class UserDAOIpml implements UserDAO {
     }
 
     /**
-     *
      * @param user
      * @return
      */
@@ -108,5 +108,20 @@ public class UserDAOIpml implements UserDAO {
         Map<String, Object> pk = new HashMap<>();
         pk.put("user_id", user.getUserId());
         return pk;
+    }
+
+    /**
+     * 获取所有用户集合
+     * @return
+     */
+    public List<User> getAllUsers() {
+        List<User> users = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.query(tableName, null);
+            users = Pack2Entity.pack2users(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
     }
 }

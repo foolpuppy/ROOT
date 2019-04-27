@@ -1,6 +1,7 @@
 package top.wigon.common;
 
 import top.wigon.entity.Item;
+import top.wigon.entity.Order;
 import top.wigon.entity.User;
 
 import java.math.BigDecimal;
@@ -25,13 +26,14 @@ public class Pack2Entity {
         User user;
         for (int i = 0; i < result.size(); i++) {
             user = new User();
-            user.setUserId(result.get(0).get("user_id").toString());
-            user.setUserName(result.get(0).get("username").toString());
-            user.setPassword(result.get(0).get("password").toString());
-            user.setTel(result.get(0).get("tel").toString());
-            user.setEmail(result.get(0).get("email").toString());
-            user.setAvatarPath(String.valueOf(result.get(0).get("avatar_path")));
-            user.setCreateTime(result.get(0).get("gmt_create").toString());
+            user.setUserId(result.get(i).get("user_id").toString());
+            user.setUserName(result.get(i).get("username").toString());
+            user.setPassword(result.get(i).get("password").toString());
+            user.setTel(result.get(i).get("tel").toString());
+            user.setEmail(result.get(i).get("email").toString());
+            user.setAvatarPath(String.valueOf(result.get(i).get("avatar_path")));
+            user.setRoleType(String.valueOf(result.get(i).get("role_type")));
+            user.setCreateTime(result.get(i).get("gmt_create").toString());
             list.add(user);
         }
         return list;
@@ -49,7 +51,7 @@ public class Pack2Entity {
 
         for (int i = 0; i < result.size(); i++) {
             item = new Item();
-            item.setId(result.get(1).get("item_id").toString());
+            item.setId(result.get(i).get("item_id").toString());
             item.setCategory(result.get(i).get("item_category").toString());
             item.setTitle(result.get(i).get("item_title").toString());
             item.setPrice(new BigDecimal(String.valueOf(result.get(i).get("price") == null ? 0 : result.get(i).get("price"))));
@@ -58,6 +60,31 @@ public class Pack2Entity {
             item.setShopId(Integer.parseInt(result.get(i).get("shop_id").toString()));
             list.add(item);
 
+        }
+        return list;
+    }
+
+    public static List<Order> pack2orders(List<Map<String, Object>> result) {
+        List<Order> list = new ArrayList<>();
+        Order order;
+
+        for (int i = 0; i < result.size(); i++) {
+            order = new Order();
+            order.setOrderId(result.get(i).get("order_id").toString());
+            order.setUserId(result.get(i).get("user_id").toString());
+            order.setPayment(new BigDecimal(String.valueOf(result.get(i).get("payment") == null ? 0 : result.get(i).get("payment"))));
+            order.setPaymentType(Integer.parseInt(result.get(i).get("payment_type").toString()));
+            order.setPostFee(new BigDecimal(String.valueOf(result.get(i).get("post_fee") == null ? 0 : result.get(i).get("post_fee"))));
+            order.setOrderState(Integer.parseInt(result.get(i).get("order_state").toString()));
+            order.setOrderCreateTime(String.valueOf(result.get(i).get("create_time")));
+            order.setPaymentTime(String.valueOf(result.get(i).get("payment_time")));
+            order.setConsignTime(String.valueOf(result.get(i).get("consign_time")));
+            order.setReceiveTime(String.valueOf(result.get(i).get("receive_time")));
+            order.setEndTime(String.valueOf(result.get(i).get("end_time")));
+            order.setCloseTime(String.valueOf(result.get(i).get("close_time")));
+            order.setCloseTime(String.valueOf(result.get(i).get("shipping_name")));
+            order.setShipingCode(String.valueOf(result.get(i).get("shipping_code")));
+            list.add(order);
         }
         return list;
     }

@@ -4,6 +4,8 @@ import top.wigon.DAO.impl.UserDAOIpml;
 import top.wigon.entity.User;
 import top.wigon.service.UserService;
 
+import java.util.List;
+
 /**
  * @author L
  * @version 1.0
@@ -46,5 +48,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean userDel(User user) {
         return dao.deleteEntity(user);
+    }
+
+    @Override
+    public Boolean checkTelExist(String tel) {
+        User user = new User();
+        user.setTel(tel);
+        return dao.findByEntity(user).getTel() != null;
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return dao.getAllUsers();
     }
 }

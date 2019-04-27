@@ -2,6 +2,8 @@ package top.wigon.service;
 
 import top.wigon.entity.User;
 
+import java.util.List;
+
 /**
  * @author L
  * @version 1.0
@@ -38,4 +40,18 @@ public interface UserService {
      * @return
      */
     Boolean userDel(User user);
+
+    /**
+     * 检测电话是否已经存在
+     *
+     * @param tel
+     * @return
+     */
+    Boolean checkTelExist(String tel);
+
+    /**
+     * 获取所有用户集合
+     * @return
+     */
+    List<User> getAllUsers();
 }

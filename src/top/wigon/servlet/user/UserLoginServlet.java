@@ -1,5 +1,6 @@
 package top.wigon.servlet.user;
 
+import top.wigon.common.MD5Util;
 import top.wigon.entity.User;
 import top.wigon.service.impl.UserServiceImpl;
 
@@ -24,15 +25,19 @@ public class UserLoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         User user = new User();
         user.setTel(tel);
-        user.setPassword(password);
+        user.setPassword(MD5Util.MD5EncodeUtf8(password));
         UserServiceImpl userService = new UserServiceImpl();
-        boolean login = userService.userLoginByphone(user);
-        if (login) {
-            req.getRequestDispatcher("index.html").forward(req,resp);
+        if (!userService.checkTelExist(tel)) {
+            boolean login = userService.userLoginByphone(user);
+            if (login) {
+                req.getSession().setAttribute("username", user.getUserName());
+                req.getRequestDispatcher("index.html").forward(req, resp);
+            } else {
+
+                resp.sendRedirect("login.html");
+            }
         } else {
-
-            resp.sendRedirect("login.html");
+            //手机号不存在
         }
-
     }
 }

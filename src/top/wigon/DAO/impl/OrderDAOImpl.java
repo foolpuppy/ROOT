@@ -2,10 +2,13 @@ package top.wigon.DAO.impl;
 
 import top.wigon.DAO.OrderDAO;
 import top.wigon.common.DBUtils;
+import top.wigon.common.Pack2Entity;
 import top.wigon.entity.Order;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,8 +21,20 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public Order findByEntity(Order order) {
+        List<Map<String, Object>> result = null;
+        try {
+            result = DBUtils.query(tableName, getPrimaryKey(order));
 
-        return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (result != null) {
+            //通过唯一ID查找 返回第一个
+            return Pack2Entity.pack2orders(result).get(0);
+        } else {
+            return new Order();
+        }
+
     }
 
     @Override
@@ -82,5 +97,16 @@ public class OrderDAOImpl implements OrderDAO {
         Map<String, Object> pk = new HashMap<>();
         pk.put("order_id", order.getOrderId());
         return pk;
+    }
+
+    public List<Order> getAllOrders() {
+        List<Order> items = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.query(tableName, null);
+            items = Pack2Entity.pack2orders(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return items;
     }
 }

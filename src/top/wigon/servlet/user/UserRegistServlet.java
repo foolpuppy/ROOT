@@ -1,5 +1,6 @@
 package top.wigon.servlet.user;
 
+import top.wigon.common.MD5Util;
 import top.wigon.entity.User;
 import top.wigon.service.impl.UserServiceImpl;
 
@@ -25,19 +26,25 @@ public class UserRegistServlet extends HttpServlet {
         String password = req.getParameter("password");
         User user = new User();
         user.setUserName(username);
-        user.setPassword(password);
+        user.setPassword(MD5Util.MD5EncodeUtf8(password));
         user.setTel(phone);
         user.setEmail(email);
         UserServiceImpl userService = new UserServiceImpl();
-        boolean flag = userService.userAdd(user);
-        if (flag) {
+        //判断电话号是否已经在数据库
+        if (!userService.checkTelExist(phone)) {
+            boolean flag = userService.userAdd(user);
+            if (flag) {
 
 
-            req.getRequestDispatcher("index.html").forward(req, resp);
+                //req.getRequestDispatcher("index.html").forward(req, resp);
+                resp.sendRedirect("index.html");
+            } else {
+
+
+                resp.sendRedirect("register.html");
+            }
         } else {
-
-
-            resp.sendRedirect("register.html");
+            //TODO 手机号已存在
         }
     }
 }

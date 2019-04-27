@@ -23,7 +23,7 @@ public class cartServlet extends HttpServlet {
         String item_price = req.getParameter("unitprice");
         String item_num = req.getParameter("count");
         if (req.getParameterMap().size() == 1) {
-            //删除ItemId的数量
+            //todo 删除ItemId的数量
         }
         if (req.getParameterMap().size() == 3) {
             //购物车商品信息变化

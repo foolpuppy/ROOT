@@ -1,13 +1,20 @@
 package test;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import top.wigon.DAO.impl.OrderDAOImpl;
 import top.wigon.common.DBUtils;
 import top.wigon.entity.Item;
+import top.wigon.entity.Order;
+import top.wigon.entity.User;
+import top.wigon.service.impl.ItemServiceImpl;
+import top.wigon.service.impl.UserServiceImpl;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,20 +23,23 @@ import java.util.Map;
  * @date 2019/4/24 22:47
  **/
 public class JSONTest {
-    public static void main(String[] args) throws IOException {
-        Item item = new Item("0000001", "小米10", "电子产品", new BigDecimal(9999), 100, 1, 100001);
+    public static void main(String[] args) throws Exception {
+        OrderDAOImpl userService = new OrderDAOImpl();
+        List<Order> userList = userService.getAllOrders();
         ObjectMapper objectMapper = new ObjectMapper();
-        String JSON = objectMapper.writeValueAsString(item);
+        String JSON = objectMapper.writeValueAsString(userList);
         System.out.println(JSON);
         //设置序列化后的格式，INDENT_OUTPUT表示缩进输出，true表示试该配置生效
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-        String JSON2 = objectMapper.writeValueAsString(item);
+        String JSON2 = objectMapper.writeValueAsString(userList);
         System.out.println(JSON2);
-        Item Xitem = objectMapper.readValue(JSON, Item.class);
-        System.out.println(Xitem);
-        Map<String, Object> map = new HashMap<>();
-        //映射为Map 对象 再 遍历
-        map = objectMapper.readValue(JSON2, map.getClass());
-        map.forEach((k, v) -> System.out.println(" key: " + k + " value: " + v));
+        //反序列化数组对象
+        List<Order> UserList = objectMapper.readValue(JSON2, new TypeReference<List<Order>>() {
+        });
+        UserList.forEach(System.out::println);
+//        Map<String, Object> map = new HashMap<>();
+//        //映射为Map 对象 再 遍历
+//        map = objectMapper.readValue(JSON2, map.getClass());
+//        map.forEach((k, v) -> System.out.println(" key: " + k + " value: " + v));
     }
 }
