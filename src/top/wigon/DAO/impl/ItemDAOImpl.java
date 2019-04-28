@@ -123,10 +123,10 @@ public class ItemDAOImpl implements ItemDAO {
      */
     public Map<String, Object> getConditionValMap(Item item) {
         Map<String, Object> vmap = new HashMap<>();
-        if (!item.getTitle().isEmpty() && item.getTitle() != null) {
+        if (item.getTitle() != null&&!item.getTitle().isEmpty()  ) {
             vmap.put("item_title", item.getTitle());
         }
-        if (!item.getCategory().isEmpty() && item.getCategory() != null) {
+        if (item.getCategory() != null&&!item.getCategory().isEmpty() ) {
             vmap.put("item_category", item.getCategory());
         }
         return vmap;

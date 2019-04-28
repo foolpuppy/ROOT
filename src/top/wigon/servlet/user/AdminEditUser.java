@@ -30,14 +30,14 @@ public class AdminEditUser extends HttpServlet {
         user.setUserName(username);
         user.setEmail(email);
         user.setPassword(password);
-        user.setRoleType(password);
+        user.setRoleType(roletype);
         UserServiceImpl userService = new UserServiceImpl();
         if (userService.userEdit(user)) {
 
-            //修改成功
+            //todo 修改成功
 
         } else {
-            //修改失败
+            //todo 修改失败
         }
     }
 }

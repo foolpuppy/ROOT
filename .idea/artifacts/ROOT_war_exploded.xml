@@ -17,6 +17,8 @@
           <element id="file-copy" path="$PROJECT_DIR$/lib/alipay-sdk-java20170324180803.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/alipay-sdk-java-3.7.26.ALL.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/commons-logging-1.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/standard.jar" />
         </element>
       </element>
     </root>

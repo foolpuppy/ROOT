@@ -29,6 +29,6 @@ public class payTest {
         AlipayTradePrecreateResponse response = alipayClient.execute(request);
 
         System.out.print(response.getBody());
-        System.out.print(response.getQrCode());
+        //System.out.print(response.getQrCode());
     }
 }

@@ -1,5 +1,7 @@
 package top.wigon.servlet.user;
 
+import top.wigon.common.ResponseUtils;
+import top.wigon.common.ServerResponse;
 import top.wigon.entity.User;
 import top.wigon.service.impl.UserServiceImpl;
 
@@ -23,10 +25,11 @@ public class UserDel extends HttpServlet {
         UserServiceImpl userService = new UserServiceImpl();
         User user = new User();
         user.setUserId(user_id);
+        resp.setContentType("text/html;charset=utf-8");
         if (userService.userDel(user)) {
-
+            resp.getWriter().println(ResponseUtils.toJson(ServerResponse.createBySuccess("删除成功")));
         } else {
-
+            System.out.println(ResponseUtils.toJson(ServerResponse.createBySuccess("删除成功")));
         }
     }
 }

@@ -36,8 +36,8 @@ public class UserRegistServlet extends HttpServlet {
             if (flag) {
 
 
-                //req.getRequestDispatcher("index.html").forward(req, resp);
-                resp.sendRedirect("index.html");
+                //req.getRequestDispatcher("index.jsp").forward(req, resp);
+                resp.sendRedirect("index.jsp");
             } else {
 
 

@@ -37,7 +37,7 @@ public class UserDAOIpml implements UserDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (result != null) {
+        if (result != null && result.size() > 0) {
             //单用户查找返回一个
             return Pack2Entity.pack2users(result).get(0);
         } else {
@@ -112,6 +112,7 @@ public class UserDAOIpml implements UserDAO {
 
     /**
      * 获取所有用户集合
+     *
      * @return
      */
     public List<User> getAllUsers() {

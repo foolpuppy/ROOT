@@ -1,5 +1,6 @@
 package top.wigon.servlet.user;
 
+import top.wigon.common.MD5Util;
 import top.wigon.entity.User;
 import top.wigon.service.impl.UserServiceImpl;
 
@@ -28,7 +29,7 @@ public class UserInfoEditServlet extends HttpServlet {
         user.setUserId(user_id);
         user.setUserName(username);
         user.setEmail(email);
-        user.setPassword(password);
+        user.setPassword(MD5Util.MD5EncodeUtf8(password));
         UserServiceImpl userService = new UserServiceImpl();
         if (userService.userEdit(user)) {
 
