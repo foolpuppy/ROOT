@@ -109,4 +109,18 @@ public class OrderDAOImpl implements OrderDAO {
         }
         return items;
     }
+
+    public Order getByOrderNo(String no) {
+        Order order = new Order();
+        order.setOrderId(no);
+        List<Map<String, Object>> result = null;
+        try {
+            //只会得到一个结果
+            result = DBUtils.query(tableName, getPrimaryKey(order));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Pack2Entity.pack2orders(result).get(0);
+    }
 }

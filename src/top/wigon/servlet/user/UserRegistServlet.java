@@ -19,7 +19,7 @@ import java.io.IOException;
 @WebServlet("/regist")
 public class UserRegistServlet extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String phone = req.getParameter("phone");
         String email = req.getParameter("email");
@@ -37,7 +37,7 @@ public class UserRegistServlet extends HttpServlet {
 
 
                 //req.getRequestDispatcher("index.jsp").forward(req, resp);
-                resp.sendRedirect("index.jsp");
+                resp.sendRedirect("index.html");
             } else {
 
 
@@ -47,4 +47,5 @@ public class UserRegistServlet extends HttpServlet {
             //TODO 手机号已存在
         }
     }
+
 }

@@ -31,22 +31,18 @@ public class UserLoginServlet extends HttpServlet {
         user.setTel(tel);
         user.setPassword(MD5Util.MD5EncodeUtf8(password));
         UserServiceImpl userService = new UserServiceImpl();
-        if (userService.checkTelExist(tel)) {
-            boolean login = userService.userLoginByphone(user);
-            if (login) {
-                //用户信息存入Session
-                req.getSession().setAttribute("user", user);
-                //用户Tel 唯一ID 存Cookies
-                Cookie cookie = new Cookie("userTel", tel);
-                cookie.setMaxAge(6000);
-                resp.addCookie(cookie);
-                resp.sendRedirect("index.html");
-            } else {
-
-                resp.sendRedirect("login.jsp");
-            }
+        boolean login = userService.userLoginByphone(user);
+        if (login) {
+            //用户信息存入Session
+            req.getSession().setAttribute("user", user);
+            //用户Tel 唯一ID 存Cookies
+            Cookie cookie = new Cookie("userTel", tel);
+            cookie.setMaxAge(60 * 5);
+            resp.addCookie(cookie);
+            resp.sendRedirect("index.html");
         } else {
-            resp.getWriter().write(ResponseUtils.toJson(ServerResponse.createByError("电话已注册")));
+
+            resp.sendRedirect("login.jsp");
         }
     }
 }

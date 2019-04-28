@@ -29,9 +29,9 @@ public class UserLogOut extends HttpServlet {
                 if ((cookie.getName()).compareTo("userTel") == 0) {
                     cookie.setMaxAge(0);
                     resp.addCookie(cookies[i]);
-                    resp.sendRedirect("index.html");
                 }
             }
         }
+        resp.sendRedirect("index.html");
     }
 }

@@ -24,4 +24,12 @@ public interface OrderService {
      * @return
      */
     Boolean delOrder(Order order);
+
+    /**
+     * 根据Order_id 取到订单
+     * @param order_no
+     * @return
+     */
+    Order getByOrderNo(String order_no);
+
 }

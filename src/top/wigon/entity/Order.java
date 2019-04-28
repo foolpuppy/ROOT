@@ -184,4 +184,25 @@ public class Order implements Serializable {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId='" + orderId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", payment=" + payment +
+                ", paymentType=" + paymentType +
+                ", postFee=" + postFee +
+                ", orderState=" + orderState +
+                ", orderCreateTime='" + orderCreateTime + '\'' +
+                ", paymentTime='" + paymentTime + '\'' +
+                ", consignTime='" + consignTime + '\'' +
+                ", receiveTime='" + receiveTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", closeTime='" + closeTime + '\'' +
+                ", shippingName='" + shippingName + '\'' +
+                ", shipingCode='" + shipingCode + '\'' +
+                ", createTime='" + createTime + '\'' +
+                '}';
+    }
 }

@@ -24,4 +24,9 @@ public class OrderServiceImpl implements OrderService {
     public Boolean delOrder(Order order) {
         return dao.deleteEntity(order);
     }
+
+    @Override
+    public Order getByOrderNo(String order_no) {
+        return dao.getByOrderNo(order_no);
+    }
 }

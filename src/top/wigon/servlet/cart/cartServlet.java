@@ -26,7 +26,7 @@ public class cartServlet extends HttpServlet {
             //todo 删除ItemId的数量
         }
         if (req.getParameterMap().size() == 3) {
-            //购物车商品信息变化
+            //TODO 购物车商品信息变化
         }
         String res = item_id + item_price + item_num;
         System.err.println(item_id + item_price + item_num);

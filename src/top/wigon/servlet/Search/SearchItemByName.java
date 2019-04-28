@@ -33,6 +33,8 @@ public class SearchItemByName extends HttpServlet {
         String JSON = objectMapper.writeValueAsString(userList);
         resp.setContentType("text/html;charset=utf-8");
         resp.getWriter().write(JSON);
+        System.out.println(JSON);
+        //TODO 返回JSON 对象
 
     }
 }
