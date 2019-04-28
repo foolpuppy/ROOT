@@ -20,7 +20,7 @@
             <a href="/">首页</a>
         </p>
         <div class="sn-quick-menu">
-            <div class="login"><a href="login.jsp">已有帐号>>请登录</a></div>
+            <div class="login"><a href="login.html">已有帐号>>请登录</a></div>
             <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
         </div>
     </div>
@@ -131,11 +131,18 @@
 <script type="text/javascript">
 
     $(function () {
+        var username_error = "";
+        var phone_error = "";
+        var email_error = "";
+        var password_error = "";
+        var repassword_error = "";
         $("#username").blur(function () {
             if ($("#username").val() == "" || $("#username").val().trim(" ") == "") {
                 $("#error-msg").html("用户名不能为空");
+                username_error = "用户名不能为空";
             } else {
                 $("#error-msg").html("");
+                username_error = "";
             }
         });
 
@@ -143,6 +150,7 @@
             var reg = /^1[3456789]\d{9}$/;
             if (!reg.test($("#phone").val())) {
                 $("#error-msg").html("电话号码格式错误");
+                phone_error = "电话号码格式错误";
             } else {
                 $.ajax({
                     url: "/checkTel",
@@ -152,8 +160,12 @@
                     success: function (data) {
                         if (data === 1) {
                             $("#error-msg").html("该手机号已被注册");
-                        } else
+                            phone_error = "该手机号已被注册";
+                        } else {
                             $("#error-msg").html("");
+                            phone_error = "";
+                        }
+
                     }
                 })
 
@@ -165,31 +177,38 @@
             var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
             if (!reg.test($("#email").val())) {
                 $("#error-msg").html("邮箱格式错误");
+                email_error = "邮箱格式错误";
             } else {
                 $("#error-msg").html("");
+                email_error = "";
             }
         });
 
         $("#password").blur(function () {
             if ($(this).val() == "") {
                 $("#error-msg").html("密码不能为空");
+                password_error = "密码不能为空";
             } else if ($(this).val().length < 8) {
                 $("#error-msg").html("密码长度小于8位");
+                password_error = "密码长度小于8位";
             } else {
                 $("#error-msg").html("");
+                password_error = "";
             }
         });
 
         $("#repassword").blur(function () {
             if ($(this).val() != $("#password").val()) {
                 $("#error-msg").html("两次输入的密码不一致");
+                repassword_error = "两次输入的密码不一致";
             } else {
                 $("#error-msg").html("");
+                repassword_error = "";
             }
 
         });
         $("form").submit(function () {
-            if ($("#phone-error").text() != "")
+            if ($("#phone-error").text() != "" || username_error != "" || phone_error != "" || email_error != "" || password_error != "" || repassword_error != "")
                 return false;
             else if ($("#username").val() == "" || $("#password").val() == "") {
                 return false;
@@ -199,6 +218,7 @@
     })
 
 </script>
+
 
 </body>
 </html>

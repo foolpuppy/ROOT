@@ -47,7 +47,7 @@ public class AddItemServlet extends HttpServlet {
             req.getRequestDispatcher("index.jsp").forward(req, resp);
         } else {
 
-            resp.sendRedirect("login.jsp");
+            resp.sendRedirect("login.html");
         }
     }
 }

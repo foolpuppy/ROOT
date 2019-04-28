@@ -36,7 +36,7 @@ public class UserIsLogInServlet implements Filter {
             //System.out.println("通过");
         } else {
             System.err.println("未登录，访问 " + path + " 未通过 , isLogin " + loggedIn + " , allowedPath: " + allowedPath);
-            httpServletResponse.sendRedirect("login.jsp");
+            httpServletResponse.sendRedirect("login.html");
         }
     }
 }

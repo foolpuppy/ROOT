@@ -42,7 +42,7 @@ public class UserLoginServlet extends HttpServlet {
             resp.sendRedirect("index.html");
         } else {
 
-            resp.sendRedirect("login.jsp");
+            resp.sendRedirect("login.html");
         }
     }
 }
