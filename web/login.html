@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
     <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
     <script type="text/javascript" src="res/layui/layui.js"></script>
+    <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -169,6 +170,30 @@
         }
     })
 </script>
+<script type="text/javascript">
+    $(function () {
+        // 想要获取的cook键值
+
+        // 调用
+        var x = getCookie("userTel");
+        if (x != null && x !== "") {
+            window.location.href = "index.html";
+        }
+
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+
+    })
+</script>
+
 
 </body>
 </html>
