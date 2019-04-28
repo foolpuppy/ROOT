@@ -25,7 +25,8 @@ import java.io.IOException;
 public class payOrderNo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String order_no = req.getParameter("order_no");
+        String order_no = req.getParameter("order_no") == null ? "100000000120122" : req.getParameter("order_no");
+
         //数据库取得相应订单号的支付信息
         OrderServiceImpl orderService = new OrderServiceImpl();
         Order order = orderService.getByOrderNo(order_no);

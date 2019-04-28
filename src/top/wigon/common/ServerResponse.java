@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @date 2019/4/27 13:49
  **/
 //保证序列化时候Null是Value key则消失
-@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+//@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class ServerResponse<T> implements Serializable {
     private int code;
     private String msg;
