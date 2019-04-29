@@ -109,7 +109,7 @@ public class ItemDAOImpl implements ItemDAO {
         try {
             List<Map<String, Object>> result = DBUtils.query("SELECT\n" +
                     "\tt1.id,\n" +
-                    "\tt1.item_id,\n" +
+                    "\tt2.item_id,\n" +
                     "\tt2.item_title,\n" +
                     "\tt1.item_image_path,\n" +
                     "\tt2.item_category,\n" +
