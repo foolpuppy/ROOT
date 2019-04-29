@@ -16,14 +16,16 @@ public class Item implements Serializable {
     private int stock;
     private int state;
     private int shopId;
-//    private String createTime;
+    private String item_image_path;
+    private String createTime;
+    private String modified_time;
 
     public Item() {
-        this.price=new BigDecimal(0);
+        this.price = new BigDecimal(0);
 
     }
 
-    public Item(String id, String title, String category, BigDecimal price, int stock, int state, int shopId) {
+    public Item(String id, String title, String category, BigDecimal price, int stock, int state, int shopId, String item_image_path, String createTime, String modified_time) {
         this.id = id;
         this.title = title;
         this.category = category;
@@ -31,6 +33,33 @@ public class Item implements Serializable {
         this.stock = stock;
         this.state = state;
         this.shopId = shopId;
+        this.item_image_path = item_image_path;
+        this.createTime = createTime;
+        this.modified_time = modified_time;
+    }
+
+    public String getItem_image_path() {
+        return item_image_path;
+    }
+
+    public void setItem_image_path(String item_image_path) {
+        this.item_image_path = item_image_path;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getModified_time() {
+        return modified_time;
+    }
+
+    public void setModified_time(String modified_time) {
+        this.modified_time = modified_time;
     }
 
     public String getId() {

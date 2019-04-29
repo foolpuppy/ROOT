@@ -107,7 +107,21 @@ public class ItemDAOImpl implements ItemDAO {
     public List<Item> getAllItems() {
         List<Item> items = new ArrayList<>();
         try {
-            List<Map<String, Object>> result = DBUtils.query(tableName, null);
+            List<Map<String, Object>> result = DBUtils.query("SELECT\n" +
+                    "\tt1.id,\n" +
+                    "\tt1.item_id,\n" +
+                    "\tt2.item_title,\n" +
+                    "\tt1.item_image_path,\n" +
+                    "\tt2.item_category,\n" +
+                    "\tt2.item_price,\n" +
+                    "\tt2.item_stock,\n" +
+                    "\tt2.item_state,\n" +
+                    "\tt2.shop_id,\n" +
+                    "\tt2.gmt_create,\n" +
+                    "\tt2.gmt_modified \n" +
+                    "FROM\n" +
+                    "\t`tb_item` t2\n" +
+                    "\tLEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id");
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {
             e.printStackTrace();

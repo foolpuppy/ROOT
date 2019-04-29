@@ -31,7 +31,7 @@ public class Pack2Entity {
             user.setPassword(result.get(i).get("password").toString());
             user.setTel(result.get(i).get("tel").toString());
             user.setEmail(result.get(i).get("email").toString());
-            user.setAvatarPath(String.valueOf(result.get(i).get("avatar_path")));
+            user.setAvatarPath(String.valueOf(result.get(i).get("avatar_path")) == null ? "res/avatar/avatar.jpg" : result.get(i).get("avatar_path").toString());
             user.setRoleType(String.valueOf(result.get(i).get("role_type")));
             user.setCreateTime(result.get(i).get("gmt_create").toString());
             list.add(user);
@@ -58,6 +58,9 @@ public class Pack2Entity {
             item.setStock(Integer.parseInt(result.get(i).get("item_stock").toString()));
             item.setState(Integer.parseInt(result.get(i).get("item_state").toString()));
             item.setShopId(Integer.parseInt(result.get(i).get("shop_id").toString()));
+            item.setItem_image_path(String.valueOf(result.get(i).get("item_image_path")));
+            item.setCreateTime(result.get(i).get("gmt_create").toString());
+            item.setModified_time(String.valueOf(result.get(i).get("gmt_modified") == null ? "" : result.get(i).get("gmt_modified")));
             list.add(item);
 
         }
