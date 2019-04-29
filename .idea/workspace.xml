@@ -7,19 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="113d7afc-ad29-4b01-b49d-505413e33371" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/avatar/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/res/avatar/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/ItemDescImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/item/UpdateItemDescServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/item/UpdateItemImageServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDescImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/top/wigon/servlet/item/UpdateItemDescServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/top/wigon/servlet/item/UpdateItemImageServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROOT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ROOT.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/ItemDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/ItemDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/user/UserIsLogInServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/user/UserIsLogInServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/commodity.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/commodity.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/Pack2Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/Pack2Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/entity/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/entity/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/AjaxTestServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/AjaxTestServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/ItemService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/ItemServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/item/GetAllItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/item/GetAllItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/user/UserIsLogInServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/user/UserIsLogInServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/entity/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/AjaxTestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/AjaxTestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserIsLogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserIsLogInServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/top/wigon/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/top/wigon/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/service/impl/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/commodity.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/commodity.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -57,44 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/details.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/user/UserIsLogInServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/user/UserLogOut.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="33" column="9" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="33" selection-end-column="9" />
+            <state relative-caret-position="3">
+              <caret line="69" column="28" lean-forward="true" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,10 +100,15 @@
       <find>URL</find>
       <find>String.valueOf(</find>
       <find>httpServletRequest</find>
+      <find>updateItemDesc</find>
+      <find>UpdateItemDesc</find>
+      <find>UpdateItemImage</find>
     </findStrings>
     <replaceStrings>
       <replace>login.jsp</replace>
       <replace>login.html</replace>
+      <replace>updateItemDesc</replace>
+      <replace>updateItemImage</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -139,12 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/top/wigon/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/top/wigon/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/top/wigon/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/test/JSONTest.java" />
-        <option value="$PROJECT_DIR$/src/top/wigon/servlet/payment/payTest.java" />
-        <option value="$PROJECT_DIR$/web/Logs.jsp" />
         <option value="$PROJECT_DIR$/src/top/wigon/servlet/user/UserInfoEditServlet.java" />
         <option value="$PROJECT_DIR$/src/top/wigon/common/MD5Util.java" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
@@ -183,13 +156,19 @@
         <option value="$PROJECT_DIR$/src/top/wigon/servlet/payment/payOrderNo.java" />
         <option value="$PROJECT_DIR$/src/top/wigon/common/ServerResponse.java" />
         <option value="$PROJECT_DIR$/src/db.properties" />
-        <option value="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/top/wigon/entity/Item.java" />
-        <option value="$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java" />
         <option value="$PROJECT_DIR$/src/top/wigon/servlet/AjaxTestServlet.java" />
-        <option value="$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java" />
         <option value="$PROJECT_DIR$/web/commodity.html" />
         <option value="$PROJECT_DIR$/src/top/wigon/servlet/user/UserIsLogInServlet.java" />
+        <option value="$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java" />
+        <option value="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDescImpl.java" />
+        <option value="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/top/wigon/servlet/item/UpdateItemDescServlet.java" />
+        <option value="$PROJECT_DIR$/src/top/wigon/service/ItemService.java" />
+        <option value="$PROJECT_DIR$/src/top/wigon/service/impl/ItemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/top/wigon/servlet/item/UpdateItemImageServlet.java" />
+        <option value="$PROJECT_DIR$/src/top/wigon/servlet/item/updateItemDescServlet.java" />
+        <option value="$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java" />
       </list>
     </option>
   </component>
@@ -246,14 +225,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="top" type="462c0819:PsiDirectoryNode" />
               <item name="wigon" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="wigon" type="462c0819:PsiDirectoryNode" />
               <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,35 +235,6 @@
               <item name="wigon" type="462c0819:PsiDirectoryNode" />
               <item name="servlet" type="462c0819:PsiDirectoryNode" />
               <item name="item" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="wigon" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="Search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="wigon" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -342,7 +284,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.19">
+  <component name="RunManager" selected="JUnit.GetAllItems.test">
     <configuration name="JSONTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.JSONTest" />
       <module name="ROOT" />
@@ -456,7 +398,7 @@
       <workItem from="1556443522994" duration="423000" />
       <workItem from="1556445141270" duration="2664000" />
       <workItem from="1556457840956" duration="2921000" />
-      <workItem from="1556499322664" duration="8738000" />
+      <workItem from="1556499322664" duration="15062000" />
     </task>
     <task id="LOCAL-00001" summary="Danm Tomcat 9.19">
       <created>1556359305114</created>
@@ -514,19 +456,17 @@
       <option name="project" value="LOCAL" />
       <updated>1556461688384</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="商品信息Ajax">
+      <created>1556508245496</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556508245496</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GetAllItems_test - 2019.04.29 at 10h 03m 14s.xml">
-      <configuration name="GetAllItems.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GetAllItems_test - 2019.04.29 at 10h 04m 19s.xml">
-      <configuration name="GetAllItems.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GetAllItems_test - 2019.04.29 at 10h 43m 54s.xml">
-      <configuration name="GetAllItems.test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GetAllItems_test - 2019.04.29 at 10h 44m 39s.xml">
       <configuration name="GetAllItems.test" configurationId="JUnit" />
     </history-entry>
@@ -548,9 +488,18 @@
     <history-entry file="GetAllItems_test - 2019.04.29 at 11h 04m 28s.xml">
       <configuration name="GetAllItems.test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="GetAllItems_test - 2019.04.29 at 13h 26m 00s.xml">
+      <configuration name="GetAllItems.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GetAllItems_test - 2019.04.29 at 13h 28m 01s.xml">
+      <configuration name="GetAllItems.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GetAllItems_test - 2019.04.29 at 13h 29m 08s.xml">
+      <configuration name="GetAllItems.test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58994000" />
+    <option name="totallyTimeSpent" value="65318000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -563,9 +512,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16085792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18096514" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -573,7 +521,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.30441177" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" visible="true" weight="0.26764706" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798927" visible="true" weight="0.5132353" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40294117" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -582,7 +530,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5020107" side_tool="true" weight="0.52794117" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5020107" side_tool="true" weight="0.475" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.375" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -607,79 +555,10 @@
     <MESSAGE value="前端差不多" />
     <MESSAGE value="前端" />
     <MESSAGE value="华为云牛逼" />
-    <option name="LAST_COMMIT_MESSAGE" value="华为云牛逼" />
+    <MESSAGE value="商品信息Ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="商品信息Ajax" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/common/BigDecimalUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/service/OrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/entity/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="188" column="18" selection-start-line="188" selection-start-column="18" selection-end-line="188" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/OrderDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="123" column="34" lean-forward="true" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/service/impl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/common/MD5Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
-          <folding>
-            <element signature="e#1359#1360#0" expanded="true" />
-            <element signature="e#1408#1409#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/user/AdminEditUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/alipay/config/AlipayConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/payment/CreateOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -779,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/ItemDescDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/OrderItemDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -876,20 +748,6 @@
         <state relative-caret-position="-1792" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/item/FindItemServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -932,38 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="122" column="40" lean-forward="true" selection-start-line="122" selection-start-column="40" selection-end-line="122" selection-end-column="40" />
-          <folding>
-            <element signature="docComment;class#ItemDAOImpl#0" />
-            <element signature="e#739#837#1" />
-            <element signature="e#1047#1118#0" />
-            <element signature="e#1142#1228#0" />
-            <element signature="method#updateEntity#0;class#ItemDAOImpl#0" />
-            <element signature="e#1359#1459#0" />
-            <element signature="e#1483#1527#0" />
-            <element signature="method#deleteEntity#0;class#ItemDAOImpl#0" />
-            <element signature="e#1657#1740#0" />
-            <element signature="e#1764#1808#0" />
-            <element signature="method#getValMap#0;class#ItemDAOImpl#0" />
-            <element signature="method#getPrimaryKey#0;class#ItemDAOImpl#0" />
-            <element signature="method#findByCondition#0;class#ItemDAOImpl#0" />
-            <element signature="e#2678#2828#0" />
-            <element signature="e#2849#2893#0" />
-            <element signature="docComment;method#getConditionValMap#0;class#ItemDAOImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/service/impl/ItemServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/AjaxTestServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -984,13 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/Search/SearchItemByName.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -1001,10 +820,143 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/user/UserIsLogInServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/user/UserLogOut.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="33" column="9" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="33" selection-end-column="9" />
+        <state relative-caret-position="824">
+          <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/entity/ItemDesc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+          <folding>
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/OrderDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1797">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/ShippingDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#ItemDAOImpl#0" />
+            <element signature="e#739#837#1" />
+            <element signature="e#1047#1118#0" />
+            <element signature="e#1142#1228#0" />
+            <element signature="e#1657#1740#0" />
+            <element signature="e#1764#1808#0" />
+            <element signature="method#findByCondition#0;class#ItemDAOImpl#0" />
+            <element signature="e#2678#2828#0" />
+            <element signature="e#2849#2893#0" />
+            <element signature="docComment;method#getConditionValMap#0;class#ItemDAOImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/ItemDescDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/service/ItemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/service/impl/ItemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDescImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="142" column="36" lean-forward="true" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/item/AddItemServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-501">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/item/UpdateItemDescServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/item/UpdateItemImageServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1013,18 +965,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/user/UserIsLogInServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        <state relative-caret-position="3">
+          <caret line="69" column="28" lean-forward="true" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,7 +1,9 @@
 package top.wigon.service.impl;
 
 import top.wigon.DAO.impl.ItemDAOImpl;
+import top.wigon.DAO.impl.ItemDescImpl;
 import top.wigon.entity.Item;
+import top.wigon.entity.ItemDesc;
 import top.wigon.service.ItemService;
 
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.Map;
  **/
 public class ItemServiceImpl implements ItemService {
     private ItemDAOImpl dao = new ItemDAOImpl();
+    private ItemDescImpl Ddao = new ItemDescImpl();
 
     @Override
     public Boolean itemAdd(Item item) {
@@ -30,6 +33,21 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> getAll() {
 
         return dao.getAllItems();
+    }
+
+    @Override
+    public boolean updateItemDesc(String Desc,String id) {
+        ItemDesc desc = new ItemDesc();
+        desc.setDesc(Desc);
+        return Ddao.updateEntity(desc);
+
+    }
+
+    @Override
+    public boolean updateItemImage(String newImagePath,String id) {
+        ItemDesc desc = new ItemDesc();
+        desc.setImagePath(newImagePath);
+        return Ddao.updateEntity(desc);
     }
 
 }

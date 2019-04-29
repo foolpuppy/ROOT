@@ -1,5 +1,6 @@
 package top.wigon.service;
 
+import top.wigon.DAO.ItemDescDAO;
 import top.wigon.entity.Item;
 
 import java.util.List;
@@ -31,4 +32,20 @@ public interface ItemService {
      * @return
      */
     List<Item> getAll();
+
+    /**
+     * 更新商品描述信息
+     * @param Desc
+     * @param id
+     * @return
+     */
+    boolean updateItemDesc(String Desc,String id);
+
+    /**
+     * 更新商品图片地址
+     * @param Desc
+     * @param id
+     * @return
+     */
+    boolean updateItemImage(String Desc,String id);
 }

@@ -1,6 +1,7 @@
 package top.wigon.common;
 
 import top.wigon.entity.Item;
+import top.wigon.entity.ItemDesc;
 import top.wigon.entity.Order;
 import top.wigon.entity.User;
 
@@ -88,6 +89,27 @@ public class Pack2Entity {
             order.setCloseTime(String.valueOf(result.get(i).get("shipping_name")));
             order.setShipingCode(String.valueOf(result.get(i).get("shipping_code")));
             list.add(order);
+        }
+        return list;
+    }
+
+    /**
+     * 结果集转为ItemDesc实体实体
+     *
+     * @param result
+     * @return
+     */
+    public static List<ItemDesc> pack2ItemDesc(List<Map<String, Object>> result) {
+        List<ItemDesc> list = new ArrayList<>();
+        ItemDesc itemDesc;
+        for (int i = 0; i < result.size(); i++) {
+            itemDesc = new ItemDesc();
+            itemDesc.setItemId(result.get(i).get("item_id").toString());
+            itemDesc.setId(Integer.parseInt(result.get(i).get("id").toString()));
+            itemDesc.setImagePath(String.valueOf(result.get(i).get("item_image_path")));
+            itemDesc.setDesc(String.valueOf(result.get(i).get("item_desc")));
+            itemDesc.setCreateTime(result.get(i).get("gmt_create").toString());
+            list.add(itemDesc);
         }
         return list;
     }

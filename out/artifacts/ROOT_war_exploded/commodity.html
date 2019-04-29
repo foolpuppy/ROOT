@@ -120,7 +120,7 @@
                     {{# layui.each(d.menu.milk.content,function(index,item){}}
                     <div class="item">
                         <div class="img">
-                            <a href="javascript:;"><img src="{{item.item_image_path}}"></a>
+                            <a href="javascript:"><img src="{{item.item_image_path}}"></a>
                         </div>
                         <div class="text">
                             <p class="title"></p>
@@ -160,13 +160,13 @@
         mm.request({
             url: 'GetAllItems',
             success: function (res) {
-                console.log(res)
+                console.log(res);
                 listCont.innerHTML = mm.renderHtml(html, res)
             },
             error: function (res) {
                 console.log(res);
             }
-        })
+        });
 
         $('.sort a').on('click', function () {
             $(this).addClass('active').siblings().removeClass('active');

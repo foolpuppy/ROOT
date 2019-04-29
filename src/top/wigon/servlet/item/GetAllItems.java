@@ -66,20 +66,14 @@ public class GetAllItems extends HttpServlet {
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         String JSON = objectMapper.writeValueAsString(items);
         StringBuffer content = new StringBuffer();
+        content.append("{\"status\":");
+        content.append("0");
+        content.append(",\"menu\":");
+        content.append("{\"milk\":");
         content.append("{\"content\":");
         content.append(JSON);
-        content.append("}");
-        StringBuffer milk = new StringBuffer();
-        milk.append("{\"milk\":");
-        milk.append(content);
-        milk.append("}");
-        StringBuffer result = new StringBuffer();
-        result.append("{\"status\":");
-        result.append("0");
-        result.append(",\"menu\":");
-        result.append(milk);
-        result.append("}");
-        String jsonString = result.toString();
+        content.append("}}}");
+        String jsonString = content.toString();
         System.err.println(jsonString);
     }
 }
