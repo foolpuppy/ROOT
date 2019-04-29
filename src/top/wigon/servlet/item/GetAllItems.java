@@ -33,39 +33,6 @@ public class GetAllItems extends HttpServlet {
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         String JSON = objectMapper.writeValueAsString(items);
         StringBuffer content = new StringBuffer();
-        content.append("{\"content\":");
-        content.append(JSON);
-        content.append("}");
-        StringBuffer milk = new StringBuffer();
-        milk.append("{\"milk\":");
-        milk.append(content);
-        milk.append("}");
-        StringBuffer result = new StringBuffer();
-        result.append("{\"status\":");
-        result.append("0");
-        result.append(",\"menu\":");
-        result.append(milk);
-        result.append("}");
-        String jsonString = result.toString();
-        System.err.println(jsonString);
-        resp.setContentType("text/plain; charset=UTF-8;");
-        resp.getWriter().write(jsonString);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
-    }
-
-    @Test
-    void test() throws JsonProcessingException {
-        ItemServiceImpl itemService = new ItemServiceImpl();
-        //返回模糊查询的商品集合
-        List<Item> items = itemService.getAll();
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-        String JSON = objectMapper.writeValueAsString(items);
-        StringBuffer content = new StringBuffer();
         content.append("{\"status\":");
         content.append("0");
         content.append(",\"menu\":");
@@ -74,6 +41,12 @@ public class GetAllItems extends HttpServlet {
         content.append(JSON);
         content.append("}}}");
         String jsonString = content.toString();
-        System.err.println(jsonString);
+        resp.setContentType("text/plain; charset=UTF-8;");
+        resp.getWriter().write(jsonString);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
     }
 }

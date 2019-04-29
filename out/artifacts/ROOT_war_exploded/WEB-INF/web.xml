@@ -14,7 +14,7 @@
     </filter>
     <filter-mapping>
         <filter-name>DruidWebStatFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/druid/*</url-pattern>
     </filter-mapping>
     <!--    监控页面-->
     <servlet>

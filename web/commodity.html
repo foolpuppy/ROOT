@@ -19,7 +19,6 @@
             <a href="index.html">首页</a>
         </p>
         <div class="sn-quick-menu">
-            <div class="login"><a href="login.html">登录</a></div>
             <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
         </div>
     </div>
@@ -148,26 +147,28 @@
         var laypage = layui.laypage, $ = layui.$,
             mm = layui.mm;
         laypage.render({
-            elem: 'demo0'
-            , count: 100 //数据总数
-        });
-
-
-        // 模版引擎导入
-        var html = demo.innerHTML;
-        var listCont = document.getElementById('list-cont');
-        // console.log(layui.router("#/about.html"))
-        mm.request({
             url: 'GetAllItems',
-            success: function (res) {
-                console.log(res);
-                listCont.innerHTML = mm.renderHtml(html, res)
-            },
-            error: function (res) {
-                console.log(res);
-            }
+            elem: 'demo0',
+            limit: 10
+            , count: 50 //数据总数
         });
 
+        /*
+                // 模版引擎导入
+                var html = demo.innerHTML;
+                var listCont = document.getElementById('list-cont');
+                // console.log(layui.ter("#/about.html"))
+                /*    mm.request({
+                        url: 'GetAllItems',
+                        success: function (res) {
+                            // listCont.innerHTML = mm.renderHtml(html, res)
+                        },
+                        error: function (res) {
+                            console.log(res);
+                        }
+                    });*/
+
+        //分类排序按钮
         $('.sort a').on('click', function () {
             $(this).addClass('active').siblings().removeClass('active');
         });

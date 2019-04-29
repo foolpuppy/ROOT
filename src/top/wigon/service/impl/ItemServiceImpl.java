@@ -6,6 +6,7 @@ import top.wigon.entity.Item;
 import top.wigon.entity.ItemDesc;
 import top.wigon.service.ItemService;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,13 +31,28 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
+    public List<Item> findItemsByCategoryCols(String category, int cols) {
+        Map<String, Object> keyword = new HashMap<>();
+        keyword.put("item_category", category);
+        List<Item> result = dao.findByConditionCols(keyword, cols);
+        return result;
+    }
+
+    @Override
+    public List<Item> findItemsByCategory(String category) {
+        Map<String, Object> keyword = new HashMap<>();
+        keyword.put("item_category", category);
+        return dao.findByCondition(keyword);
+    }
+
+    @Override
     public List<Item> getAll() {
 
         return dao.getAllItems();
     }
 
     @Override
-    public boolean updateItemDesc(String Desc,String id) {
+    public boolean updateItemDesc(String Desc, String id) {
         ItemDesc desc = new ItemDesc();
         desc.setDesc(Desc);
         return Ddao.updateEntity(desc);
@@ -44,7 +60,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public boolean updateItemImage(String newImagePath,String id) {
+    public boolean updateItemImage(String newImagePath, String id) {
         ItemDesc desc = new ItemDesc();
         desc.setImagePath(newImagePath);
         return Ddao.updateEntity(desc);

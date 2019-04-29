@@ -28,24 +28,43 @@ public interface ItemService {
     List<Item> findItemsByName(Item item);
 
     /**
+     * 类别查询  显示行数
+     * @param category
+     * @param clos
+     * @return
+     */
+    List<Item> findItemsByCategoryCols(String category, int clos);
+
+    /**
+     * 类别查询
+     *
+     * @param category
+     * @return
+     */
+    List<Item> findItemsByCategory(String category);
+
+    /**
      * 获得所有商品
+     *
      * @return
      */
     List<Item> getAll();
 
     /**
      * 更新商品描述信息
+     *
      * @param Desc
      * @param id
      * @return
      */
-    boolean updateItemDesc(String Desc,String id);
+    boolean updateItemDesc(String Desc, String id);
 
     /**
      * 更新商品图片地址
+     *
      * @param Desc
      * @param id
      * @return
      */
-    boolean updateItemImage(String Desc,String id);
+    boolean updateItemImage(String Desc, String id);
 }

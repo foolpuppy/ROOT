@@ -31,10 +31,17 @@ public class SearchItemByName extends HttpServlet {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         String JSON = objectMapper.writeValueAsString(userList);
-        resp.setContentType("text/html;charset=utf-8");
-        resp.getWriter().write(JSON);
-        System.out.println(JSON);
-        //TODO 返回JSON 对象
+        StringBuffer content = new StringBuffer();
+        content.append("{\"status\":");
+        content.append("0");
+        content.append(",\"menu\":");
+        content.append("{\"milk\":");
+        content.append("{\"content\":");
+        content.append(JSON);
+        content.append("}}}");
+        String jsonString = content.toString();
+        resp.setContentType("text/plain; charset=UTF-8;");
+        resp.getWriter().write(jsonString);
 
     }
 }

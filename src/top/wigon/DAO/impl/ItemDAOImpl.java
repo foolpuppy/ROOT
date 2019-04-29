@@ -95,7 +95,25 @@ public class ItemDAOImpl implements ItemDAO {
     public List<Item> findByCondition(Map<String, Object> keyword) {
         List<Item> items = new ArrayList<>();
         try {
-            List<Map<String, Object>> result = DBUtils.queryLike(tableName, keyword);
+            List<Map<String, Object>> result = DBUtils.queryLikeMult("SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id", keyword);
+
+            items = Pack2Entity.pack2items(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
+
+    /**
+     * 显示行数
+     * @param keyword
+     * @param cols
+     * @return
+     */
+    public List<Item> findByConditionCols(Map<String, Object> keyword, int cols) {
+        List<Item> items = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.queryLikeMult("SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id", keyword, cols);
 
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {
@@ -107,21 +125,7 @@ public class ItemDAOImpl implements ItemDAO {
     public List<Item> getAllItems() {
         List<Item> items = new ArrayList<>();
         try {
-            List<Map<String, Object>> result = DBUtils.query("SELECT\n" +
-                    "\tt1.id,\n" +
-                    "\tt1.item_id,\n" +
-                    "\tt2.item_title,\n" +
-                    "\tt1.item_image_path,\n" +
-                    "\tt2.item_category,\n" +
-                    "\tt2.item_price,\n" +
-                    "\tt2.item_stock,\n" +
-                    "\tt2.item_state,\n" +
-                    "\tt2.shop_id,\n" +
-                    "\tt2.gmt_create,\n" +
-                    "\tt2.gmt_modified \n" +
-                    "FROM\n" +
-                    "\t`tb_item` t2\n" +
-                    "\tLEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id");
+            List<Map<String, Object>> result = DBUtils.query("SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id");
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {
             e.printStackTrace();
