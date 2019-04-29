@@ -7,49 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="113d7afc-ad29-4b01-b49d-505413e33371" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/servlet/Search/SearchByCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/servlet/mainPage/init.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/avatar/itemDefaultImage.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/impl/ItemDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/impl/ItemDAOImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/common/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/common/DBUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/common/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/common/MD5Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/common/Pack2Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/common/Pack2Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/ItemService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/ItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/Search/SearchItemByName.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/Search/SearchItemByName.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/item/GetAllItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/item/GetAllItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/user/UserIsLogInServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/user/UserIsLogInServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/all_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/all_order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/commodity.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/commodity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/json/buytoday.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/json/buytoday.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/json/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/json/index.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/ItemDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/ItemDAOImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/DBUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/MD5Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/Pack2Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/Pack2Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/ItemService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/ItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/Search/SearchItemByName.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/Search/SearchItemByName.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/item/GetAllItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/item/GetAllItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/user/UserIsLogInServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/user/UserIsLogInServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/common/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/common/DBUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/common/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/common/MD5Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/common/Pack2Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/service/impl/ItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/Search/SearchItemByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/Search/SearchItemByName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserIsLogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserIsLogInServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/all_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/all_order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/commodity.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/commodity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/json/buytoday.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/json/buytoday.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/json/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/json/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/mainPage/init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/mainPage/init.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,8 +47,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/mainPage/init.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="338">
+              <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,9 +174,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="653" />
+    <option name="width" value="1274" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -234,48 +213,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="top" type="462c0819:PsiDirectoryNode" />
               <item name="wigon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="wigon" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="wigon" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="wigon" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="wigon" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="top" type="462c0819:PsiDirectoryNode" />
-              <item name="wigon" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
@@ -351,7 +288,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.19">
+  <component name="RunManager" selected="JUnit.init.test">
     <configuration name="JSONTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.JSONTest" />
       <module name="ROOT" />
@@ -377,6 +314,16 @@
       <module name="ROOT" />
       <option name="PACKAGE_NAME" value="top.wigon.servlet.item" />
       <option name="MAIN_CLASS_NAME" value="top.wigon.servlet.item.GetAllItems" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="init.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ROOT" />
+      <option name="PACKAGE_NAME" value="top.wigon.servlet.mainPage" />
+      <option name="MAIN_CLASS_NAME" value="top.wigon.servlet.mainPage.init" />
       <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -446,9 +393,11 @@
       <item itemvalue="Tomcat Server.Tomcat 9.0.19" />
       <item itemvalue="JUnit.GetAllItems.test" />
       <item itemvalue="Application.MD5Util" />
+      <item itemvalue="JUnit.init.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.init.test" />
         <item itemvalue="Application.MD5Util" />
         <item itemvalue="JUnit.GetAllItems.test" />
         <item itemvalue="Application.JSONTest" />
@@ -474,7 +423,7 @@
       <workItem from="1556443522994" duration="423000" />
       <workItem from="1556445141270" duration="2664000" />
       <workItem from="1556457840956" duration="2921000" />
-      <workItem from="1556499322664" duration="33693000" />
+      <workItem from="1556499322664" duration="34489000" />
     </task>
     <task id="LOCAL-00001" summary="Danm Tomcat 9.19">
       <created>1556359305114</created>
@@ -546,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556516013087</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="商品图片更新SERVLET 商品描述更新Servlet">
+      <created>1556538166180</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556538166180</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -582,7 +538,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83949000" />
+    <option name="totallyTimeSpent" value="84745000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -594,19 +550,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="646" y="0" width="897" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2613941" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info id="Designer" order="3" />
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Web" order="1" side_tool="true" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="3" weight="0.5392405" />
       <window_info id="Learn" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.30441177" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4966488" weight="0.5838235" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.18970588" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.32291666" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.4735294" />
@@ -1039,8 +995,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/item/GetAllItems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="24" />
+        <state relative-caret-position="135">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1049,8 +1005,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/mainPage/init.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="338">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
