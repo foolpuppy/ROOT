@@ -18,17 +18,19 @@ import java.util.Map;
  **/
 public class ItemDAOImpl implements ItemDAO {
     private final String tableName = "tb_item";
+    private final String ITEM_JOIN_DESC = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id";
+    ;
 
     @Override
     public Item findByEntity(Item item) {
         List<Map<String, Object>> result = null;
         try {
-            result = DBUtils.query(tableName, getPrimaryKey(item));
+            result = DBUtils.queryMult(ITEM_JOIN_DESC, getPrimaryKey(item));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (result != null) {
+        if (result != null && result.size() > 0) {
             //通过唯一ID查找 返回第一个
             return Pack2Entity.pack2items(result).get(0);
         } else {
@@ -95,7 +97,7 @@ public class ItemDAOImpl implements ItemDAO {
     public List<Item> findByCondition(Map<String, Object> keyword) {
         List<Item> items = new ArrayList<>();
         try {
-            List<Map<String, Object>> result = DBUtils.queryLikeMult("SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id", keyword);
+            List<Map<String, Object>> result = DBUtils.queryLikeMult(ITEM_JOIN_DESC, keyword);
 
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {
@@ -106,6 +108,7 @@ public class ItemDAOImpl implements ItemDAO {
 
     /**
      * 显示行数
+     *
      * @param keyword
      * @param cols
      * @return
@@ -113,7 +116,7 @@ public class ItemDAOImpl implements ItemDAO {
     public List<Item> findByConditionCols(Map<String, Object> keyword, int cols) {
         List<Item> items = new ArrayList<>();
         try {
-            List<Map<String, Object>> result = DBUtils.queryLikeMult("SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id", keyword, cols);
+            List<Map<String, Object>> result = DBUtils.queryLikeMult(ITEM_JOIN_DESC, keyword, cols);
 
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {
@@ -125,7 +128,7 @@ public class ItemDAOImpl implements ItemDAO {
     public List<Item> getAllItems() {
         List<Item> items = new ArrayList<>();
         try {
-            List<Map<String, Object>> result = DBUtils.query("SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id");
+            List<Map<String, Object>> result = DBUtils.query(ITEM_JOIN_DESC);
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {
             e.printStackTrace();

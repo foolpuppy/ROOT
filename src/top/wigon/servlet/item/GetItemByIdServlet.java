@@ -11,38 +11,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * @author L
  * @version 1.0
- * @date 2019/4/29 9:36
+ * @date 2019/4/30 9:59
  **/
-@WebServlet("/GetAllItems")
-public class GetAllItems extends HttpServlet {
+@WebServlet("/details.html*")
+public class GetItemByIdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String item_id = req.getParameter("id");
+        System.err.println("item_id" + item_id);
         ItemServiceImpl itemService = new ItemServiceImpl();
-        //返回模糊查询的商品集合
-        List<Item> items = itemService.getAll();
+        Item item = itemService.findbyitemid(item_id);
+        resp.setContentType("text/plain; charset=UTF-8;");
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-        String JSON = objectMapper.writeValueAsString(items);
-        StringBuffer content = new StringBuffer();
-        content.append("{\"status\":");
-        content.append("0");
-        content.append(",\"menu\":");
-        content.append("{\"milk\":");
-        content.append("{\"content\":");
-        content.append(JSON);
-        content.append("}}}");
-        String jsonString = content.toString();
-        resp.setContentType("text/plain; charset=UTF-8;");
-        resp.getWriter().write(jsonString);
+        String JSON = objectMapper.writeValueAsString(item);
+        resp.getWriter().println(JSON);
+        System.err.println(JSON);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
+        super.doGet(req, resp);
     }
 }

@@ -3,368 +3,261 @@
   "floor": {
     "bigimg": "res/static/img/s_img1.jpg",
     "banner": {
-      "cont": [
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img2.jpg",
-          "title": "宝宝五彩袜棉质舒服",
-          "price": "￥49.00",
-          "original": "￥99.00"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img3.jpg",
-          "title": "宝宝五彩袜棉质舒服",
-          "price": "￥49.00",
-          "original": "￥99.00"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img4.jpg",
-          "title": "宝宝五彩袜棉质舒服",
-          "price": "￥49.00",
-          "original": "￥99.00"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img5.jpg",
-          "title": "宝宝五彩袜棉质舒服",
-          "price": "￥49.00",
-          "original": "￥99.00"
-        }
-      ]
+      "cont": [{
+        "id": "1000508",
+        "title": "TCL Hero N3 (Y910T) 16GB 雪山白 移动3G手机 双卡双待",
+        "category": "电子产品",
+        "price": 109900.00,
+        "stock": 99999,
+        "state": 1,
+        "shopId": 10001,
+        "item_image_path": "res/avatar/itemDefaultImage.jpg",
+        "createTime": "2019-04-29 14:31:56.0",
+        "modified_time": "2019-04-29 14:40:54.0"
+      }, {
+        "id": "1002523",
+        "title": "飞利浦（PHILIPS） 65PFL8730/T3 65英寸 3D全高清LED智能电视",
+        "category": "电子产品",
+        "price": 1699900.00,
+        "stock": 99999,
+        "state": 1,
+        "shopId": 10001,
+        "item_image_path": "res/avatar/itemDefaultImage.jpg",
+        "createTime": "2019-04-29 14:31:56.0",
+        "modified_time": "2019-04-29 14:40:54.0"
+      }, {
+        "id": "1002986",
+        "title": "创维(Skyworth)LED 32E5ERS 32英寸 窄边蓝光节能平板液晶电视(银色)",
+        "category": "电子产品",
+        "price": 138800.00,
+        "stock": 99999,
+        "state": 1,
+        "shopId": 10001,
+        "item_image_path": "res/avatar/itemDefaultImage.jpg",
+        "createTime": "2019-04-29 14:31:56.0",
+        "modified_time": "2019-04-29 14:40:54.0"
+      }, {
+        "id": "1411041994",
+        "title": "优豊(uphone) U5C 联通3G三防智能手机 双卡双待 橙色', 'IP68防护超长待机 智能四核户外备用军工品质 防水 防摔 耐用 防水手机 个性对讲机手机",
+        "category": "电子产品",
+        "price": 450.20,
+        "stock": 200,
+        "state": 1,
+        "shopId": 10001,
+        "item_image_path": "res/avatar/itemDefaultImage.jpg",
+        "createTime": "2019-04-25 12:58:22.0",
+        "modified_time": "2019-04-29 14:40:54.0"
+      }, {
+        "id": "2024448",
+        "title": "测试一下",
+        "category": "电子产品",
+        "price": 5008.00,
+        "stock": 20,
+        "state": 1,
+        "shopId": 10001,
+        "item_image_path": "res/avatar/itemDefaultImage.jpg",
+        "createTime": "2019-04-26 10:18:56.0",
+        "modified_time": "2019-04-29 14:40:54.0"
+      }]
     }
   },
-  "proct": [
-    {
-      "floorNum": "1F",
-      "productItem": "product-item1",
-      "carImg": "res/static/img/icon_gou.png",
-      "text": "电子产品",
-      "bigImg": "res/static/img/img12.jpg",
-      "imgBox": [
-        {
-          "href": "javascript:",
-          "href": "javascript:",
-          "img": "res/static/img/s_img7.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img8.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img9.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img10.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img11.jpg"
-        }
-      ]
-    },
-    {
-      "floorNum": "2F",
-      "productItem": "product-item2",
-      "carImg": "res/static/img/icon_gou.png",
-      "text": "服饰衣帽",
-      "bigImg": "res/static/img/img12.jpg",
-      "imgBox": [
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img7.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img8.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img9.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img10.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img11.jpg"
-        }
-      ]
-    },
-    {
-      "floorNum": "3F",
-      "productItem": "product-item3",
-      "carImg": "res/static/img/icon_gou.png",
-      "text": "化妆用品",
-      "bigImg": "res/static/img/img12.jpg",
-      "imgBox": [
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img7.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img8.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img9.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img10.jpg"
-        },
-        {
-          "href": "javascript:",
-          "img": "res/static/img/s_img11.jpg"
-        }
-      ]
-    }
-  ],
-  "productList": [
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more1.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more2.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more3.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more4.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more5.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more1.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more2.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more3.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more4.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more5.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more1.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more2.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more3.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more4.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more5.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more1.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more2.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more3.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more4.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more5.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more1.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more2.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more3.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more4.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more5.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more1.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more2.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more3.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more4.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more5.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more1.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more2.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more3.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more4.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more5.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more1.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more2.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more3.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more4.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    },
-    {
-      "href": "javascript:",
-      "img": "res/static/img/more5.jpg",
-      "text": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
-      "price": "￥100.00"
-    }
-  ]
+  "proct": [{
+    "floorNum": "1F",
+    "productItem": "product-item1",
+    "carImg": "res/static/img/icon_gou.png",
+    "text": "电子产品",
+    "bigImg": "res/static/img/img12.jpg",
+    "imgBox": []
+  }, {
+    "floorNum": "2F",
+    "productItem": "product-item2",
+    "carImg": "res/static/img/icon_gou.png",
+    "text": "服饰衣帽",
+    "bigImg": "res/static/img/img12.jpg",
+    "imgBox": [{
+      "id": "998878",
+      "title": "佳农 进口香蕉 2kg（约10-12根） 单根独立包装 厄瓜多尔进口 新鲜水果",
+      "category": "生鲜水果",
+      "price": 20.00,
+      "stock": 99999,
+      "state": 1,
+      "shopId": 10002,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 18:57:11.0",
+      "modified_time": "2019-04-29 18:58:01.0"
+    }, {
+      "id": "77100140",
+      "title": "【第2件5折/3件6.5折】顺丰 烟台大樱桃车厘子 美早大樱桃 500g/箱 果径约26mm起 车厘子新鲜水果",
+      "category": "生鲜水果",
+      "price": 12.00,
+      "stock": 66,
+      "state": 1,
+      "shopId": 10002,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 18:59:27.0",
+      "modified_time": "2019-04-29 19:01:33.0"
+    }, {
+      "id": "456870054",
+      "title": "友鱼鲜生 冷冻南美青虾仁1kg(大号)鲜虾仁 去虾线 宝宝辅食 青虾仁1kg（60-80只）",
+      "category": "生鲜水果",
+      "price": 77.00,
+      "stock": 66,
+      "state": 1,
+      "shopId": 10002,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 19:00:39.0",
+      "modified_time": "2019-04-29 19:01:35.0"
+    }, {
+      "id": "2130212134",
+      "title": "以色列红心西柚葡萄柚新鲜孕妇水果柚子进口生鲜水果 6个装",
+      "category": "生鲜水果",
+      "price": 56.00,
+      "stock": 66,
+      "state": 1,
+      "shopId": 10022,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 19:01:07.0",
+      "modified_time": "2019-04-29 19:02:37.0"
+    }, {
+      "id": "1115409",
+      "title": "新疆库尔勒香梨 一级中果 净重2kg 新鲜水果",
+      "category": "生鲜水果",
+      "price": 0.01,
+      "stock": 122,
+      "state": 1,
+      "shopId": 203345,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 19:02:35.0",
+      "modified_time": "2019-04-29 19:02:42.0"
+    }]
+  }, {
+    "floorNum": "3F",
+    "productItem": "product-item3",
+    "carImg": "res/static/img/icon_gou.png",
+    "text": "化妆用品",
+    "bigImg": "res/static/img/img12.jpg",
+    "imgBox": [{
+      "id": "20244487",
+      "title": "SK-II神仙水230ml Confetti春季限量版（ SK2 精华液 补水保湿 面部护肤品 化妆品）",
+      "category": "美妆馆",
+      "price": 1400.00,
+      "stock": 20,
+      "state": 1,
+      "shopId": 10001,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 19:11:28.0",
+      "modified_time": ""
+    }, {
+      "id": "21412412",
+      "title": "SK-II神仙水75ml护肤套装化妆品礼盒（赠清莹露+氨基酸洗面奶+大红瓶面霜+眼霜）SK2精华液 乳液 补水保湿",
+      "category": "美妆馆",
+      "price": 355.00,
+      "stock": 600,
+      "state": 1,
+      "shopId": 5556,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 19:11:45.0",
+      "modified_time": "2019-04-29 19:57:40.0"
+    }, {
+      "id": "12312412",
+      "title": "SK-II大眼眼霜15g护肤套装化妆品礼盒（赠神仙水）SK2眼部精华 补水保湿 去黑眼圈眼袋去细纹 提拉紧致",
+      "category": "美妆馆",
+      "price": 466.00,
+      "stock": 555,
+      "state": 1,
+      "shopId": 1111,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 19:11:54.0",
+      "modified_time": "2019-04-29 19:57:33.0"
+    }, {
+      "id": "1232142143",
+      "title": "SK-II前男友面膜10p（SK2日本面膜女 护肤品 补水保湿 提亮肤色 紧致肌肤 化妆品）",
+      "category": "美妆馆",
+      "price": 1500.00,
+      "stock": 334,
+      "state": 1,
+      "shopId": 33333,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 19:11:59.0",
+      "modified_time": "2019-04-29 19:57:36.0"
+    }, {
+      "id": "12355553",
+      "title": "圣罗兰（YSL）纯口红52# 任选10支",
+      "category": "美妆馆",
+      "price": 3600.00,
+      "stock": 22,
+      "state": 1,
+      "shopId": 4444,
+      "item_image_path": "res/avatar/itemDefaultImage.jpg",
+      "createTime": "2019-04-29 19:12:05.0",
+      "modified_time": "2019-04-29 19:57:38.0"
+    }]
+  }],
+  "productList": [{
+    "id": "20244487",
+    "title": "SK-II神仙水230ml Confetti春季限量版（ SK2 精华液 补水保湿 面部护肤品 化妆品）",
+    "category": "美妆馆",
+    "price": 1400.00,
+    "stock": 20,
+    "state": 1,
+    "shopId": 10001,
+    "item_image_path": "res/avatar/itemDefaultImage.jpg",
+    "createTime": "2019-04-29 19:11:28.0",
+    "modified_time": ""
+  }, {
+    "id": "21412412",
+    "title": "SK-II神仙水75ml护肤套装化妆品礼盒（赠清莹露+氨基酸洗面奶+大红瓶面霜+眼霜）SK2精华液 乳液 补水保湿",
+    "category": "美妆馆",
+    "price": 355.00,
+    "stock": 600,
+    "state": 1,
+    "shopId": 5556,
+    "item_image_path": "res/avatar/itemDefaultImage.jpg",
+    "createTime": "2019-04-29 19:11:45.0",
+    "modified_time": "2019-04-29 19:57:40.0"
+  }, {
+    "id": "12312412",
+    "title": "SK-II大眼眼霜15g护肤套装化妆品礼盒（赠神仙水）SK2眼部精华 补水保湿 去黑眼圈眼袋去细纹 提拉紧致",
+    "category": "美妆馆",
+    "price": 466.00,
+    "stock": 555,
+    "state": 1,
+    "shopId": 1111,
+    "item_image_path": "res/avatar/itemDefaultImage.jpg",
+    "createTime": "2019-04-29 19:11:54.0",
+    "modified_time": "2019-04-29 19:57:33.0"
+  }, {
+    "id": "1232142143",
+    "title": "SK-II前男友面膜10p（SK2日本面膜女 护肤品 补水保湿 提亮肤色 紧致肌肤 化妆品）",
+    "category": "美妆馆",
+    "price": 1500.00,
+    "stock": 334,
+    "state": 1,
+    "shopId": 33333,
+    "item_image_path": "res/avatar/itemDefaultImage.jpg",
+    "createTime": "2019-04-29 19:11:59.0",
+    "modified_time": "2019-04-29 19:57:36.0"
+  }, {
+    "id": "12355553",
+    "title": "圣罗兰（YSL）纯口红52# 任选10支",
+    "category": "美妆馆",
+    "price": 3600.00,
+    "stock": 22,
+    "state": 1,
+    "shopId": 4444,
+    "item_image_path": "res/avatar/itemDefaultImage.jpg",
+    "createTime": "2019-04-29 19:12:05.0",
+    "modified_time": "2019-04-29 19:57:38.0"
+  }, {
+    "id": "12321412",
+    "title": "圣罗兰（YSL）纯口红99#",
+    "category": "美妆馆",
+    "price": 320.00,
+    "stock": 22,
+    "state": 1,
+    "shopId": 22222,
+    "item_image_path": "res/avatar/itemDefaultImage.jpg",
+    "createTime": "2019-04-29 19:12:10.0",
+    "modified_time": "2019-04-29 19:57:34.0"
+  }]
 }

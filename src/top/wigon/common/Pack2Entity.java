@@ -55,7 +55,7 @@ public class Pack2Entity {
             item.setId(result.get(i).get("item_id").toString());
             item.setCategory(result.get(i).get("item_category").toString());
             item.setTitle(result.get(i).get("item_title").toString());
-            item.setPrice(new BigDecimal(String.valueOf(result.get(i).get("price") == null ? 0 : result.get(i).get("price"))));
+            item.setPrice(new BigDecimal(String.valueOf(result.get(i).get("item_price") == null ? 0 : result.get(i).get("item_price"))));
             item.setStock(Integer.parseInt(result.get(i).get("item_stock").toString()));
             item.setState(Integer.parseInt(result.get(i).get("item_state").toString()));
             item.setShopId(Integer.parseInt(result.get(i).get("shop_id").toString()));

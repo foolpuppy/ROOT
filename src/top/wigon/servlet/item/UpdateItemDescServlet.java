@@ -1,6 +1,5 @@
 package top.wigon.servlet.item;
 
-import top.wigon.DAO.impl.ItemDescImpl;
 import top.wigon.service.impl.ItemServiceImpl;
 
 import javax.servlet.ServletException;
@@ -15,7 +14,7 @@ import java.io.IOException;
  * @version 1.0
  * @date 2019/4/29 11:46
  **/
-@WebServlet("/updateItemDesc")
+@WebServlet("/updateItemDesc*")
 public class UpdateItemDescServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

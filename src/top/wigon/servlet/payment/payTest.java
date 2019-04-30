@@ -7,8 +7,6 @@ import com.alipay.api.domain.AlipayTradePrecreateModel;
 import com.alipay.api.request.AlipayTradePrecreateRequest;
 import com.alipay.api.response.AlipayTradePrecreateResponse;
 
-import static com.alibaba.druid.util.FnvHash.Constants.CHARSET;
-import static com.alipay.api.AlipayConstants.APP_ID;
 import static com.alipay.api.AlipayConstants.CHARSET_UTF8;
 
 /**

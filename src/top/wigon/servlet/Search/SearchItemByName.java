@@ -2,11 +2,9 @@ package top.wigon.servlet.Search;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import top.wigon.DAO.impl.ItemDAOImpl;
 import top.wigon.entity.Item;
 import top.wigon.service.impl.ItemServiceImpl;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

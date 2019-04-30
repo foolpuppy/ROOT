@@ -37,7 +37,8 @@ public class init extends HttpServlet {
         content.append("\"banner\": {");
         content.append("\"cont\":");
         content.append(items_0f);
-        System.out.println();
+        //todo 前端整合
+        resp.setContentType("text/plain; charset=UTF-8;");
     }
 
     @Test
@@ -51,7 +52,7 @@ public class init extends HttpServlet {
         List<Item> items_2f = itemService.findItemsByCategoryCols("生鲜水果", 5);
         List<Item> items_3f = itemService.findItemsByCategoryCols("美妆馆", 5);
         List<Item> items_all = itemService.findItemsByCategoryCols("美妆馆", 20);
-        String JSON = null;
+        String JSON;
         StringBuffer content = new StringBuffer();
         content.append("{\"status\": 0,\"floor\": {\"bigimg\": \"res/static/img/s_img1.jpg\",");
         content.append("\"banner\": {");
@@ -76,7 +77,8 @@ public class init extends HttpServlet {
         JSON = objectMapper.writeValueAsString(items_all);
         content.append(JSON);
         content.append("}");
-        System.err.println(content.toString());
+
+        //TODO 首页初始化
 
     }
 }

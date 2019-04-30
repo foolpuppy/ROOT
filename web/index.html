@@ -60,13 +60,13 @@
         </div>
     </div>
     <div class="category-banner">
-            <div class="layui-carousel" id="test1">
-                <div carousel-item="">
-                    <div><img src="res/static/img/banner1.jpg"></div>
-                    <div><img src="res/static/img/banner1.jpg"></div>
-                    <div><img src="res/static/img/banner1.jpg"></div>
-                </div>
+        <div class="layui-carousel" id="test1">
+            <div carousel-item="">
+                <div><img src="res/static/img/banner1.jpg"></div>
+                <div><img src="res/static/img/banner1.jpg"></div>
+                <div><img src="res/static/img/banner1.jpg"></div>
             </div>
+        </div>
     </div>
     <div class="category-con">
         <div class="category-inner-con w1200">
@@ -111,7 +111,7 @@
                             <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
                         </li>
-                        <li class="nav-item nobor" ><a href="">
+                        <li class="nav-item nobor"><a href="">
                             <div class="title">美妆产品</div>
                             <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
@@ -153,7 +153,7 @@
 
 
     <!--楼层展示-->
-    <div class="product-cont w1200" id="product-cont" >
+    <div class="product-cont w1200" id="product-cont">
 
     </div>
 
@@ -198,7 +198,7 @@
 <script type="text/html" id="demo">
     {{# layui.each(d.floor.banner.cont,function(index,item){}}
     <div class="item">
-        <a href="{{item.href}}"><img src="{{item.img}}"></a>
+        <a href="details.html?id={{item.id}}"><img src="{{item.item_image_path}}"></a>
         <div class="title">{{item.title}}</div>
         <div class="price">
             <span>{{item.price}}</span>
@@ -210,7 +210,7 @@
 
 <script type="text/html" id="demo1">
     {{# layui.each(d.proct,function(index,item){}}
-    <div class="product-item {{item.productItem}} layui-clear" >
+    <div class="product-item {{item.productItem}} layui-clear">
         <div class="left-title">
             <h4><i>{{item.floorNum}}</i></h4>
             <img src="{{item.carImg}}">
@@ -218,9 +218,9 @@
         </div>
         <div class="right-cont">
             <a href="{{item.href}}" class="top-img"><img src="{{item.bigImg}}" alt=""></a>
-            <div class="img-box" >
+            <div class="img-box">
                 {{# layui.each(item.imgBox,function(index1,item1){}}
-                    <a href="{{item.href}}"><img src="{{item1.img}}"></a>
+                <a href="{{item.href}}"><img src="{{item1.item_image_path}}"></a>
                 {{# }); }}
             </div>
         </div>
@@ -231,11 +231,11 @@
 
 <script type="text/html" id="demo2">
     {{# layui.each(d.productList,function(index,item){}}
-        <div class="list-item">
-            <a href="{{item.href}}"><img src="{{item.img}}"></a>
-            <p>{{item.text}}</p>
-            <span>{{item.price}}</span>
-        </div>
+    <div class="list-item">
+        <a href="{{item.href}}"><img src="{{item.item_image_path}}"></a>
+        <p>{{item.text}}</p>
+        <span>{{item.price}}</span>
+    </div>
     {{# }); }}
 </script>
 
@@ -289,14 +289,14 @@
         var productList = document.getElementById('product-box-list');
         mm.request({
             url: 'json/index.json',
-            success : function(res){
+            success: function (res) {
                 console.log(res);
-                listCont.innerHTML = mm.renderHtml(html,res);
-                listCont1.innerHTML = mm.renderHtml(html,res);
-                proct.innerHTML = mm.renderHtml(html_proct,res);
-                productList.innerHTML = mm.renderHtml(html_productList,res)
+                listCont.innerHTML = mm.renderHtml(html, res);
+                listCont1.innerHTML = mm.renderHtml(html, res);
+                proct.innerHTML = mm.renderHtml(html_proct, res);
+                productList.innerHTML = mm.renderHtml(html_productList, res)
             },
-            error: function(res){
+            error: function (res) {
                 console.log(res);
             }
         })

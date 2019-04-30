@@ -1,6 +1,5 @@
 package top.wigon.service;
 
-import top.wigon.DAO.ItemDescDAO;
 import top.wigon.entity.Item;
 
 import java.util.List;
@@ -29,6 +28,7 @@ public interface ItemService {
 
     /**
      * 类别查询  显示行数
+     *
      * @param category
      * @param clos
      * @return
@@ -67,4 +67,12 @@ public interface ItemService {
      * @return
      */
     boolean updateItemImage(String Desc, String id);
+
+    /**
+     * 根据Item_Id 查询
+     *
+     * @param item_id
+     * @return
+     */
+    Item findbyitemid(String item_id);
 }

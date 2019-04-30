@@ -355,6 +355,36 @@ public class DBUtils {
     }
 
     /**
+     * 连表查询 带条件
+     * 注意 这是多表
+     *
+     * @param sql      执行的语SQL句
+     * @param whereMap where条件
+     * @return List<Map < String, Object>>
+     * @throws SQLException
+     */
+    public static List<Map<String, Object>> queryMult(String sql,
+                                                      Map<String, Object> whereMap) throws Exception {
+        StringBuffer SQL = new StringBuffer();
+        Object[] whereArgs = null;
+        SQL.append(sql);
+        if (whereMap != null && whereMap.size() > 0) {
+            Iterator<String> iterator = whereMap.keySet().iterator();
+            //i=1就 会从第一个WherMap 开始 添加条件
+            int i = 0;
+            while (iterator.hasNext()) {
+                String key = iterator.next();
+                SQL.append(i == 0 ? " where " : " ");
+                SQL.append(i == 0 ? " " : " AND ");
+                SQL.append(" t2.").append(key).append(" = ").append(whereMap.get(key));
+                i++;
+            }
+        }
+
+        return executeQuery(SQL.toString(), null);
+    }
+
+    /**
      * 执行sql通过 Map<String, Object>限定查询条件模糊查询
      * 注意 这是多表
      *

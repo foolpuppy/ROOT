@@ -1,12 +1,9 @@
 package top.wigon.servlet.user;
 
 import top.wigon.common.MD5Util;
-import top.wigon.common.ResponseUtils;
-import top.wigon.common.ServerResponse;
 import top.wigon.entity.User;
 import top.wigon.service.impl.UserServiceImpl;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -38,6 +35,7 @@ public class UserLoginServlet extends HttpServlet {
             //用户Tel 唯一ID 存Cookies
             Cookie cookie = new Cookie("userTel", tel);
             cookie.setMaxAge(60 * 5);
+            cookie.setHttpOnly(true);
             resp.addCookie(cookie);
             resp.sendRedirect("index.html");
         } else {

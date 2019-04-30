@@ -3,7 +3,6 @@ package top.wigon.servlet.payment;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
-import com.alipay.api.domain.Product;
 import com.alipay.api.request.AlipayTradePagePayRequest;
 import top.wigon.alipay.config.AlipayConfig;
 import top.wigon.entity.Order;

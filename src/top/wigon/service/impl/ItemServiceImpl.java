@@ -66,4 +66,11 @@ public class ItemServiceImpl implements ItemService {
         return Ddao.updateEntity(desc);
     }
 
+    @Override
+    public Item findbyitemid(String item_id) {
+        Item item = new Item();
+        item.setId(item_id);
+        return dao.findByEntity(item);
+    }
+
 }

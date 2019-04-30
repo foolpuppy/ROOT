@@ -57,6 +57,5 @@ public class MD5Util {
 
     public static void main(String[] args) {
         System.out.println(MD5EncodeUtf8("cwg"));
-        ;
     }
 }
