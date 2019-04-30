@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <link rel="stylesheet" href="res/static/iconfont/iconfont.css">
+  <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
   <script src="res/static/iconfont/iconfont.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -21,7 +22,6 @@
       </p>
       <div class="sn-quick-menu">
         <div class="login"><a href="UserLogOut">退出</a></div>
-        <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
       </div>
     </div>
   </div>
@@ -165,8 +165,23 @@
     </div>
   </div>
 
-  <script>
 
+<script type="text/javascript">
+  $(function(){
+    $.ajax({
+      url : "GetUserInfo",
+      type : "post",
+      data : {"username":username },
+      success : function(data) {
+        $(".username").val() = username;
+      }
+    });
+  })
+</script>
+
+
+
+  <script>
   layui.config({
     base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
   }).use(['mm','laypage','jquery'],function(){
@@ -177,21 +192,6 @@
         ,count: 100 //数据总数
       });
 
-
-    // 模版引擎导入
-    //  var html = demo.innerHTML;
-    //  var listCont = document.getElementById('list-cont');
-    //  // console.log(layui.router("#/about.html"))
-    // mm.request({
-    //     url: 'json/commodity.json',
-    //     success : function(res){
-    //       console.log(res)
-    //       listCont.innerHTML = mm.renderHtml(html,res)
-    //     },
-    //     error: function(res){
-    //       console.log(res);
-    //     }
-    //   })
 
     $('.sort a').on('click',function(){
       $(this).addClass('active').siblings().removeClass('active');

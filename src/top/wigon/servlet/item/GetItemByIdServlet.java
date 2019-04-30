@@ -17,7 +17,7 @@ import java.io.IOException;
  * @version 1.0
  * @date 2019/4/30 9:59
  **/
-@WebServlet("/details.html*")
+@WebServlet("/details.html")
 public class GetItemByIdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>商品详情</title>
   <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
   <script type="text/javascript" src="res/layui/layui.js"></script>
+  <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 </head>
@@ -15,10 +16,10 @@
     <div class="site-nav w1200">
       <p class="sn-back-home">
         <i class="layui-icon layui-icon-home"></i>
-        <a href="#">首页</a>
+        <a href="index.html">首页</a>
       </p>
       <div class="sn-quick-menu">
-       <div class="login"><a href="login.html">登录</a></div>
+       <div class="login"><a href="login.html" id="loginbtn">登录</a></div>
         <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
       </div>
     </div>
@@ -30,7 +31,7 @@
     <div class="headerLayout w1200">
       <div class="headerCon">
         <h1 class="mallLogo">
-          <a href="#" title="母婴商城">
+          <a href="index.html" title="母婴商城">
             <img src="res/static/img/logo.png">
           </a>
         </h1>
@@ -53,86 +54,81 @@
       <div class="inner-cont0">
         <div class="inner-cont1 w1200">
           <div class="inner-cont2">
-            <a href="commodity.html" class="active">所有商品</a>
-            <a href="buytoday.html">今日团购</a>
-            <a href="information.html">母婴资讯</a>
+            <a href="" class="active">商品详情</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="data-cont-wrap w1200">
-      <div class="crumb">
-        <a href="javascript:">首页</a>
-        <span>></span>
-        <a href="javascript:">所有商品</a>
-        <span>></span>
-        <a href="javascript:">产品详情</a>
+    <div class="data-cont-wrap w1200" style="margin-top: 40px;" id="data-cont-wrap">
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="ng-promise-box">
+      <div class="ng-promise w1200">
+        <p class="text">
+          <a class="icon1" href="javascript:">7天无理由退换货</a>
+          <a class="icon2" href="javascript:">满99元全场免邮</a>
+          <a class="icon3" style="margin-right: 0" href="javascript:">100%品质保证</a>
+        </p>
       </div>
-      <div class="product-intro layui-clear">
+    </div>
+    <div class="mod_help w1200">
+      <p>
+        <a href="javascript:">关于我们</a>
+        <span>|</span>
+        <a href="javascript:">帮助中心</a>
+        <span>|</span>
+        <a href="javascript:">售后服务</a>
+        <span>|</span>
+        <a href="javascript:">母婴资讯</a>
+        <span>|</span>
+        <a href="javascript:">关于货源</a>
+      </p>
+      <p class="coty">母婴商城版权所有 &copy; 2012-2020</p>
+    </div>
+  </div>
+
+
+    <script type="text/html" id="demo">
+      {{# layui.each(d.detailList,function(index,item){}}
+      <div class="product-intro layui-clear" >
         <div class="preview-wrap">
-          <a href="javascript:"><img src="res/static/img/details_img1.jpg"></a>
+          <a href=""><img src="{{item.img}}"></a>
         </div>
         <div class="itemInfo-wrap">
           <div class="itemInfo">
             <div class="title">
-              <h4>男女宝宝秋冬装套装0一1岁婴儿衣服潮加厚连体衣保暖冬季外出抱衣 </h4>
-              <span><i class="layui-icon layui-icon-rate-solid"></i>收藏</span>
+              <h4>{{item.title}} </h4>
             </div>
             <div class="summary">
-              <p class="reference"><span>参考价</span> <del>￥280.00</del></p>
-              <p class="activity"><span>活动价</span><strong class="price"><i>￥</i>99.00</strong></p>
-              <p class="address-box"><span>送&nbsp;&nbsp;&nbsp;&nbsp;至</span><strong class="address">江西&nbsp;&nbsp;南昌&nbsp;&nbsp;东湖区</strong></p>
+              <p class="reference"><span>分&nbsp;&nbsp;&nbsp;&nbsp;类</span> <span>{{item.category}}</span></p>
+              <p class="activity"><span>价&nbsp;&nbsp;&nbsp;&nbsp;格</span><strong class="price"><i>￥</i>{{item.price}}</strong></p>
+              <p class="address-box">
+                <span>商品编号</span><strong class="goodsid">{{item.goodsid}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>库&nbsp;&nbsp;&nbsp;&nbsp;存</span><strong class="stock">{{item.stock}}</strong>
+              </p>
             </div>
             <div class="choose-attrs">
-              <div class="color layui-clear"><span class="title">颜&nbsp;&nbsp;&nbsp;&nbsp;色</span> <div class="color-cont"><span class="btn">白色</span> <span class="btn active">粉丝</span></div></div>
-              <div class="number layui-clear"><span class="title">数&nbsp;&nbsp;&nbsp;&nbsp;量</span><div class="number-cont"><span class="cut btn">-</span><input onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" maxlength="4" type="" name="" value="1"><span class="add btn">+</span></div></div>
+              <div class="number layui-clear"><span class="title">数&nbsp;&nbsp;&nbsp;&nbsp;量</span><div class="number-cont"><span class="cut btn">-</span><input  maxlength="4" type="" name="" value="1" id="number"><span class="add btn">+</span></div></div>
             </div>
             <div class="choose-btns">
               <button class="layui-btn layui-btn-primary purchase-btn">立刻购买</button>
-              <button class="layui-btn  layui-btn-danger car-btn"><i class="layui-icon layui-icon-cart-simple"></i>加入购物车</button>  
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="layui-clear">
-        <div class="aside">
-          <h4>热销推荐</h4>
-          <div class="item-list">
-            <div class="item">
-              <img src="res/static/img/details_img2.jpg">
-              <p><span>可爱宝宝粉色连体秋裤</span><span class="pric">￥99.00</span></p>
-            </div>
-            <div class="item">
-              <img src="res/static/img/details_img2.jpg">
-              <p><span>可爱宝宝粉色连体秋裤</span><span class="pric">￥99.00</span></p>
-            </div>
-            <div class="item">
-              <img src="res/static/img/details_img2.jpg">
-              <p><span>可爱宝宝粉色连体秋裤</span><span class="pric">￥99.00</span></p>
-            </div>
-            <div class="item">
-              <img src="res/static/img/details_img2.jpg">
-              <p><span>可爱宝宝粉色连体秋裤</span><span class="pric">￥99.00</span></p>
-            </div>
-            <div class="item">
-              <img src="res/static/img/details_img2.jpg">
-              <p><span>可爱宝宝粉色连体秋裤</span><span class="pric">￥99.00</span></p>
-            </div>
-            <div class="item">
-              <img src="res/static/img/details_img2.jpg">
-              <p><span>可爱宝宝粉色连体秋裤</span><span class="pric">￥99.00</span></p>
+              <button class="layui-btn  layui-btn-danger car-btn"><i class="layui-icon layui-icon-cart-simple"></i>加入购物车</button>
             </div>
           </div>
         </div>
         <div class="detail">
           <h4>详情</h4>
-          <div class="item">
-            <img src="res/static/img/details_imgbig.jpg">
+          <div class="item" id="detail-box" style="text-align: center;">
+            {{item.desc}}
           </div>
         </div>
       </div>
-    </div>
-  </div>
+      {{# }); }}
+    </script>
+
 <script type="text/javascript">
   layui.config({
     base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
@@ -154,6 +150,89 @@
   });
 </script>
 
+
+
+  <script type="text/javascript">
+    $(function () {
+      // 想要获取的cook键值
+
+      // 调用
+      var x = getCookie("userTel");
+      if (x != null && x !== "") {
+        $("#loginbtn").html("个人中心");
+        $("#loginbtn").prop("href", "consumer_center.html");
+      }
+
+
+      function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i].trim();
+          if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+      }
+
+    })
+  </script>
+
+<script type="text/javascript">
+  $(function(){
+    $(".purchase-btn").click(function(){
+      var goodsid = $(".goodsid").html();
+      var number = $("#number").val();
+      $.ajax({
+        url : "/aa",
+        type : "post",
+        data : {"goodsid":goodsid ,"number":number},
+        success : function(data) {
+
+        }
+      });
+    })
+
+    $(".car-btn").click(function(){
+        var goodsid = $(".goodsid").html();
+        var number = $("#number").val();
+        $.ajax({
+          url : "/aa",
+          type : "post",
+          data : {"goodsid":goodsid ,"number":number},
+          success : function(data) {
+
+          }
+        });
+    })
+
+
+
+  })
+
+
+</script>
+
+    <script type="text/javascript">
+      layui.config({
+        base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
+      }).use(['mm', 'carousel'], function () {
+        var carousel = layui.carousel,
+                mm = layui.mm;
+        var html = demo.innerHTML;
+        var detailList = document.getElementById('data-cont-wrap');
+        mm.request({
+          url: 'json/details.json',
+          success : function(res) {
+            console.log(res);
+            detailList.innerHTML = mm.renderHtml(html, res);
+          },
+          error: function(res) {
+            console.log(res);
+          }
+        })
+
+      });
+    </script>
 
 </body>
 </html>

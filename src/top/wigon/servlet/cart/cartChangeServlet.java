@@ -15,7 +15,7 @@ import java.io.IOException;
  * @date 2019/4/26 16:25
  **/
 @WebServlet("/cartchange")
-public class cartServlet extends HttpServlet {
+public class cartChangeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ObjectMapper objectMapper = new ObjectMapper();

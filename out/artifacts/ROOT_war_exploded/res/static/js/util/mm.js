@@ -1,8 +1,3 @@
-/*
-*@Name: 母婴商城
-*@Author: xuzhiwen
-*@Copyright:layui.com
-*/
 
 
 layui.define(['jquery','element','laytpl','carousel','laypage'],function(exports){
