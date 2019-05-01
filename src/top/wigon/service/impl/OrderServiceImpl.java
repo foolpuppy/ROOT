@@ -28,4 +28,32 @@ public class OrderServiceImpl implements OrderService {
     public Order getByOrderNo(String order_no) {
         return dao.getByOrderNo(order_no);
     }
+
+    @Override
+    public boolean createOrder(Order order) {
+        return dao.addEntity(order);
+    }
+
+    @Override
+    public String getOrderItemTotalMoney(String order_no) {
+        String money = "0";
+        try {
+            money = dao.getItemOrderTotalMoney(order_no);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return money;
+    }
+
+    @Override
+    public String getOrderTotalMoney(String order_no) {
+        String money = "0";
+        try {
+            money = dao.getOrderTotalMoney(order_no);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return money;
+    }
+
 }

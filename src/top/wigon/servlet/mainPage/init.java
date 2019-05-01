@@ -27,7 +27,7 @@ public class init extends HttpServlet {
         ItemServiceImpl itemService = new ItemServiceImpl();
         //推荐产品
         List<Item> items_0f = itemService.findItemsByCategoryCols("电子产品", 5);
-        List<Item> items_1f = itemService.findItemsByCategoryCols("衣橱服务", 5);
+        List<Item> items_1f = itemService.findItemsByCategoryCols("衣橱服饰", 5);
         List<Item> items_2f = itemService.findItemsByCategoryCols("生鲜水果", 5);
         List<Item> items_3f = itemService.findItemsByCategoryCols("美妆馆", 5);
         List<Item> items_all = itemService.findItemsByCategoryCols("美妆馆", 5);

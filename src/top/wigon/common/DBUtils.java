@@ -695,4 +695,11 @@ public class DBUtils {
         return new Timestamp(new java.util.Date().getTime()).toString();
     }
 
+    /**
+     * 返回时间戳
+     * @return
+     */
+    public static String getCurrentTimeMillis() {
+        return String.valueOf(System.currentTimeMillis());
+    }
 }

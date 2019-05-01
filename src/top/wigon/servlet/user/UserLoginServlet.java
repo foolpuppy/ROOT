@@ -1,6 +1,5 @@
 package top.wigon.servlet.user;
 
-import top.wigon.common.CartUtil;
 import top.wigon.common.MD5Util;
 import top.wigon.entity.User;
 import top.wigon.service.impl.UserServiceImpl;
@@ -33,15 +32,17 @@ public class UserLoginServlet extends HttpServlet {
         if (login) {
             //用户信息存入Session
             req.getSession().setAttribute("user", user);
+            //存用户ID 到session
+            req.getSession().setAttribute("user_id", userService.getUserIDByTel(tel));
             //用户Tel 唯一ID 存Cookies
             Cookie cookie = new Cookie("userTel", tel);
             cookie.setMaxAge(60 * 5);
             resp.addCookie(cookie);
-            Cookie cart = CartUtil.getCookie(req);
             cookie.setMaxAge(60 * 10);
+            /*Cookie cart = CartUtil.getCookie(req);
             cart.setMaxAge(60 * 10);
-            cookie.setHttpOnly(true);
-            resp.addCookie(cart);
+            cart.setHttpOnly(true);
+            resp.addCookie(cart);*/
             resp.sendRedirect("index.html");
         } else {
 

@@ -61,4 +61,13 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUsers() {
         return dao.getAllUsers();
     }
+
+    @Override
+    public String getUserIDByTel(String tel) {
+        User user = new User();
+        user.setTel(tel);
+        dao.findByEntity(user);
+        return dao.findByEntity(user).getUserId();
+    }
+
 }

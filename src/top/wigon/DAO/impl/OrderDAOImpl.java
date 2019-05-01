@@ -77,9 +77,9 @@ public class OrderDAOImpl implements OrderDAO {
         Map<String, Object> valueMap = new HashMap<>();
         valueMap.put("order_id", order.getOrderId());
         valueMap.put("user_id", order.getUserId());
-        valueMap.put("payment", order.getPayment());
-        valueMap.put("payment_type", order.getPaymentType());
-        valueMap.put("post_fee", order.getPostFee());
+//        valueMap.put("payment", order.getPayment());
+//        valueMap.put("payment_type", order.getPaymentType());
+//        valueMap.put("post_fee", order.getPostFee());
         valueMap.put("order_state", order.getOrderState());
         valueMap.put("create_time", order.getOrderCreateTime());
         valueMap.put("payment_time", order.getPaymentTime());
@@ -122,5 +122,16 @@ public class OrderDAOImpl implements OrderDAO {
             e.printStackTrace();
         }
         return Pack2Entity.pack2orders(result).get(0);
+    }
+
+    public String getItemOrderTotalMoney(String order_no) throws Exception {
+        Map<String, Object> whereMap = new HashMap<>();
+        whereMap.put("order_id", order_no);
+        return (String) DBUtils.queryMult("SELECT SUM(item_num*item_price) payment FROM `tb_order_item` ", whereMap).get(0).get("payment");
+    }
+    public String getOrderTotalMoney(String order_no) throws Exception {
+        Map<String, Object> whereMap = new HashMap<>();
+        whereMap.put("order_id", order_no);
+        return (String) DBUtils.queryMult("SELECT payment FROM `tb_order` ", whereMap).get(0).get("payment");
     }
 }

@@ -51,7 +51,14 @@ public interface UserService {
 
     /**
      * 获取所有用户集合
+     *
      * @return
      */
     List<User> getAllUsers();
+
+    /**
+     * 通过电话号得到User_ID
+     * @return
+     */
+    public String getUserIDByTel(String tel);
 }

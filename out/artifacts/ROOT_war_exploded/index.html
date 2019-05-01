@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商城首页</title>
+    <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
+    <script type="text/javascript" src="res/layui/layui.js"></script>
+    <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+</head>
+<body id="list-cont">
+<div class="site-nav-bg">
+    <div class="site-nav w1200">
+        <p class="sn-back-home">
+            <i class="layui-icon layui-icon-home"></i>
+            <a href="/">首页</a>
+        </p>
+        <div class="sn-quick-menu">
+            <div class="login"><a href="login.html" id="loginbtn">登录</a></div>
+            <div class="login"><a href="druid">监控</a></div>
+            <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="header">
+    <div class="headerLayout w1200">
+        <div class="headerCon">
+            <h1 class="mallLogo">
+                <a href="index.html" title="母婴商城">
+                    <img src="res/static/img/logo.png">
+                </a>
+            </h1>
+            <div class="mallSearch">
+                <form action="search" class="layui-form" novalidate>
+                    <input type="text" name="title" required lay-verify="required" autocomplete="off"
+                           class="layui-input" placeholder="请输入需要的商品">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">
+                        <i class="layui-icon layui-icon-search"></i>
+                    </button>
+                    <input type="hidden" name="" value="">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="content">
+    <div class="main-nav">
+        <div class="inner-cont0">
+            <div class="inner-cont1 w1200">
+                <div class="inner-cont2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="category-banner">
+            <div class="layui-carousel" id="test1">
+                <div carousel-item="">
+                    <div><img src="res/static/img/banner1.jpg"></div>
+                    <div><img src="res/static/img/banner1.jpg"></div>
+                    <div><img src="res/static/img/banner1.jpg"></div>
+                </div>
+            </div>
+    </div>
+    <div class="category-con">
+        <div class="category-inner-con w1200">
+            <div class="category-type">
+                <h3>全部分类</h3>
+            </div>
+            <div class="category-tab-content">
+                <div class="nav-con">
+                    <ul class="normal-nav layui-clear">
+                        <li class="nav-item"><a href="">
+                            <div class="title">电子产品</div>
+                            <p><a href="">手机</a><a href="">电脑</a><a href="">配件</a></p>
+                            <i class="layui-icon layui-icon-right"></i></a>
+                        </li>
+                        <li class="nav-item"><a href="">
+                            <div class="title">服装鞋包</div>
+                            <p><a href="">男士</a><a href="">女士</a><a href="">鞋包</a></p>
+                            <i class="layui-icon layui-icon-right"></i></a>
+                        </li>
+                        <li class="nav-item"><a href="">
+                            <div class="title">母婴玩具</div>
+                            <p><a href="">奶粉</a><a href="">捕食</a><a href="">营养品</a></p>
+                            <i class="layui-icon layui-icon-right"></i></a>
+                        </li>
+                        <li class="nav-item"><a href="">
+                            <div class="title">生鲜水果</div>
+                            <p><a href="">水果</a><a href="">海鲜</a><a href="">特产</a></p>
+                            <i class="layui-icon layui-icon-right"></i></a>
+                        </li>
+                        <li class="nav-item"><a href="">
+                            <div class="title">美妆产品</div>
+                            <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
+                            <i class="layui-icon layui-icon-right"></i></a>
+                        </li>
+                        <li class="nav-item"><a href="">
+                            <div class="title">美妆产品</div>
+                            <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
+                            <i class="layui-icon layui-icon-right"></i></a>
+                        </li>
+                        <li class="nav-item"><a href="">
+                            <div class="title">美妆产品</div>
+                            <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
+                            <i class="layui-icon layui-icon-right"></i></a>
+                        </li>
+                        <li class="nav-item nobor" ><a href="">
+                            <div class="title">美妆产品</div>
+                            <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
+                            <i class="layui-icon layui-icon-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--今日必抢-->
+    <div class="floors">
+        <div class="sk">
+            <div class="sk_inner w1200">
+                <div class="sk_hd">
+                    <a href="javascript:">
+                        <img src="res/static/img/s_img1.jpg">
+                    </a>
+                </div>
+                <div class="sk_bd">
+                    <div class="layui-carousel" id="test2">
+                        <div carousel-item>
+                            <div class="item-box" id="item-box-demo">
+
+
+                            </div>
+                            <div class="item-box" id="item-box-demo1">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--楼层展示-->
+    <div class="product-cont w1200" id="product-cont" >
+
+    </div>
+
+
+    <!--更多推荐-->
+    <div class="product-list-box" id="product-list-box">
+        <div class="product-list-cont w1200">
+            <h4>更多推荐</h4>
+            <div class="product-item-box layui-clear" id="product-box-list">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="ng-promise-box">
+        <div class="ng-promise w1200">
+            <p class="text">
+                <a class="icon1" href="javascript:">7天无理由退换货</a>
+                <a class="icon2" href="javascript:">满99元全场免邮</a>
+                <a class="icon3" style="margin-right: 0" href="javascript:">100%品质保证</a>
+            </p>
+        </div>
+    </div>
+    <div class="mod_help w1200">
+        <p>
+            <a href="javascript:">关于我们</a>
+            <span>|</span>
+            <a href="javascript:">帮助中心</a>
+            <span>|</span>
+            <a href="javascript:">售后服务</a>
+            <span>|</span>
+            <a href="javascript:">母婴资讯</a>
+            <span>|</span>
+            <a href="javascript:">关于货源</a>
+        </p>
+        <p class="coty">母婴商城版权所有 &copy; 2012-2020</p>
+    </div>
+</div>
+
+<script type="text/html" id="demo">
+    {{# layui.each(d.floor.banner.cont,function(index,item){}}
+    <div class="item">
+        <a href="details.html?id={{item.id}}"><img src="{{item.item_image_path}}"></a>
+        <div class="title">{{item.title}}</div>
+        <div class="price">
+            <span>{{item.price}}</span>
+        </div>
+    </div>
+    {{# }); }}
+</script>
+
+<script type="text/html" id="demo1">
+    {{# layui.each(d.proct,function(index,item){}}
+    <div class="product-item {{item.productItem}} layui-clear" >
+        <div class="left-title">
+            <h4><i>{{item.floorNum}}</i></h4>
+            <img src="{{item.item_image_path}}">
+            <h5>{{item.title}}</h5>
+        </div>
+        <div class="right-cont">
+            <img src="{{item.bigImg}}" alt="">
+            <div class="img-box" >
+                {{# layui.each(item.imgBox,function(index1,item1){}}
+                    <a href="details.html?id={{item1.id}}"><img src="{{item1.item_image_path}}"></a>
+                {{# }); }}
+            </div>
+        </div>
+    </div>
+    {{# }); }}
+</script>
+
+
+<script type="text/html" id="demo2">
+    {{# layui.each(d.productList,function(index,item){}}
+        <div class="list-item">
+            <a href="details.html?id={{item.id}}"><img src="{{item.item_image_path}}" style="width: 160px;height: 210px;padding: 0px;"></a>
+            <p>{{item.title}}</p>
+            <span>￥{{item.price}}</span>
+        </div>
+    {{# }); }}
+</script>
+
+<script type="text/javascript">
+
+    layui.config({
+        base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
+    }).use(['mm', 'carousel'], function () {
+        var carousel = layui.carousel,
+            mm = layui.mm;
+        var option1 = {
+            elem: '#test1'
+            , width: '100%' //设置容器宽度
+            , arrow: 'none'
+            , height: '400'
+            , indicator: 'none'
+        };
+        var option2 = {
+            elem: '#test2'
+            , width: '100%' //设置容器宽度
+            , arrow: 'always'
+            , height: '298'
+            , interval: 5000
+            , indicator: 'none'
+        };
+        carousel.render(option1);
+        carousel.render(option2);
+        // 模版引擎导入
+        // var ins = carousel.render(option);
+        // var html = demo.innerHTML;
+        // var listCont = document.getElementById('list-cont');
+        // // console.log(layui.router("#/about.html"))
+        //  mm.request({
+        //    url: 'json/index.json',
+        //    success : function(res){
+        //      console.log(res)
+        //      listCont.innerHTML = mm.renderHtml(html,res)
+        //      ins.reload(option);
+        //    },
+        //    error: function(res){
+        //      console.log(res);
+        //    }
+        //  })
+
+        var html = demo.innerHTML;
+        var html_proct = demo1.innerHTML;
+        var html_productList = demo2.innerHTML;
+        var listCont = document.getElementById('item-box-demo');
+        var listCont1 = document.getElementById('item-box-demo1');
+        var proct = document.getElementById('product-cont');
+        var productList = document.getElementById('product-box-list');
+        mm.request({
+            url: 'init',
+            success : function(res){
+                console.log(res);
+                listCont.innerHTML = mm.renderHtml(html,res);
+                listCont1.innerHTML = mm.renderHtml(html,res);
+                proct.innerHTML = mm.renderHtml(html_proct,res);
+                productList.innerHTML = mm.renderHtml(html_productList,res)
+            },
+            error: function(res){
+                console.log(res);
+            }
+        })
+
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+        // 想要获取的cook键值
+
+        // 调用
+        var x = getCookie("userTel");
+        if (x != null && x !== "") {
+            $("#loginbtn").html("个人中心");
+            $("#loginbtn").prop("href", "consumer_center.html");
+        }
+
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+
+    })
+</script>
+
+</body>
+</html>

@@ -15,12 +15,11 @@ public class OrderItem {
     private String title;
     private BigDecimal price;
     private BigDecimal totalFee;
-    private String createTime;
 
     public OrderItem() {
     }
 
-    public OrderItem(int id, int itemId, String orderId, int num, String title, BigDecimal price, BigDecimal totalFee, String createTime) {
+    public OrderItem(int id, int itemId, String orderId, int num, String title, BigDecimal price, BigDecimal totalFee) {
         this.id = id;
         this.itemId = itemId;
         this.orderId = orderId;
@@ -28,16 +27,12 @@ public class OrderItem {
         this.title = title;
         this.price = price;
         this.totalFee = totalFee;
-        this.createTime = createTime;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getItemId() {
         return itemId;
@@ -80,18 +75,7 @@ public class OrderItem {
     }
 
     public BigDecimal getTotalFee() {
-        return totalFee;
+        return price.multiply(BigDecimal.valueOf(num));
     }
 
-    public void setTotalFee(BigDecimal totalFee) {
-        this.totalFee = totalFee;
-    }
-
-    public String getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
 }

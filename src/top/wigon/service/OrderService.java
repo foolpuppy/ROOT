@@ -27,9 +27,29 @@ public interface OrderService {
 
     /**
      * 根据Order_id 取到订单
+     *
      * @param order_no
      * @return
      */
     Order getByOrderNo(String order_no);
 
+    /**
+     * 创建订单
+     * @param order
+     * @return
+     */
+    boolean createOrder(Order order);
+
+    /**
+     * 订单号获取Order_Item付款金额
+     * @param order_no
+     * @return
+     */
+    String getOrderItemTotalMoney(String order_no);
+    /**
+     * 订单号获取Order付款金额
+     * @param order_no
+     * @return
+     */
+    String getOrderTotalMoney(String order_no);
 }

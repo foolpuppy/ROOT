@@ -24,8 +24,8 @@ import java.io.IOException;
 public class payOrderNo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String order_no = req.getParameter("order_no") == null ? "100000000120122" : req.getParameter("order_no");
-
+//        String order_no = (String) req.getSession().getAttribute("order_no");
+        String order_no = req.getParameter("order_no");
         //数据库取得相应订单号的支付信息
         OrderServiceImpl orderService = new OrderServiceImpl();
         Order order = orderService.getByOrderNo(order_no);
@@ -44,7 +44,7 @@ public class payOrderNo extends HttpServlet {
         //订单名称，必填
         String subject = "电子商城订单";
         //商品描述，可空
-        String body = "邮费：" + order.getPostFee();
+        String body = "";
 
         // 该笔订单允许的最晚付款时间，逾期将关闭交易。取值范围：1m～15d。m-分钟，h-小时，d-天，1c-当天（1c-当天的情况下，无论交易何时创建，都在0点关闭）。 该参数数值不接受小数点， 如 1.5h，可转换为 90m。
         String timeout_express = "1c";

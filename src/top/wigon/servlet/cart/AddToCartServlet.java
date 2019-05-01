@@ -26,8 +26,8 @@ public class AddToCartServlet extends HttpServlet {
         String item_num = req.getParameter("item_num");
         Cookie cookie = CartUtil.getCookie(req);
         List<CartInfo> cartInfos = new ArrayList<>();
-        CartInfo info = new CartInfo(item_num, Integer.parseInt(item_id));
-        cartInfos.add(info);
+//        CartInfo info = new CartInfo(item_num, Integer.parseInt(item_id));
+//        cartInfos.add(info);
         cookie.setValue(CartUtil.setCookiesVal(cartInfos));
         resp.addCookie(cookie);
         resp.sendRedirect("index.html");
