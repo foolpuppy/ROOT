@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
     <script type="text/javascript" src="res/layui/layui.js"></script>
     <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="res/static/js/util/jquery.cookie.js"></script>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -21,7 +22,8 @@
         <div class="sn-quick-menu">
             <div class="login"><a href="login.html" id="loginbtn">登录</a></div>
             <div class="login"><a href="druid">监控</a></div>
-            <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
+            <div class="login" id="logout"></div>
+            <div class="sp-cart"><a href="shopcart.html">购物车</a><span id="cart-num">0</span></div>
         </div>
     </div>
 </div>
@@ -199,9 +201,9 @@
     {{# layui.each(d.floor.banner.cont,function(index,item){}}
     <div class="item">
         <a href="details.html?id={{item.id}}"><img src="{{item.item_image_path}}"></a>
-        <div class="title">{{item.title}}</div>
+        <div class="title" style="width: 190px;height:40px;font-size: 10px;overflow: hidden;">{{item.title}}</div>
         <div class="price">
-            <span>{{item.price}}</span>
+            <span>￥{{item.price}}</span>
         </div>
     </div>
     {{# }); }}
@@ -212,8 +214,8 @@
     <div class="product-item {{item.productItem}} layui-clear" >
         <div class="left-title">
             <h4><i>{{item.floorNum}}</i></h4>
-            <img src="{{item.item_image_path}}">
-            <h5>{{item.title}}</h5>
+            <img src="{{item.carImg}}">
+            <h5>{{item.text}}</h5>
         </div>
         <div class="right-cont">
             <img src="{{item.bigImg}}" alt="">
@@ -232,7 +234,7 @@
     {{# layui.each(d.productList,function(index,item){}}
         <div class="list-item">
             <a href="details.html?id={{item.id}}"><img src="{{item.item_image_path}}" style="width: 160px;height: 210px;padding: 0px;"></a>
-            <p>{{item.title}}</p>
+            <p style="height:40px;font-size: 10px;overflow: hidden;">{{item.title}}</p>
             <span>￥{{item.price}}</span>
         </div>
     {{# }); }}
@@ -308,11 +310,13 @@
     $(function () {
         // 想要获取的cook键值
 
+        getCartNum();
         // 调用
         var x = getCookie("userTel");
         if (x != null && x !== "") {
             $("#loginbtn").html("个人中心");
             $("#loginbtn").prop("href", "consumer_center.html");
+            $("#logout").html("<a href=\"UserLogOut\">退出</a>");
         }
 
 
@@ -324,6 +328,22 @@
                 if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
             }
             return "";
+        }
+
+        function getCartNum(){  //获取购物车中商品数量
+            var index = 0;
+            while(true)
+            {
+                if($.cookie(index.toString()) == null)
+                {
+                    break;
+                }
+                else
+                {
+                    index++;
+                }
+            }
+            $("#cart-num").html(index);
         }
 
     })

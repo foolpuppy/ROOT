@@ -1,5 +1,8 @@
 package top.wigon.DAO.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import top.wigon.DAO.UserDAO;
 import top.wigon.common.DBUtils;
 import top.wigon.common.Pack2Entity;
@@ -18,7 +21,7 @@ import java.util.Map;
  **/
 public class UserDAOIpml implements UserDAO {
     private final String tableName = "tb_user";
-
+    private final String QUERY_ORDER_INFO = "SELECT tb_order.order_id,tb_order.user_id,tb_order.payment,tb_order.payment_type,tb_order.post_fee,tb_order.order_state,tb_order.create_time,tb_order.update_time,tb_order.payment_time,tb_order.consign_time,tb_order.receive_time,tb_order.end_time,tb_order.close_time,tb_order.shipping_name,tb_order.shipping_code,tb_order.gmt_create,tb_order.gmt_modified,tb_order_item.item_num,tb_item.item_category,tb_order_item.item_title,tb_order_item.item_price,tb_order_item.total_fee,tb_order_item.item_id,tb_desc.item_image_path FROM tb_order LEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id JOIN tb_desc on tb_order_item.item_id=tb_desc.item_id join tb_item on  tb_order_item.item_id=tb_item.item_id WHERE tb_order.order_id = (SELECT order_id from tb_order where user_id=(select user_id from tb_user where tel=?));";
     /**
      * 特殊处理 用手机号唯一标识用户
      *
@@ -124,5 +127,13 @@ public class UserDAOIpml implements UserDAO {
             e.printStackTrace();
         }
         return users;
+    }
+
+    public String getUserOrderByTel(String tel) throws SQLException, JsonProcessingException {
+        Map<String, Object> whereMap = new HashMap<>();
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+        return objectMapper.writeValueAsString((DBUtils.executeQuery(QUERY_ORDER_INFO, new Object[]{tel})));
+
     }
 }

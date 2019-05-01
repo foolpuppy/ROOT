@@ -58,7 +58,17 @@ public interface UserService {
 
     /**
      * 通过电话号得到User_ID
+     *
      * @return
      */
     public String getUserIDByTel(String tel);
+
+    /**
+     * 电话号获得该用户的订单信息
+     * 返回JSON
+     *
+     * @param tel
+     * @return
+     */
+    public String getUserOrderInfoByTel(String tel);
 }

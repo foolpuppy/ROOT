@@ -399,7 +399,6 @@ public class DBUtils {
         SQL.append(sql);
         if (whereMap != null && whereMap.size() > 0) {
             Iterator<String> iterator = whereMap.keySet().iterator();
-            //i=1就 会从第一个WherMap 开始 添加条件
             int i = 0;
             while (iterator.hasNext()) {
                 String key = iterator.next();

@@ -26,11 +26,11 @@ public class init extends HttpServlet {
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         ItemServiceImpl itemService = new ItemServiceImpl();
         //推荐产品
-        List<Item> items_0f = itemService.findItemsByCategoryCols("电子产品", 5);
-        List<Item> items_1f = itemService.findItemsByCategoryCols("衣橱服饰", 5);
-        List<Item> items_2f = itemService.findItemsByCategoryCols("生鲜水果", 5);
+        List<Item> items_0f = itemService.findItemsByPrice(100, 0, 4);
+        List<Item> items_1f = itemService.findItemsByCategoryCols("笔记本电脑", 5);
+        List<Item> items_2f = itemService.findItemsByCategoryCols("水果生鲜", 5);
         List<Item> items_3f = itemService.findItemsByCategoryCols("美妆馆", 5);
-        List<Item> items_all = itemService.findItemsByCategoryCols("美妆馆", 5);
+        List<Item> items_all = itemService.getAll();
         String JSON;
         StringBuffer content = new StringBuffer();
         content.append("{\"status\": 0,\"floor\": {\"bigimg\": \"res/static/img/s_img1.jpg\",");
@@ -44,11 +44,11 @@ public class init extends HttpServlet {
         JSON = objectMapper.writeValueAsString(items_1f);
         content.append(JSON);
         content.append("},");
-        content.append("{\"floorNum\": \"2F\",\"productItem\": \"product-item2\",\"carImg\": \"res/static/img/icon_gou.png\",\"text\": \"服饰衣帽\",\"bigImg\": \"res/static/img/img12.jpg\",\"imgBox\": ");
+        content.append("{\"floorNum\": \"2F\",\"productItem\": \"product-item2\",\"carImg\": \"res/static/img/icon_gou.png\",\"text\": \"水果生鲜\",\"bigImg\": \"res/static/img/img12.jpg\",\"imgBox\": ");
         JSON = objectMapper.writeValueAsString(items_2f);
         content.append(JSON);
         content.append("},");
-        content.append("{\"floorNum\": \"3F\",\"productItem\": \"product-item3\",\"carImg\": \"res/static/img/icon_gou.png\", \"text\": \"化妆用品\",\"bigImg\": \"res/static/img/img12.jpg\",\"imgBox\": ");
+        content.append("{\"floorNum\": \"3F\",\"productItem\": \"product-item3\",\"carImg\": \"res/static/img/icon_gou.png\", \"text\": \"美妆馆\",\"bigImg\": \"res/static/img/img12.jpg\",\"imgBox\": ");
         JSON = objectMapper.writeValueAsString(items_3f);
         content.append(JSON);
         content.append("}],");

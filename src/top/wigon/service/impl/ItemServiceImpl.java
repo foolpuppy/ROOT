@@ -46,6 +46,11 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
+    public List<Item> findItemsByPrice(int hPrice, int lPrice, int cols) {
+        return dao.getDailyRecommend(hPrice, lPrice, cols);
+    }
+
+    @Override
     public List<Item> getAll() {
 
         return dao.getAllItems();

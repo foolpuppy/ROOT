@@ -44,6 +44,15 @@ public interface ItemService {
     List<Item> findItemsByCategory(String category);
 
     /**
+     * 价格筛选商品
+     *
+     * @param hPrice
+     * @param lPrice
+     * @return
+     */
+    List<Item> findItemsByPrice(int hPrice, int lPrice, int cols);
+
+    /**
      * 获得所有商品
      *
      * @return
@@ -75,4 +84,5 @@ public interface ItemService {
      * @return
      */
     Item findbyitemid(String item_id);
+
 }

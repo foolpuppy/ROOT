@@ -1,9 +1,11 @@
 package top.wigon.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import top.wigon.DAO.impl.UserDAOIpml;
 import top.wigon.entity.User;
 import top.wigon.service.UserService;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -68,6 +70,24 @@ public class UserServiceImpl implements UserService {
         user.setTel(tel);
         dao.findByEntity(user);
         return dao.findByEntity(user).getUserId();
+    }
+
+    @Override
+    public String getUserOrderInfoByTel(String tel) {
+        String result = "";
+        try {
+            result = dao.getUserOrderByTel(tel);
+        } catch (SQLException | JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public User getUserByTel(String tel) {
+        User user = new User();
+        user.setTel(tel);
+        return dao.findByEntity(user);
+
     }
 
 }

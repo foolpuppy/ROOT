@@ -34,6 +34,7 @@ public class CreateOrder extends HttpServlet {
         order.setCreateTime(DBUtils.getCurrDateTime());
         OrderServiceImpl orderService = new OrderServiceImpl();
         List<OrderItem> cartItem = new ArrayList<>();
+
         boolean flag = orderService.createOrder(order);
         //订单创建完成吧订单号存入session
         if (flag) {
