@@ -7,73 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="113d7afc-ad29-4b01-b49d-505413e33371" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/servlet/user/GetUserInfoServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/top/wigon/servlet/user/GetUserOrderInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/04d1be08d2d7ebe1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/097a4682fa14f5bc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/2b7a42c393cad4f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/31df3c468a9490e5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/4699ebb5778f2600.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/5500d487160b3a6e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/55ded74cNdf9979db.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/56fcc54fN70430aa6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/579c50c0N9017e5a3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/58396dfdN8e10c77e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/5ab47b47N56a9ce8a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/5b166771N82deb328.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/5b226dd4N211675fa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/5b4f0e3aN262237fc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/5bc0914fN9c0e3876.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/5be956ddN251f279e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/5c01eadeNcbc9d028.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/70e84d1d269937ed.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/8de85dfb81c2618e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/b4632b9c3fb69e5f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/c9650f003a4c5654.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/c9bc15728688520c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/cacc9985eb090ac5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/ce3fc6374fa932f7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/d12d482c91f05516.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/dfd0c13359e341ae.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/e6dc1cbb45b7cd0a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/res/static/js/util/jquery.cookie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/57c1734e44fe2dc4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/img/b98b416a198613b3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/res/static/img/img1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/test/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/test/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/impl/ItemDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/impl/ItemDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/impl/UserDAOIpml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/DAO/impl/UserDAOIpml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/common/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/common/DBUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/ItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/ItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/OrderItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/OrderItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/mainPage/init.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/mainPage/init.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/payment/CreateOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/payment/CreateOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/user/UserLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/WEB-INF/classes/top/wigon/servlet/user/UserLoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/test/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/test/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/ItemDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/ItemDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/UserDaoIpml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/DAO/impl/UserDaoIpml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/DBUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/common/DBUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/ItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/ItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/mainPage/init.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/mainPage/init.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/payment/CreateOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/payment/CreateOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/user/UserLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ROOT/top/wigon/servlet/user/UserLoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/DAO/impl/ItemDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/DAO/impl/UserDAOIpml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/DAO/impl/UserDAOIpml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/common/DBUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/common/DBUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/service/impl/ItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/mainPage/init.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/mainPage/init.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/payment/CreateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/payment/CreateOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/top/wigon/servlet/user/UserLoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/579c50c0N9017e5a3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/579c50c0N9017e5a3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/res/static/img/img12.jpg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/mainPage/init.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+            <state relative-caret-position="219">
+              <caret line="41" column="150" lean-forward="true" selection-start-line="41" selection-start-column="150" selection-end-line="41" selection-end-column="150" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,11 +71,16 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/res/static/img/img1.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/user/GetUserOrderInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+              <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/payment/CreateOrder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="37" column="39" lean-forward="true" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+              <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -188,6 +133,7 @@
       <find>LIMIT</find>
       <find>COLS</find>
       <find>findItemsByPrice</find>
+      <find>12</find>
     </findStrings>
     <replaceStrings>
       <replace>login.jsp</replace>
@@ -271,8 +217,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="287" />
-    <option name="y" value="22" />
+    <option name="x" value="698" />
+    <option name="y" value="37" />
     <option name="width" value="979" />
     <option name="height" value="1040" />
   </component>
@@ -300,6 +246,27 @@
             </path>
             <path>
               <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ROOT" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ROOT" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
@@ -317,7 +284,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/res/static/img" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -329,18 +296,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\K\IdeaProjects\ROOT\web\res\static\img" />
       <recent name="C:\Users\K\IdeaProjects\ROOT\web\img" />
       <recent name="C:\Users\K\IdeaProjects\ROOT\web" />
       <recent name="C:\Users\K\IdeaProjects\ROOT\web\res\avatar" />
       <recent name="C:\Users\K\IdeaProjects\ROOT\web\json" />
-      <recent name="C:\Users\K\IdeaProjects\ROOT\out\artifacts\ROOT_war_exploded\res\avatar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\K\IdeaProjects\ROOT\web\res\static\img" />
       <recent name="C:\Users\K\IdeaProjects\ROOT\web\res\static\js\util" />
       <recent name="C:\Users\K\IdeaProjects\ROOT\web\img" />
       <recent name="C:\Users\K\IdeaProjects\ROOT\web\res\static\js" />
       <recent name="C:\Users\K\IdeaProjects\ROOT\web" />
-      <recent name="C:\Users\K\IdeaProjects\ROOT\lib" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -397,7 +364,8 @@
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 9.0.19" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.19" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="ROOT:war exploded">
           <settings>
@@ -456,10 +424,10 @@
     <list>
       <item itemvalue="Application.JSONTest" />
       <item itemvalue="Application.MD5Util" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.19" />
       <item itemvalue="Application.test" />
-      <item itemvalue="JUnit.CreateOrder.test" />
       <item itemvalue="JavaScript Debug.pay.jsp" />
+      <item itemvalue="JUnit.CreateOrder.test" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.19" />
     </list>
     <recent_temporary>
       <list>
@@ -495,7 +463,7 @@
       <workItem from="1556548017390" duration="195000" />
       <workItem from="1556586740663" duration="18131000" />
       <workItem from="1556630378899" duration="658000" />
-      <workItem from="1556682969317" duration="26672000" />
+      <workItem from="1556682969317" duration="29609000" />
     </task>
     <task id="LOCAL-00001" summary="Danm Tomcat 9.19">
       <created>1556359305114</created>
@@ -595,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556705620911</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="HardWorking">
+      <created>1556721889681</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556721889681</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -631,7 +606,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134373000" />
+    <option name="totallyTimeSpent" value="137310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -644,17 +619,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Web" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.18364611" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.18364611" />
       <window_info id="Learn" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.30441177" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49329758" visible="true" weight="0.375" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49329758" visible="true" weight="0.4897059" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.20735294" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -664,7 +638,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5067024" side_tool="true" weight="0.53088236" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.375" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.39411765" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Problems" order="14" weight="0.44705883" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -743,90 +717,10 @@
     <MESSAGE value="商品图片更新SERVLET 商品描述更新Servlet" />
     <MESSAGE value="商品详情页" />
     <MESSAGE value="创建订单" />
-    <option name="LAST_COMMIT_MESSAGE" value="创建订单" />
+    <MESSAGE value="HardWorking" />
+    <option name="LAST_COMMIT_MESSAGE" value="HardWorking" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/alipay/config/AlipayConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/common/MD5Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/service/OrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/ROOT_war_exploded/notify_url.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1512">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/entity/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pay.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/entity/CartInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#325#326#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/service/impl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
-          <folding>
-            <element signature="e#710#711#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/impl/OrderDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="49" column="20" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="49" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/DAO/OrderItemDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1085,14 +979,14 @@
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/payment/CreateOrder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="37" column="39" lean-forward="true" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/user/GetUserOrderInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1111,15 +1005,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/4699ebb5778f2600.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/img/b98b416a198613b3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/res/static/img/hot9.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/res/static/img/icon_gou2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/res/static/img/icon_gou.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/res/static/img/hot4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/res/static/img/img12.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/res/static/img/banner.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/top/wigon/servlet/mainPage/init.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+        <state relative-caret-position="219">
+          <caret line="41" column="150" lean-forward="true" selection-start-line="41" selection-start-column="150" selection-end-line="41" selection-end-column="150" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/res/static/img/img1.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
   <component name="masterDetails">

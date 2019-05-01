@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认订单</title>
+    <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
+    <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="res/layui/layui.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+</head>
+<body>
+
+<div class="site-nav-bg">
+    <div class="site-nav w1200">
+        <p class="sn-back-home">
+            <i class="layui-icon layui-icon-home"></i>
+            <a href="index.html">首页</a>
+        </p>
+        <div class="sn-quick-menu">
+            <div class="login"><a href="consumer_center.html">个人中心</a></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="header">
+    <div class="headerLayout w1200">
+        <div class="headerCon">
+            <h1 class="mallLogo">
+                <a href="index.html" title="母婴商城">
+                    <img src="res/static/img/logo.png">
+                </a>
+            </h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="content content-nav-base shopcart-content">
+    <div class="main-nav">
+        <div class="inner-cont0">
+            <div class="inner-cont1 w1200">
+                <div class="inner-cont2">
+                    <a href="" class="active">确认订单信息</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="layui-form" action="" method="post" >
+        <div class=" w1200 user-address" style="margin-top: 40px;">
+            <h3>请填写收货信息</h3>
+            <div class="layui-form-item first-input" style="margin-top: 20px;">
+                <div class="layui-inline">
+                    <label class="layui-form-label">收货人姓名</label>
+                    <div class="layui-input-inline">
+                        <input type="tel" name="username"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">收货人电话</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="phone"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">邮政编码</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="zip_code"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label  class="layui-form-label">省份</label>
+                    <div class="layui-input-inline">
+                        <input type="tel" name="provence"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label  class="layui-form-label">城市</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="city"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">区/县</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="county"  autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">收货地址</label>
+                <div class="layui-input-block">
+                    <input type="text" name="address"  autocomplete="off" placeholder="地址具体到门牌号" class="layui-input">
+                </div>
+            </div>
+
+        </div>
+        <div class="cart w1200">
+            <div class="cart-table-th">
+                <div class="th th-chk">
+                    <div class="th-inner">
+                        订单编号
+                    </div>
+                </div>
+                <div class="th th-item" style="margin-left: 50px;">
+                    <div class="th-inner">
+                        商品
+                    </div>
+                </div>
+                <div class="th th-price">
+                    <div class="th-inner">
+                        单价
+                    </div>
+                </div>
+                <div class="th th-amount" style="margin-left: -50px;">
+                    <div class="th-inner">
+                        数量
+                    </div>
+                </div>
+                <div class="th th-sum">
+                    <div class="th-inner">
+                        应付款
+                    </div>
+                </div>
+                <div class="th th-op">
+                    <div class="th-inner">
+                        交易状态
+                    </div>
+                </div>
+            </div>
+            <div class="OrderList">
+                <div class="order-content" id="list-cont">
+                    <ul class="item-content layui-clear">
+                        <li class="th th-chk" style="width: 125px;margin-left: 20px;">
+                            <span name="goodsid" style="color: gray;">416658400761476179</span>
+                            <span style="color: gray;">时间：2019-04-12</span>
+                        </li>
+                        <li class="th th-item" style="width: 400px;margin-left: 100px;">
+                            <div class="item-cont">
+                                <a href="javascript:"><img src="res/static/img/paging_img1.jpg" alt=""></a>
+                                <div class="text">
+                                    <div class="title">宝宝T恤棉质小衫</div>
+                                    <p><span>粉色</span>  <span>130</span>cm<br>
+                                        <span>商品ID：</span><span class="goodsid">000000000</span>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="th th-price" style="margin-left: -140px;">
+                            <span class="th-su">189.00</span>
+                        </li>
+                        <li class="th th-amount" style="margin-left: -50px;">
+                            1
+                        </li>
+                        <li class="th th-sum">
+                            <span class="sum">189.00</span>
+                        </li>
+                        <li class="th th-op">
+                            <span >待付款</span>
+                        </li>
+                    </ul>
+
+
+
+                    <div class="FloatBarHolder layui-clear">
+                        <div class="th Settlement">
+                            <button class="layui-btn" id="layui-btn-settlement" >提交订单</button>
+                        </div>
+                        <div class="th total">
+                            <p>应付款：<span class="pieces-total">0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
