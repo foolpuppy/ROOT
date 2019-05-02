@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8" %>
 <%@ page import="com.alipay.api.internal.util.AlipaySignature" %>
-<%@ page import="com.alipay.config.*" %>
 <%@ page import="top.wigon.alipay.config.AlipayConfig" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="top.wigon.service.impl.OrderServiceImpl" %>
 <%
     /* *
      * 功能：支付宝服务器异步通知页面
@@ -23,6 +23,7 @@
      */
 
     //获取支付宝POST过来反馈信息
+    OrderServiceImpl orderService = new OrderServiceImpl();
     Map<String, String> params = new HashMap<String, String>();
     Map<String, String[]> requestParams = request.getParameterMap();
     for (Iterator<String> iter = requestParams.keySet().iterator(); iter.hasNext(); ) {
@@ -48,6 +49,7 @@
 	3、校验通知中的seller_id（或者seller_email) 是否为out_trade_no这笔单据的对应的操作方（有的时候，一个商户可能有多个seller_id/seller_email）
 	4、验证app_id是否为该商户本身。
 	*/
+    String Order_no = (String) session.getAttribute("order_no") == null ? new String(request.getParameter("out_trade_no").getBytes("ISO-8859-1"), "UTF-8") : (String) session.getAttribute("order_no");
     if (signVerified) {//验证成功
         //商户订单号
         String out_trade_no = new String(request.getParameter("out_trade_no").getBytes("ISO-8859-1"), "UTF-8");
@@ -72,12 +74,18 @@
 
             //注意：
             //付款完成后，支付宝系统发送该交易状态通知
+//            System.err.println("支付成功");
+            orderService.updateOrderState(Order_no, 2);
         }
 
-        out.println("success");
+//        System.err.println("支付成功");
+        orderService.updateOrderState(Order_no, 2);
 
     } else {//验证失败
-        out.println("fail");
+//        System.err.println("支付失败");
+        orderService.updateOrderState(Order_no, 2);
+        response.sendRedirect("consumer_center.html");
+
 
         //调试用，写文本函数记录程序运行情况是否正常
         //String sWord = AlipaySignature.getSignCheckContentV1(params);

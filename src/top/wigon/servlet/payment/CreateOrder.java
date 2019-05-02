@@ -38,6 +38,7 @@ public class CreateOrder extends HttpServlet {
         boolean flag = orderService.createOrder(order);
         //订单创建完成吧订单号存入session
         if (flag) {
+            req.getSession().removeAttribute("order_no");
             req.getSession().setAttribute("order_no", order.getOrderId());
             //todo 商品加入到数据库
             OrderItemServiceImpl orderItemService = new OrderItemServiceImpl();

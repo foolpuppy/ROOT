@@ -4,6 +4,7 @@ import top.wigon.DAO.impl.OrderDAOImpl;
 import top.wigon.entity.Order;
 import top.wigon.service.OrderService;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -54,6 +55,17 @@ public class OrderServiceImpl implements OrderService {
             e.printStackTrace();
         }
         return money;
+    }
+
+    @Override
+    public boolean updateOrderState(String order_id, int state) {
+        boolean flag = false;
+        try {
+            flag = dao.updateOrderState(order_id, state);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
     }
 
 }

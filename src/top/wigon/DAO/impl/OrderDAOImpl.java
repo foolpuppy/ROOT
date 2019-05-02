@@ -129,9 +129,25 @@ public class OrderDAOImpl implements OrderDAO {
         whereMap.put("order_id", order_no);
         return (String) DBUtils.queryMult("SELECT SUM(item_num*item_price) payment FROM `tb_order_item` ", whereMap).get(0).get("payment");
     }
+
     public String getOrderTotalMoney(String order_no) throws Exception {
         Map<String, Object> whereMap = new HashMap<>();
         whereMap.put("order_id", order_no);
         return (String) DBUtils.queryMult("SELECT payment FROM `tb_order` ", whereMap).get(0).get("payment");
+    }
+
+    /**
+     * 更新订单状态
+     *
+     * @param order_id
+     * @param state
+     * @return
+     */
+    public boolean updateOrderState(String order_id, int state) throws SQLException {
+        Map<String, Object> valueMap = new HashMap<>();
+        valueMap.put("order_state", state);
+        Map<String, Object> whereMap = new HashMap<>();
+        whereMap.put("order_id", order_id);
+        return DBUtils.update(tableName, valueMap, whereMap) == 0;
     }
 }

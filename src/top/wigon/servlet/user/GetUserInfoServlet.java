@@ -16,7 +16,7 @@ import java.io.IOException;
  * @version 1.0
  * @date 2019/5/1 20:19
  **/
-@WebServlet("/userinfo")
+@WebServlet("/userInfo")
 public class GetUserInfoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

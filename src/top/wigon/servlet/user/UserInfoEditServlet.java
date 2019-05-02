@@ -21,14 +21,16 @@ public class UserInfoEditServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //String user_id = (String) req.getSession().getAttribute("user_id");
-        String user_id = req.getParameter("user_id");
+        String user_id = (String) req.getSession().getAttribute("user_id");
         String username = req.getParameter("username");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        String tel = req.getParameter("tel");
         User user = new User();
         user.setUserId(user_id);
         user.setUserName(username);
         user.setEmail(email);
+        user.setTel(tel);
         user.setPassword(MD5Util.MD5EncodeUtf8(password));
         UserServiceImpl userService = new UserServiceImpl();
         if (userService.userEdit(user)) {

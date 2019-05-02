@@ -24,8 +24,7 @@ import java.io.IOException;
 public class payOrderNo extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String order_no = (String) req.getSession().getAttribute("order_no");
-        String order_no = req.getParameter("order_no");
+        String order_no = req.getParameter("order_no") != null ? req.getParameter("order_no") : (String) req.getSession().getAttribute("order_no");
         //数据库取得相应订单号的支付信息
         OrderServiceImpl orderService = new OrderServiceImpl();
         Order order = orderService.getByOrderNo(order_no);
@@ -60,7 +59,7 @@ public class payOrderNo extends HttpServlet {
         String result = null;
         try {
             result = alipayClient.pageExecute(alipayRequest).getBody();
-            System.out.println(result);
+            //write才能跳转支付
             resp.setContentType("text/html;charset=utf-8");
             resp.getWriter().write(result);
         } catch (AlipayApiException e) {
