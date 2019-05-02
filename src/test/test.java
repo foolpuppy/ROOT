@@ -1,10 +1,8 @@
 package test;
 
-import top.wigon.entity.Item;
-import top.wigon.service.impl.ItemServiceImpl;
+import top.wigon.DAO.impl.UserDAOIpml;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -46,11 +44,27 @@ public class test {
 //        orderItem.setOrderId(order.getOrderId());
 //        OrderItemServiceImpl orderItemService = new OrderItemServiceImpl();
 //        orderItemService.add(orderItem);
-        ItemServiceImpl itemService = new ItemServiceImpl();
-        List<Item> items_0f = itemService.findItemsByPrice(100, 0, 4);
-        List<Item> items_1f = itemService.findItemsByCategoryCols("笔记本电脑", 5);
-        List<Item> items_2f = itemService.findItemsByCategoryCols("水果生鲜", 5);
-        List<Item> items_3f = itemService.findItemsByCategoryCols("美妆馆", 5);
-        List<Item> items_all = itemService.getAll();
+//        ItemServiceImpl itemService = new ItemServiceImpl();
+//        List<Item> items_0f = itemService.findItemsByPrice(100, 0, 4);
+//        List<Item> items_1f = itemService.findItemsByCategoryCols("笔记本电脑", 5);
+//        List<Item> items_2f = itemService.findItemsByCategoryCols("水果生鲜", 5);
+//        List<Item> items_3f = itemService.findItemsByCategoryCols("美妆馆", 5);
+//        List<Item> items_all = itemService.getAll();
+//        UserServiceImpl userService = new UserServiceImpl();
+//        System.out.println(userService.getUserIDByTel("15871653387"));
+//        UserServiceImpl userService=new UserServiceImpl();
+//        String JSON=userService.getUserOrderUnPaidInfoByTel("15871653387");
+//        ObjectMapper mapper=new ObjectMapper();
+//        System.out.println(JSON);
+//        JsonNode node=mapper.readTree(JSON);
+//        System.out.println(node.findValue("payment"));
+//       UserServiceImpl userService = new UserServiceImpl();
+//        String JSON = userService.getUserOrderUnPaidInfoByTel("15871653387");
+//        System.out.println(JSON);
+//        ItemServiceImpl itemService = new ItemServiceImpl();
+//        System.out.println(itemService.getItemPriceById("1000000265"));
+        UserDAOIpml userService = new UserDAOIpml();
+        System.out.println(userService.getUserOrderUnPaidNumByUserId("15871653387"));
+
     }
 }

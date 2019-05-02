@@ -28,7 +28,14 @@ public class SearchByCategory extends HttpServlet {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         String JSON = objectMapper.writeValueAsString(itemList);
+        StringBuffer content = new StringBuffer();
+        content.append("{\"status\":");
+        content.append("0");
+        content.append(",\"content\":");
+        content.append(JSON);
+        content.append("}");
+        String jsonString = content.toString();
         resp.setContentType("text/plain; charset=UTF-8;");
-        resp.getWriter().write(JSON);
+        resp.getWriter().write(jsonString);
     }
 }

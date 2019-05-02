@@ -32,11 +32,9 @@ public class SearchItemByName extends HttpServlet {
         StringBuffer content = new StringBuffer();
         content.append("{\"status\":");
         content.append("0");
-        content.append(",\"menu\":");
-        content.append("{\"milk\":");
-        content.append("{\"content\":");
+        content.append(",\"content\":");
         content.append(JSON);
-        content.append("}}}");
+        content.append("}");
         String jsonString = content.toString();
         resp.setContentType("text/plain; charset=UTF-8;");
         resp.getWriter().write(jsonString);

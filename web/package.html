@@ -20,7 +20,7 @@
       </p>
       <div class="sn-quick-menu">
         <div class="login"><a href="consumer_center.html">个人中心</a></div>
-        <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
+        <div class="sp-cart"><a href="shopcart.html">购物车</a><span id="cart-num">0</span></div>
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
           </a>
         </h1>
         <div class="mallSearch">
-          <form action="" class="layui-form" novalidate>
+          <form action="search_list.html" class="layui-form" novalidate>
             <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入需要的商品">
             <button class="layui-btn" lay-submit lay-filter="formDemo">
                 <i class="layui-icon layui-icon-search"></i>
@@ -104,6 +104,24 @@
     </div>
   </div>
 
+  <script>
+    getCartNum();
+    function getCartNum(){  //获取购物车中商品数量
+      var index = 0;
+      for(var i=0;i<30;i++)
+      {
+        if($.cookie(i.toString()) == null)
+        {
+          continue;
+        }
+        else
+        {
+          index++;
+        }
+      }
+      $("#cart-num").html(index);
+    }
+  </script>
   <script type="text/html" id="demo">
     {{# layui.each(d.packageList,function(index,item){}}
       <ul class="item-content layui-clear">

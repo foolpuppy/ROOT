@@ -6,7 +6,9 @@ import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.request.AlipayTradePagePayRequest;
 import top.wigon.alipay.config.AlipayConfig;
 import top.wigon.entity.Order;
+import top.wigon.entity.Shipping;
 import top.wigon.service.impl.OrderServiceImpl;
+import top.wigon.service.impl.ShippingServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,11 +25,22 @@ import java.io.IOException;
 @WebServlet("/GoPay")
 public class payOrderNo extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String order_no = req.getParameter("order_no") != null ? req.getParameter("order_no") : (String) req.getSession().getAttribute("order_no");
         //数据库取得相应订单号的支付信息
         OrderServiceImpl orderService = new OrderServiceImpl();
+        ShippingServiceImpl shippingService = new ShippingServiceImpl();
+        Shipping shipping = new Shipping();
+        shipping.setOrderId(order_no);
+        shipping.setReceiverName(req.getParameter("name"));
+        shipping.setReceiverTel(req.getParameter("tel"));
+        shipping.setReceiverState(req.getParameter("province"));
+        shipping.setReceiverCity(req.getParameter("city"));
+        shipping.setReceiverDistrict(req.getParameter("district"));
+        shipping.setReceiverZip(req.getParameter("zip"));
+        shipping.setReceiverAddress(req.getParameter("address"));
         Order order = orderService.getByOrderNo(order_no);
+        shippingService.add(shipping);
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id, AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key, AlipayConfig.sign_type);
 
@@ -67,5 +80,10 @@ public class payOrderNo extends HttpServlet {
         }
 
 
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
     }
 }

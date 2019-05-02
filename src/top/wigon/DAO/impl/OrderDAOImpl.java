@@ -80,7 +80,7 @@ public class OrderDAOImpl implements OrderDAO {
 //        valueMap.put("payment", order.getPayment());
 //        valueMap.put("payment_type", order.getPaymentType());
 //        valueMap.put("post_fee", order.getPostFee());
-        valueMap.put("order_state", order.getOrderState());
+//        valueMap.put("order_state", order.getOrderState());
         valueMap.put("create_time", order.getOrderCreateTime());
         valueMap.put("payment_time", order.getPaymentTime());
         valueMap.put("consign_time", order.getConsignTime());

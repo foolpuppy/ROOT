@@ -29,23 +29,21 @@ layui.define(['layer'], function (exports) {
 
             // 小计
             function getSubTotal(ul) {
-                var goodsid = ul.getElementsByClassName('goodsid')[0].innerHTML;
+                var cookieId =ul.getElementsByClassName('cookieId')[0].innerHTML;
                 var unitprice = parseFloat(ul.getElementsByClassName('th-su')[0].innerHTML);
                 var count = parseInt(ul.getElementsByClassName('Quantity-input')[0].value);/*加减后的数量*/
                 var SubTotal = parseFloat(unitprice * count);
                 ul.getElementsByClassName('sum')[0].innerHTML = SubTotal.toFixed(2);
                 /*将修改后的值传入*/
-                $.ajax({
-                    //购物车物品加减
-                    url: "cartchange",
-                    type: "post",
-                    dataType: "json",
-                    data: {"goodsid": goodsid, "unitprice": unitprice, "count": count},
-                    success: function (data) {
-
-                    }
-                });
-
+                var cookieVal = $.cookie(cookieId);
+                var arr = cookieVal.split(";");
+                arr[5] = count;
+                var cookieValue = "";
+                for(var i=0 ; i<arr.length ;i++)
+                {
+                    cookieValue = cookieValue+arr[i]+";";
+                }
+                $.cookie(cookieId , cookieValue);
             }
 
             for (var i = 0; i < checkInputs.length; i++) {
@@ -71,7 +69,7 @@ layui.define(['layer'], function (exports) {
                     var cls = el.className;
                     var input = this.getElementsByClassName('Quantity-input')[0];
                     var less = this.getElementsByClassName('less')[0];
-                    var goodsid = this.getElementsByClassName('goodsid')[0].innerHTML;
+                    var cookieId = this.getElementsByClassName('cookieId')[0].innerHTML;
                     var val = parseInt(input.value);
                     var that = this;
                     switch (cls) {
@@ -90,15 +88,8 @@ layui.define(['layer'], function (exports) {
                                 yes: function (index, layero) {
 
                                     /*删除此条数据*/
-                                    $.ajax({
-                                        url: "cartchange",
-                                        type: "post",
-                                        dataType: "json",
-                                        data: {"goodsid": goodsid},
-                                        success: function (data) {
-
-                                        }
-                                    });
+                                    $.cookie(cookieId, "", {expires: -1});
+                                    $("#cart-num").html((parseInt($("#cart-num").html())-1));
                                     layer.close(index);
                                     that.parentNode.removeChild(that);
                                     getTotal();
@@ -122,6 +113,18 @@ layui.define(['layer'], function (exports) {
                                     i--;
                                 }
                             }
+                            for(var i=0 ;i<30;i++)
+                            {
+                                if($.cookie(i.toString())==null)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    $.cookie(i.toString(), "", {expires: -1});
+                                    $("#cart-num").html(0);
+                                }
+                            }
                             getTotal()
                         }
 
@@ -140,29 +143,45 @@ layui.define(['layer'], function (exports) {
             $(function () {
                 $("#layui-btn-settlement").click(function () {
                     var uls = document.getElementById('list-cont').getElementsByTagName('ul');//每一行
-                    var list = [];
+                    var list = [];//数组
                     var flag = 0;
                     for (var i = 0; i < uls.length; i++) {
                         if (uls[i].getElementsByTagName('input')[0].checked) {
                             list[flag] = [
                                 uls[i].getElementsByClassName('goodsid')[0].innerHTML,
+                                uls[i].getElementsByClassName('title')[0].innerHTML,
                                 parseInt(uls[i].getElementsByClassName('Quantity-input')[0].value)
                             ];
                             flag += 1;
                         }
                     }
-                    var fee = $(".pieces-total").html();
-                    var goods = {goods: list, totalfee: fee};
-//提交订单
-                    $.ajax({
-                        url: "cartchange",
-                        type: "post",
-                        dataType: "json",
-                        data: {"goods": goods},
-                        success: function (data) {
+                    var fee = parseInt($(".pieces-total").html().substr(1));
+                    if(fee>0)
+                    {
+                        //提交订单
+                        $.ajax({
+                            url: "cartchange",
+                            type: "post",
+                            dataType: "json",
+                            data: {"goodsList": list , "fee":fee},
+                            success: function (data) {
+                                for(var i=0 ;i<30;i++)
+                                {
+                                    if($.cookie(i.toString())==null)
+                                    {
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                        $.cookie(i.toString(), "", {expires: -1});
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    else
+                        layer.msg('请选择商品');
 
-                        }
-                    });
                 })
             })
         }

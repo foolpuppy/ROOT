@@ -59,7 +59,6 @@ public class ShippingDAOImpl implements ShippingDAO {
     @Override
     public Map<String, Object> getValMap(Shipping shipping) {
         Map<String, Object> valueMap = new HashMap<>();
-        valueMap.put("id", shipping.getId());
         valueMap.put("order_id", shipping.getOrderId());
         valueMap.put("receiver_name", shipping.getReceiverName());
         valueMap.put("receiver_tel", shipping.getReceiverTel());

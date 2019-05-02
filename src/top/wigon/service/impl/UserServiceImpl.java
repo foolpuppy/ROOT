@@ -68,7 +68,6 @@ public class UserServiceImpl implements UserService {
     public String getUserIDByTel(String tel) {
         User user = new User();
         user.setTel(tel);
-        dao.findByEntity(user);
         return dao.findByEntity(user).getUserId();
     }
 
@@ -83,10 +82,26 @@ public class UserServiceImpl implements UserService {
         return result;
     }
 
+    @Override
+    public String getUserOrderUnPaidInfoByTel(String tel) {
+        String result = "";
+        try {
+            result = dao.getUserOrderUnPaidByTel(tel);
+        } catch (SQLException | JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     public User getUserByTel(String tel) {
         User user = new User();
         user.setTel(tel);
         return dao.findByEntity(user);
+
+    }
+
+    public int getUserOrderUnPaidNumByUserId(String user_id) throws SQLException, JsonProcessingException {
+        return dao.getUserOrderUnPaidNumByUserId(user_id);
 
     }
 

@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
   <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="res/static/js/util/jquery.cookie.js"></script>
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -20,7 +21,7 @@
       </p>
       <div class="sn-quick-menu">
         <div class="login"><a href="login.html" id="loginbtn">登录</a></div>
-        <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
+        <div class="sp-cart"><a href="shopcart.html">购物车</a><span id="cart-num">0</span></div>
       </div>
     </div>
   </div>
@@ -36,7 +37,7 @@
           </a>
         </h1>
         <div class="mallSearch">
-          <form action="" class="layui-form" novalidate>
+          <form action="search_list.html" class="layui-form" novalidate>
             <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入需要的商品">
             <button class="layui-btn" lay-submit lay-filter="formDemo">
                 <i class="layui-icon layui-icon-search"></i>
@@ -55,8 +56,8 @@
         <div class="inner-cont1 w1200">
           <div class="inner-cont2">
             <a href="shopcart.html" class="active">购物车</a>
-            <a href="package.html">待收货</a>
-            <a href="all_order.html">所有订单</a>
+            <a id="wait" href=""></a>
+            <a id="all_orders" href=""></a>
           </div>
         </div>
       </div>
@@ -103,80 +104,7 @@
       </div>
       <div class="OrderList">
         <div class="order-content" id="list-cont">
-          <ul class="item-content layui-clear">
-            <li class="th th-chk">
-              <div class="select-all">
-                <div class="cart-checkbox">
-                  <input class="CheckBoxShop check" type="checkbox" num="all" name="select-all" value="true">
-                </div>
-              </div>
-            </li>
-            <li class="th th-item">
-              <div class="item-cont">
-                <a href="javascript:"><img src="res/static/img/paging_img1.jpg" alt=""></a>
-                <div class="text">
-                  <div class="title">宝宝T恤棉质小衫</div>
-                  <p><span>粉色</span>  <span>130</span>cm<br>
-                    <span>商品ID：</span><span class="goodsid">000000000</span>
-                  </p>
 
-                </div>
-              </div>
-            </li>
-            <li class="th th-price">
-              <span class="th-su">189.00</span>
-            </li>
-            <li class="th th-amount">
-              <div class="box-btn layui-clear">
-                <div class="less layui-btn">-</div>
-                <input class="Quantity-input" type="" name="" value="1" disabled="disabled">
-                <div class="add layui-btn">+</div>
-              </div>
-            </li>
-            <li class="th th-sum">
-              <span class="sum">189.00</span>
-            </li>
-            <li class="th th-op">
-              <span class="dele-btn">删除</span>
-            </li>
-          </ul>
-          <ul class="item-content layui-clear">
-            <li class="th th-chk">
-              <div class="select-all">
-                <div class="cart-checkbox">
-                  <input class="CheckBoxShop check" type="checkbox" num="all" name="select-all" value="true">
-                </div>
-              </div>
-            </li>
-            <li class="th th-item">
-              <div class="item-cont">
-                <a href="javascript:"><img src="res/static/img/paging_img1.jpg" alt=""></a>
-                <div class="text">
-                  <div class="title">宝宝T恤棉质小衫</div>
-                  <p><span>粉色</span>  <span>130</span>cm<br>
-                    <span>商品ID：</span><span class="goodsid">000000000</span>
-                  </p>
-
-                </div>
-              </div>
-            </li>
-            <li class="th th-price">
-              <span class="th-su">189.00</span>
-            </li>
-            <li class="th th-amount">
-              <div class="box-btn layui-clear">
-                <div class="less layui-btn">-</div>
-                <input class="Quantity-input" type="" name="" value="1" disabled="disabled">
-                <div class="add layui-btn">+</div>
-              </div>
-            </li>
-            <li class="th th-sum">
-              <span class="sum">189.00</span>
-            </li>
-            <li class="th th-op">
-              <span class="dele-btn">删除</span>
-            </li>
-          </ul>
         </div>
       </div>
 
@@ -204,17 +132,21 @@
 
 
 
+
   <script type="text/javascript">
     $(function () {
-      // 想要获取的cook键值
-
+      getCartNum();
+      showGoods();
       // 调用
       var x = getCookie("userTel");
       if (x != null && x !== "") {
         $("#loginbtn").html("个人中心");
         $("#loginbtn").prop("href", "consumer_center.html");
+        $("#wait").html("待收货");
+        $("#wait").prop("href", "package.html");
+        $("#all_orders").html("所有订单");
+        $("#all_orders").prop("href", "all_order.html");
       }
-
 
       function getCookie(cname) {
         var name = cname + "=";
@@ -225,6 +157,82 @@
         }
         return "";
       }
+      function getCartNum(){  //获取购物车中商品数量
+          var index = 0;
+          for(var i=0;i<30;i++)
+          {
+            if($.cookie(i.toString()) == null)
+            {
+              continue;
+            }
+            else
+            {
+              index++;
+            }
+          }
+          $("#cart-num").html(index);
+          return index;
+        }
+
+      function showGoods(){
+        var num = getCartNum();
+        var content = "";
+        if(num == 0)
+        {
+          content = "<p style='font-size: 20px;color: red;text-align: center;'>您还没有添加商品到购物车！</p>";
+        }
+        else{
+          var i;
+          for(i=0 ; i< 30 ; i++)
+          {
+            if($.cookie(i.toString()) == null)
+            {
+              continue;
+            }
+            var value = $.cookie(i.toString());
+            var arr = value.split(";");
+            content = content + "<ul class=\"item-content layui-clear\">\n" +
+                    "            <li class=\"th th-chk\">\n" +
+                    "              <div class=\"select-all\">\n" +
+                    "                <div class=\"cart-checkbox\">\n" +
+                    "                  <input class=\"CheckBoxShop check\" type=\"checkbox\" num=\"all\" name=\"select-all\" value=\"true\">\n" +
+                    "                </div>\n" +
+                    "              </div>\n" +
+                    "            </li>\n" +
+                    "            <li class=\"th th-item\">\n" +
+                    "              <div class=\"item-cont\">\n" +
+                    "                <a href=\"javascript:\"><img style='width: 100px;height: 100px;' src="+arr[0]+" alt=\"\"></a>\n" +
+                    "                <div class=\"text\">\n" +
+                    "                  <div class=\"title\" style='height: 50px;overflow: hidden;'>"+arr[1]+"</div>\n" +
+                    "                  <p><span>"+arr[2]+"</span>  <br>\n" +
+                    "                    <span>商品ID：</span><span class=\"goodsid\">"+arr[3]+"</span><div class='cookieId' style='display: none;'>"+arr[6]+"</div>\n" +
+                    "                  </p>\n" +
+                    "\n" +
+                    "                </div>\n" +
+                    "              </div>\n" +
+                    "            </li>\n" +
+                    "            <li class=\"th th-price\">\n" +
+                    "              <span class=\"th-su\">"+arr[4].substr(8)+"</span>\n" +
+                    "            </li>\n" +
+                    "            <li class=\"th th-amount\">\n" +
+                    "              <div class=\"box-btn layui-clear\">\n" +
+                    "                <div class=\"less layui-btn\">-</div>\n" +
+                    "                <input class=\"Quantity-input\" type=\"\" name=\"\" value="+arr[5]+" disabled=\"disabled\">\n" +
+                    "                <div class=\"add layui-btn\">+</div>\n" +
+                    "              </div>\n" +
+                    "            </li>\n" +
+                    "            <li class=\"th th-sum\">\n" +
+                    "              <span class=\"sum\">"+(parseInt(arr[4].substr(8))*parseInt(arr[5])).toFixed(2)+"</span>\n" +
+                    "            </li>\n" +
+                    "            <li class=\"th th-op\">\n" +
+                    "              <span class=\"dele-btn\">删除</span>\n" +
+                    "            </li>\n" +
+                    "          </ul>"
+          }
+        }
+        $("#list-cont").html(content);
+      }
+
 
     })
   </script>

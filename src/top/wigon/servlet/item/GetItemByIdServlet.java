@@ -17,20 +17,24 @@ import java.io.IOException;
  * @version 1.0
  * @date 2019/4/30 9:59
  **/
-@WebServlet("/details.html")
+@WebServlet("/getDetail")
 public class GetItemByIdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String item_id = req.getParameter("id");
-        System.err.println("item_id" + item_id);
         ItemServiceImpl itemService = new ItemServiceImpl();
         Item item = itemService.findbyitemid(item_id);
         resp.setContentType("text/plain; charset=UTF-8;");
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         String JSON = objectMapper.writeValueAsString(item);
-        resp.getWriter().println(JSON);
-        System.err.println(JSON);
+        StringBuffer content = new StringBuffer();
+        content.append("{\n" +
+                "  \"status\": 0,\n" +
+                "  \"detailList\":[");
+        content.append(JSON);
+        content.append("]}");
+        resp.getWriter().println(content.toString());
     }
 
     @Override

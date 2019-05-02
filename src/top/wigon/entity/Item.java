@@ -19,13 +19,14 @@ public class Item implements Serializable {
     private String item_image_path;
     private String createTime;
     private String modified_time;
+    private  String desc;
 
     public Item() {
         this.price = new BigDecimal(0);
 
     }
 
-    public Item(String id, String title, String category, BigDecimal price, int stock, int state, int shopId, String item_image_path, String createTime, String modified_time) {
+    public Item(String id, String title, String category, BigDecimal price, int stock, int state, int shopId, String item_image_path, String createTime, String modified_time, String desc) {
         this.id = id;
         this.title = title;
         this.category = category;
@@ -36,6 +37,15 @@ public class Item implements Serializable {
         this.item_image_path = item_image_path;
         this.createTime = createTime;
         this.modified_time = modified_time;
+        this.desc = desc;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public String getItem_image_path() {

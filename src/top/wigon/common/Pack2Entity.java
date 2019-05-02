@@ -61,6 +61,7 @@ public class Pack2Entity {
             item.setShopId(Integer.parseInt(result.get(i).get("shop_id").toString()));
             item.setItem_image_path(String.valueOf(result.get(i).get("item_image_path")));
             item.setCreateTime(result.get(i).get("gmt_create").toString());
+            item.setDesc(result.get(i).get("item_desc").toString());
             item.setModified_time(String.valueOf(result.get(i).get("gmt_modified") == null ? "" : result.get(i).get("gmt_modified")));
             list.add(item);
 

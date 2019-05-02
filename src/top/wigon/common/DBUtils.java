@@ -551,7 +551,7 @@ public class DBUtils {
         System.out.println("成功查询到了" + datas.size() + "行数据");
         for (int i = 0; i < datas.size(); i++) {
             Map<String, Object> map = datas.get(i);
-            System.out.println("第" + (i + 1) + "行：" + map);
+            //todo 显示记录System.out.println("第" + (i + 1) + "行：" + map);
         }
         return datas;
     }

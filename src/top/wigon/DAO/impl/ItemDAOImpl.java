@@ -18,8 +18,8 @@ import java.util.Map;
  **/
 public class ItemDAOImpl implements ItemDAO {
     private final String tableName = "tb_item";
-    private final String ITEM_JOIN_DESC = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id";
-    private final String DAILY_RECOMMEND = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id WHERE t2.item_price<? and t2.item_price>? Limit ?";
+    private final String ITEM_JOIN_DESC = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t1.item_desc,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id";
+    private final String DAILY_RECOMMEND = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t1.item_desc,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id WHERE t2.item_price< ? and t2.item_price> ? Limit ?";
 
     @Override
     public Item findByEntity(Item item) {

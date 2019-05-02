@@ -34,7 +34,7 @@ public class UserLoginServlet extends HttpServlet {
             req.getSession().setAttribute("user", user);
             req.getSession().setAttribute("user_tel", tel);
             //存用户ID 到session
-            req.getSession().setAttribute("user_id", userService.getUserIDByTel(tel));
+            req.getSession().setAttribute("user_id", userService.getUserIDByTel(user.getTel()));
             //用户Tel 唯一ID 存Cookies
             Cookie cookie = new Cookie("userTel", tel);
             cookie.setMaxAge(60 * 5);

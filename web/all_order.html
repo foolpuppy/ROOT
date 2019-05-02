@@ -20,7 +20,7 @@
       </p>
       <div class="sn-quick-menu">
         <div class="login"><a href="consumer_center.html">个人中心</a></div>
-        <div class="sp-cart"><a href="shopcart.html">购物车</a><span>2</span></div>
+        <div class="sp-cart"><a href="shopcart.html">购物车</a><span id="cart-num">0</span></div>
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@
           </a>
         </h1>
         <div class="mallSearch">
-          <form action="" class="layui-form" novalidate>
+          <form action="search_list.html" class="layui-form" novalidate>
             <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入需要的商品">
             <button class="layui-btn" lay-submit lay-filter="formDemo">
                 <i class="layui-icon layui-icon-search"></i>
@@ -100,36 +100,7 @@
       </div>
       <div class="OrderList">
         <div class="order-content" id="list-cont">
-          <!--<ul class="item-content layui-clear">
-            <li class="th th-chk" style="width: 125px;margin-left: 20px;">
-              <span style="color: gray;">416658400761476179</span>
-              <span style="color: gray;">时间：2019-04-12</span>
-            </li>
-            <li class="th th-item" style="width: 400px;margin-left: 100px;">
-              <div class="item-cont">
-                <a href="javascript:"><img src="res/static/img/paging_img1.jpg" alt=""></a>
-                <div class="text">
-                  <div class="title">宝宝T恤棉质小衫</div>
-                  <p><span>衣服</span><br>
-                    <span>商品ID：</span><span class="goodsid">000000000</span>
-                  </p>
 
-                </div>
-              </div>
-            </li>
-            <li class="th th-price" style="margin-left: -140px;">
-              <span class="th-su">189.00</span>
-            </li>
-            <li class="th th-amount" style="margin-left: -50px;">
-              <p>1</p>
-            </li>
-            <li class="th th-sum">
-              <span class="sum">189.00</span>
-            </li>
-            <li class="th th-op">
-              <span >交易完成</span>
-            </li>
-          </ul>-->
         </div>
       </div>
       <div class="FloatBarHolder layui-clear">
@@ -139,36 +110,54 @@
   </div>
 
 
+  <script>
+    getCartNum();
+    function getCartNum(){  //获取购物车中商品数量
+      var index = 0;
+      for(var i=0;i<30;i++)
+      {
+        if($.cookie(i.toString()) == null)
+        {
+          continue;
+        }
+        else
+        {
+          index++;
+        }
+      }
+      $("#cart-num").html(index);
+    }
+  </script>
+
   <script type="text/html" id="demo">
     {{# layui.each(d.orderList,function(index,item){}}
       <ul class="item-content layui-clear">
         <li class="th th-chk" style="width: 125px;margin-left: 20px;">
-          <span style="color: gray;">{{item.orderid}}</span>
-          <span style="color: gray;">时间：{{item.time}}</span>
+          <span style="color: gray;">{{item.order_id}}</span>
         </li>
         <li class="th th-item" style="width: 400px;margin-left: 100px;">
           <div class="item-cont">
-            <a href="{{item.href}}"><img src="{{item.img}}" alt=""></a>
+            <img src="{{item.item_image_path}}" alt="">
             <div class="text">
-              <div class="title">{{item.title}}</div>
+              <div class="title">{{item.item_title}}</div>
               <p><span>{{item.category}}</span><br>
-                <span>商品ID：</span><span class="goodsid">{{item.goodsid}}</span>
+                <span>商品ID：</span><span class="goodsid">{{item.item_id}}</span>
               </p>
 
             </div>
           </div>
         </li>
         <li class="th th-price" style="margin-left: -140px;">
-          <span class="th-su">{{item.unprice}}</span>
+          <span class="th-su">{{item.item_price}}</span>
         </li>
         <li class="th th-amount" style="margin-left: -50px;">
-          <p>{{item.number}}</p>
+          <p>{{item.item_num}}</p>
         </li>
         <li class="th th-sum">
-          <span class="sum">{{item.totalprice}}</span>
+          <span class="sum">{{item.payment}}</span>
         </li>
         <li class="th th-op">
-          <span >{{item.status}}</span>
+          <span >{{item.order_state}}</span>
         </li>
       </ul>
     {{# }); }}
@@ -186,7 +175,7 @@
       var html = demo.innerHTML;
       var listCont = document.getElementById('list-cont');
       mm.request({
-        url: 'json/order.json',
+        url: 'orderInfo',
         success : function(res) {
             console.log(res);
             listCont.innerHTML = mm.renderHtml(html, res);

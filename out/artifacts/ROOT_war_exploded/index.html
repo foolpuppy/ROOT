@@ -38,7 +38,7 @@
                 </a>
             </h1>
             <div class="mallSearch">
-                <form action="search" class="layui-form" novalidate>
+                <form action="search_list.html" class="layui-form" novalidate>
                     <input type="text" name="title" required lay-verify="required" autocomplete="off"
                            class="layui-input" placeholder="请输入需要的商品">
                     <button class="layui-btn" lay-submit lay-filter="formDemo">
@@ -62,13 +62,13 @@
         </div>
     </div>
     <div class="category-banner">
-            <div class="layui-carousel" id="test1">
-                <div carousel-item="">
-                    <div><img src="res/static/img/banner1.jpg"></div>
-                    <div><img src="res/static/img/banner1.jpg"></div>
-                    <div><img src="res/static/img/banner1.jpg"></div>
-                </div>
+        <div class="layui-carousel" id="test1">
+            <div carousel-item="">
+                <div><img src="res/static/img/banner1.jpg"></div>
+                <div><img src="res/static/img/banner1.jpg"></div>
+                <div><img src="res/static/img/banner1.jpg"></div>
             </div>
+        </div>
     </div>
     <div class="category-con">
         <div class="category-inner-con w1200">
@@ -78,44 +78,44 @@
             <div class="category-tab-content">
                 <div class="nav-con">
                     <ul class="normal-nav layui-clear">
-                        <li class="nav-item"><a href="">
-                            <div class="title">电子产品</div>
+                        <li class="nav-item"><a href="search_list.html?category=笔记本电脑">
+                            <div class="title">笔记本电脑</div>
                             <p><a href="">手机</a><a href="">电脑</a><a href="">配件</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
                         </li>
-                        <li class="nav-item"><a href="">
-                            <div class="title">服装鞋包</div>
-                            <p><a href="">男士</a><a href="">女士</a><a href="">鞋包</a></p>
+                        <li class="nav-item"><a href="search_list.html?category=白酒">
+                            <div class="title">中外名酒</div>
+                            <p><a href="">白酒</a><a href="">红酒</a><a href="">葡萄酒</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
                         </li>
-                        <li class="nav-item"><a href="">
-                            <div class="title">母婴玩具</div>
-                            <p><a href="">奶粉</a><a href="">捕食</a><a href="">营养品</a></p>
+                        <li class="nav-item"><a href="search_list.html?category=耳机耳麦">
+                            <div class="title">电子配件</div>
+                            <p><a href="">耳机</a><a href="">耳麦</a><a href="">其他配件</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
                         </li>
-                        <li class="nav-item"><a href="">
-                            <div class="title">生鲜水果</div>
+                        <li class="nav-item"><a href="search_list.html?category=水果生鲜">
+                            <div class="title">水果生鲜</div>
                             <p><a href="">水果</a><a href="">海鲜</a><a href="">特产</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
                         </li>
-                        <li class="nav-item"><a href="">
+                        <li class="nav-item"><a href="search_list.html?category=美妆馆">
                             <div class="title">美妆产品</div>
                             <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
                         </li>
-                        <li class="nav-item"><a href="">
-                            <div class="title">美妆产品</div>
-                            <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
+                        <li class="nav-item"><a href="search_list.html?category=家用电器">
+                            <div class="title">家用电器</div>
+                            <p><a href="">电视</a><a href="">空调</a><a href="">洗衣机</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
                         </li>
-                        <li class="nav-item"><a href="">
-                            <div class="title">美妆产品</div>
-                            <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
+                        <li class="nav-item"><a href="search_list.html?category=居家日用">
+                            <div class="title">居家日用</div>
+                            <p><a href="">水具酒具</a><a href="">烹饪锅具</a><a href="">抱枕靠垫</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
                         </li>
-                        <li class="nav-item nobor" ><a href="">
-                            <div class="title">美妆产品</div>
-                            <p><a href="">化妆品</a><a href="">护肤品</a><a href="">营养品</a></p>
+                        <li class="nav-item nobor"><a href="search_list.html?category=汽车用品">
+                            <div class="title">汽车用品</div>
+                            <p><a href="">行车记录仪</a><a href="">车载充电器</a><a href="">蓄电池</a></p>
                             <i class="layui-icon layui-icon-right"></i></a>
                         </li>
                     </ul>
@@ -155,7 +155,7 @@
 
 
     <!--楼层展示-->
-    <div class="product-cont w1200" id="product-cont" >
+    <div class="product-cont w1200" id="product-cont">
 
     </div>
 
@@ -211,7 +211,7 @@
 
 <script type="text/html" id="demo1">
     {{# layui.each(d.proct,function(index,item){}}
-    <div class="product-item {{item.productItem}} layui-clear" >
+    <div class="product-item {{item.productItem}} layui-clear">
         <div class="left-title">
             <h4><i>{{item.floorNum}}</i></h4>
             <img src="{{item.carImg}}">
@@ -219,9 +219,9 @@
         </div>
         <div class="right-cont">
             <img src="{{item.bigImg}}" alt="">
-            <div class="img-box" >
+            <div class="img-box">
                 {{# layui.each(item.imgBox,function(index1,item1){}}
-                    <a href="details.html?id={{item1.id}}"><img src="{{item1.item_image_path}}"></a>
+                <a href="details.html?id={{item1.id}}"><img src="{{item1.item_image_path}}"></a>
                 {{# }); }}
             </div>
         </div>
@@ -232,11 +232,12 @@
 
 <script type="text/html" id="demo2">
     {{# layui.each(d.productList,function(index,item){}}
-        <div class="list-item">
-            <a href="details.html?id={{item.id}}"><img src="{{item.item_image_path}}" style="width: 160px;height: 210px;padding: 0px;"></a>
-            <p style="height:40px;font-size: 10px;overflow: hidden;">{{item.title}}</p>
-            <span>￥{{item.price}}</span>
-        </div>
+    <div class="list-item">
+        <a href="details.html?id={{item.id}}"><img src="{{item.item_image_path}}"
+                                                   style="width: 160px;height: 210px;padding: 0px;"></a>
+        <p style="height:40px;font-size: 10px;overflow: hidden;">{{item.title}}</p>
+        <span>￥{{item.price}}</span>
+    </div>
     {{# }); }}
 </script>
 
@@ -290,14 +291,14 @@
         var productList = document.getElementById('product-box-list');
         mm.request({
             url: 'init',
-            success : function(res){
+            success: function (res) {
                 console.log(res);
-                listCont.innerHTML = mm.renderHtml(html,res);
-                listCont1.innerHTML = mm.renderHtml(html,res);
-                proct.innerHTML = mm.renderHtml(html_proct,res);
-                productList.innerHTML = mm.renderHtml(html_productList,res)
+                listCont.innerHTML = mm.renderHtml(html, res);
+                listCont1.innerHTML = mm.renderHtml(html, res);
+                proct.innerHTML = mm.renderHtml(html_proct, res);
+                productList.innerHTML = mm.renderHtml(html_productList, res)
             },
-            error: function(res){
+            error: function (res) {
                 console.log(res);
             }
         })
@@ -330,16 +331,12 @@
             return "";
         }
 
-        function getCartNum(){  //获取购物车中商品数量
+        function getCartNum() {  //获取购物车中商品数量
             var index = 0;
-            while(true)
-            {
-                if($.cookie(index.toString()) == null)
-                {
-                    break;
-                }
-                else
-                {
+            for (var i = 0; i < 30; i++) {
+                if ($.cookie(i.toString()) == null) {
+                    continue;
+                } else {
                     index++;
                 }
             }

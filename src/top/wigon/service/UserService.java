@@ -71,4 +71,6 @@ public interface UserService {
      * @return
      */
     public String getUserOrderInfoByTel(String tel);
+
+    String getUserOrderUnPaidInfoByTel(String tel);
 }

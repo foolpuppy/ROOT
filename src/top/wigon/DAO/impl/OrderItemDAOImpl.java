@@ -15,6 +15,7 @@ import java.util.Map;
  **/
 public class OrderItemDAOImpl implements OrderItemDAO {
     private final String tableName = "tb_order_item";
+    private final String QUERY_PRICE_BY_ID = "SELECT item_price FROM `tb_item` where item_id=?";
 
     @Override
     public OrderItem findByEntity(OrderItem orderItem) {

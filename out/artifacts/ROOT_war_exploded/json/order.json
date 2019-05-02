@@ -1,13 +1,44 @@
 {
-	"status":0,
-  "orderList":[
-    {"orderid":"416658400761476179","time": "2019-04-12","href": "javascript:","img":"res/static/img/paging_img1.jpg","title":"宝宝T恤棉质小衫","category":"衣服","goodsid": "000000000","unprice": "189.00","number": "1","totalprice": "189.00","status":"交易完成"}
-    ,{"orderid":"416658400761476179","time": "2019-04-12","href": "javascript:","img":"res/static/img/paging_img1.jpg","title":"宝宝T恤棉质小衫","category":"衣服","goodsid": "000000000","unprice": "189.00","number": "1","totalprice": "189.00","status":"交易完成"}
-    ,{"orderid":"416658400761476179","time": "2019-04-12","href": "javascript:","img":"res/static/img/paging_img1.jpg","title":"宝宝T恤棉质小衫","category":"衣服","goodsid": "000000000","unprice": "189.00","number": "1","totalprice": "189.00","status":"交易完成"}],
-
-  "packageList":[
-    {"orderid":"416658400761476179","time": "2019-04-12","href": "javascript:","img":"res/static/img/paging_img1.jpg","title":"宝宝T恤棉质小衫","category":"衣服","goodsid": "000000000","number": "1","totalprice": "189.00","packageInfo":"商品已打包出厂<br>包裹已离开深圳<br>包裹到达武汉转运中心","status":"待收货"}
-  ,{"orderid":"416658400761476179","time": "2019-04-12","href": "javascript:","img":"res/static/img/paging_img1.jpg","title":"宝宝T恤棉质小衫","category":"衣服","goodsid": "000000000","number": "1","totalprice": "189.00","packageInfo":"商品已打包出厂<br>包裹已离开深圳<br>包裹到达武汉转运中心","status":"待收货"}
-  ,{"orderid":"416658400761476179","time": "2019-04-12","href": "javascript:","img":"res/static/img/paging_img1.jpg","title":"宝宝T恤棉质小衫","category":"衣服","goodsid": "000000000","number": "1","totalprice": "189.00","packageInfo":"商品已打包出厂<br>包裹已离开深圳<br>包裹到达武汉转运中心","status":"待收货"}]
-
+  "status": 0,
+  "orderList": [
+    {
+      "orderid": "416658400761476179",
+      "time": "2019-04-12",
+      "href": "javascript:",
+      "img": "res/static/img/paging_img1.jpg",
+      "title": "宝宝T恤棉质小衫",
+      "category": "衣服",
+      "goodsid": "000000000",
+      "unprice": "189.00",
+      "number": "1",
+      "totalprice": "189.00",
+      "status": "交易完成"
+    },
+    {
+      "orderid": "416658400761476179",
+      "time": "2019-04-12",
+      "href": "javascript:",
+      "img": "res/static/img/paging_img1.jpg",
+      "title": "宝宝T恤棉质小衫",
+      "category": "衣服",
+      "goodsid": "000000000",
+      "unprice": "189.00",
+      "number": "1",
+      "totalprice": "189.00",
+      "status": "交易完成"
+    },
+    {
+      "orderid": "416658400761476179",
+      "time": "2019-04-12",
+      "href": "javascript:",
+      "img": "res/static/img/paging_img1.jpg",
+      "title": "宝宝T恤棉质小衫",
+      "category": "衣服",
+      "goodsid": "000000000",
+      "unprice": "189.00",
+      "number": "1",
+      "totalprice": "189.00",
+      "status": "交易完成"
+    }
+  ]
 }

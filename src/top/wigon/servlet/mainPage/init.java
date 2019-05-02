@@ -39,16 +39,16 @@ public class init extends HttpServlet {
         JSON = objectMapper.writeValueAsString(items_0f);
         content.append(JSON);
         content.append("}},");
-        content.append("\"proct\": [{\"floorNum\": \"1F\",\"productItem\": \"product-item1\",\"carImg\": \"res/static/img/icon_gou.png\", \"text\": \"电子产品\",\"bigImg\": \"res/static/img/img1.jpg\",\n" +
+        content.append("\"proct\": [{\"floorNum\": \"1F\",\"productItem\": \"product-item1\",\"carImg\": \"res/static/img/icon_gou.png\", \"text\": \"电子产品\",\"bigImg\": \"res/static/img/img12.jpg\",\n" +
                 " \"imgBox\":");
         JSON = objectMapper.writeValueAsString(items_1f);
         content.append(JSON);
         content.append("},");
-        content.append("{\"floorNum\": \"2F\",\"productItem\": \"product-item2\",\"carImg\": \"res/static/img/icon_gou.png\",\"text\": \"水果生鲜\",\"bigImg\": \"res/static/img/img2.jpg\",\"imgBox\": ");
+        content.append("{\"floorNum\": \"2F\",\"productItem\": \"product-item2\",\"carImg\": \"res/static/img/icon_gou.png\",\"text\": \"水果生鲜\",\"bigImg\": \"res/static/img/img12.jpg\",\"imgBox\": ");
         JSON = objectMapper.writeValueAsString(items_2f);
         content.append(JSON);
         content.append("},");
-        content.append("{\"floorNum\": \"3F\",\"productItem\": \"product-item3\",\"carImg\": \"res/static/img/icon_gou.png\", \"text\": \"美妆馆\",\"bigImg\": \"res/static/img/img3.jpg\",\"imgBox\": ");
+        content.append("{\"floorNum\": \"3F\",\"productItem\": \"product-item3\",\"carImg\": \"res/static/img/icon_gou.png\", \"text\": \"美妆馆\",\"bigImg\": \"res/static/img/img12.jpg\",\"imgBox\": ");
         JSON = objectMapper.writeValueAsString(items_3f);
         content.append(JSON);
         content.append("}],");

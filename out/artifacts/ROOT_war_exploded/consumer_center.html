@@ -8,6 +8,7 @@
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <link rel="stylesheet" href="res/static/iconfont/iconfont.css">
   <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="res/static/js/util/jquery.cookie.js"></script>
   <script src="res/static/iconfont/iconfont.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -37,7 +38,7 @@
           </a>
         </h1>
         <div class="mallSearch">
-          <form action="" class="layui-form" novalidate>
+          <form action="search_list.html" class="layui-form" novalidate>
             <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入需要的商品">
             <button class="layui-btn" lay-submit lay-filter="formDemo">
                 <i class="layui-icon layui-icon-search"></i>
@@ -77,15 +78,15 @@
               
               <div class="consumer_center_tab">
                 <div class="top_tab">   
-                  <img src="res/static/img/new1.jpg">
+                  <img id="img" src="res/static/img/new1.jpg">
                   <div class="user">
-                    <p>用户1</p><br>
+                    <p id="username">用户1</p><br>
                     <a href="consumer_info.html">修改个人信息>></a>
                   </div>
                   <div class="info">
-                    用户ID：000000000<br><br>
-                    绑定手机：135******64<br><br>
-                    绑定邮箱：101*******@q*.com
+                    <p id="id">用户ID：000000000</p><br>
+                    <p id="phone">绑定手机：135******64</p><br>
+                    <p id="email">绑定邮箱：101*******@q*.com
                   </div>
                 </div>
                 <hr>
@@ -95,7 +96,7 @@
                       <div class="mycart">
                         <span class="iconfont icon-gouwu"></span>
                         <div class="mycart-info">
-                          <p>购物车中的订单：0</p>  <br>
+                          <p>购物车中的订单</p>  <br>
                           <a href="shopcart.html">查看购物车></a>
                         </div>
                       </div>
@@ -104,7 +105,7 @@
                       <div class="mycart">
                         <span class="iconfont icon-dingdan"></span>
                         <div class="mycart-info">
-                          <p>我的所有订单：0</p>  <br>
+                          <p>我的所有订单</p>  <br>
                           <a href="all_order.html">查看所有订单></a>
                         </div>
                       </div>
@@ -113,7 +114,7 @@
                       <div class="mycart">
                         <span class="iconfont icon-kuaidi"></span>
                         <div class="mycart-info">
-                          <p>我的所有物流：0</p>  <br>
+                          <p>我的所有物流</p>  <br>
                           <a href="package.html">查看我的物流></a>
                         </div>
                       </div>
@@ -122,7 +123,7 @@
                       <div class="mycart">
                         <span class="iconfont icon-dianpu"></span>
                         <div class="mycart-info">
-                          <p>我的店铺：0</p>  <br>
+                          <p>我的店铺</p>  <br>
                           <a href="">查看我的店铺></a>
                         </div>
                       </div>
@@ -168,12 +169,17 @@
 
 <script type="text/javascript">
   $(function(){
+    var userTel = $.cookie("userTel");
     $.ajax({
       url : "GetUserInfo",
       type : "post",
-      data : {"username":username },
+      data : {"userTel":userTel },
       success : function(data) {
-        $(".username").val() = username;
+        $("#img").prop("src" ,img);
+        $("#username").val(username);
+        $("#id").val("用户ID"+id);
+        $("#phone").val("用户电话"+phone);
+        $("#email").val("用户邮箱"+email);
       }
     });
   })

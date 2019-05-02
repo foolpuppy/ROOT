@@ -77,5 +77,10 @@ public class ItemServiceImpl implements ItemService {
         item.setId(item_id);
         return dao.findByEntity(item);
     }
+    public String getItemPriceById(String item_id){
+        Item item=new Item();
+        item.setId(item_id);;
+        return dao.findByEntity(item).getPrice().toString();
+    }
 
 }

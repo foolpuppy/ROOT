@@ -20,8 +20,13 @@ public class GetUserOrderInfo extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserServiceImpl userService = new UserServiceImpl();
         String JSONResult = userService.getUserOrderInfoByTel((String) req.getSession().getAttribute("user_tel"));
+        StringBuilder content = new StringBuilder();
+        content.append("{\n" +
+                "  \"status\": 0,\n" +
+                "  \"orderList\":");
+        content.append(JSONResult);
+        content.append("}");
         resp.setContentType("text/plain; charset=UTF-8;");
-        resp.getWriter().write(JSONResult);
-
+        resp.getWriter().write(content.toString());
     }
 }
