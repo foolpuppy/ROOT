@@ -27,6 +27,11 @@ public class DelUserOrder extends HttpServlet {
         } else {
             resp.getWriter().write("删除失败");
         }
+        resp.sendRedirect("all_order.html");
+    }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
     }
 }

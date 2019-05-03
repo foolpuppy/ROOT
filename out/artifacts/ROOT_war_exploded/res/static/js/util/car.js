@@ -156,9 +156,9 @@ layui.define(['layer'], function (exports) {
                         var fee = parseInt($(".pieces-total").html().substr(1));
                         if (fee > 0) {
                             //提交订单
-                            $.ajaxSettings.traditional=true;
+                            $.ajaxSettings.traditional = true;
                             $.ajax({
-                                url: "CTEST",
+                                url: "CreateOrder",
                                 type: "post",
                                 dataType: "json",
                                 data: {"goodsList": list},
@@ -170,8 +170,11 @@ layui.define(['layer'], function (exports) {
                                             $.cookie(i.toString(), "", {expires: -1});
                                         }
                                     }
-                                }, error: function (data) {
-                                    alert(list);
+                                    if (data === 0) {
+                                        window.location.href = 'confirm_orders.html';
+                                    }
+                                }
+                                , error: function (data) {
 
                                 }
                             });

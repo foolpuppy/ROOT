@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
   <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="res/static/js/util/jquery.cookie.js"></script>
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -77,17 +78,17 @@
             商品
           </div>
         </div>
-        <div class="th th-price">
+        <div class="th th-price" >
           <div class="th-inner">
             单价
           </div>
         </div>
-        <div class="th th-amount" style="margin-left: -50px;">
+        <div class="th th-amount" style="margin-left: -100px;">
           <div class="th-inner">
             数量
           </div>
         </div>
-        <div class="th th-sum">
+        <div class="th th-sum" style="margin-left: -60px;">
           <div class="th-inner">
             实付款
           </div>
@@ -96,7 +97,12 @@
           <div class="th-inner">
             交易状态
           </div>
-        </div>  
+        </div>
+        <div class="th th-op">
+          <div class="th-inner">
+            操作
+          </div>
+        </div>
       </div>
       <div class="OrderList">
         <div class="order-content" id="list-cont">
@@ -133,13 +139,13 @@
     {{# layui.each(d.orderList,function(index,item){}}
       <ul class="item-content layui-clear">
         <li class="th th-chk" style="width: 125px;margin-left: 20px;">
-          <span style="color: gray;">{{item.order_id}}</span>
+          <span id="order_id" style="color: gray;">{{item.order_id}}</span>
         </li>
         <li class="th th-item" style="width: 400px;margin-left: 100px;">
           <div class="item-cont">
             <img src="{{item.item_image_path}}" alt="">
             <div class="text">
-              <div class="title">{{item.item_title}}</div>
+              <div class="title" style='height: 50px;overflow: hidden;'>{{item.item_title}}</div>
               <p><span>{{item.item_category}}</span><br>
                 <span>商品ID：</span><span class="goodsid">{{item.item_id}}</span>
               </p>
@@ -147,22 +153,24 @@
             </div>
           </div>
         </li>
-        <li class="th th-price" style="margin-left: -140px;">
+        <li class="th th-price" style="margin-left: -140px; vertical-align: middle;">
           <span class="th-su">{{item.item_price}}</span>
         </li>
-        <li class="th th-amount" style="margin-left: -50px;">
+        <li class="th th-amount" style="margin-left: -100px;">
           <p>{{item.item_num}}</p>
         </li>
-        <li class="th th-sum">
+        <li class="th th-sum" style="margin-left: -60px;">
           <span class="sum">{{item.payment}}</span>
         </li>
         <li class="th th-op">
-          <span >{{item.order_state}}</span>
+          <span id="order_state">{{item.order_state}}</span>
+        </li>
+        <li class="th th-op">
+          <span class="dele-btn">删除</span>
         </li>
       </ul>
     {{# }); }}
   </script>
-
 
 
 
@@ -179,6 +187,48 @@
         success : function(res) {
             console.log(res);
             listCont.innerHTML = mm.renderHtml(html, res);
+
+          <!--处理订单状态-->
+          var order_state =  $("#order_state").html();
+          var order_id = $("#order_id").html();
+          if(order_state == "1")
+          {
+            $("#order_state").html("<a href='GoPay?order_no="+order_id+"'>请付款</a>");
+          }
+          else if(order_state == "2")
+          {
+            $("#order_state").html("已付款");
+          }
+          else if(order_state == "3")
+          {
+            $("#order_state").html("未发货");
+          }
+          else if(order_state == "4")
+          {
+            $("#order_state").html("已发货");
+          }
+          else if(order_state == "5")
+          {
+            $("#order_state").html("交易成功");
+          }
+          else
+          {
+            $("#order_state").html("交易失败");
+          }
+
+          //处理删除事件
+          $(".dele-btn").click(function () {
+            var order_id = $("#order_id").html();
+            var r = confirm("你确定要删除吗")
+            if(r)
+            {
+              window.location.href = "delUserOrder?order_no="+order_id;
+            }
+
+          })
+
+
+
         },
           error: function(res) {
               console.log(res);
@@ -187,6 +237,8 @@
 
     });
   </script>
+
+
 
 </body>
 </html>

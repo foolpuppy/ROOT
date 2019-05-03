@@ -150,7 +150,7 @@
             </div>
         </li>
         <li class="th " style="float: right;margin-right: 100px;color: red">
-            <span>{{item.orderState}}</span>
+            <span id="order_state">{{item.orderState}}</span>
         </li>
     </ul>
     {{# }); }}
@@ -170,6 +170,34 @@
             success: function (res) {
                 console.log(res);
                 listCont.innerHTML = mm.renderHtml(html, res);
+
+                var order_state =  $("#order_state").html();
+                if(order_state == "1")
+                {
+                    $("#order_state").html("未付款");
+                }
+                else if(order_state == "2")
+                {
+                    $("#order_state").html("已付款");
+                }
+                else if(order_state == "3")
+                {
+                    $("#order_state").html("未发货");
+                }
+                else if(order_state == "4")
+                {
+                    $("#order_state").html("已发货");
+                }
+                else if(order_state == "5")
+                {
+                    $("#order_state").html("交易成功");
+                }
+                else
+                {
+                    $("#order_state").html("交易失败");
+                }
+
+
             },
             error: function (res) {
                 console.log(res);

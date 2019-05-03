@@ -40,9 +40,10 @@ public class CreateOrder extends HttpServlet {
                 OrderServiceImpl orderService = new OrderServiceImpl();
                 ItemServiceImpl itemService = new ItemServiceImpl();
                 List<OrderItem> cartItem = new ArrayList<>();
+                OrderItem item;
                 //单个商品
-                {
-                    OrderItem item = new OrderItem();
+                if (req.getParameter("id") != null && req.getParameter("number") != null && req.getParameter("id") != null) {
+                    item = new OrderItem();
                     item.setItemId(Integer.parseInt(req.getParameter("id")));
                     item.setTitle(req.getParameter("title"));
                     item.setNum(Integer.parseInt(req.getParameter("number")));
@@ -50,6 +51,17 @@ public class CreateOrder extends HttpServlet {
                     item.setPrice(new BigDecimal(itemService.getItemPriceById(req.getParameter("id"))));
 
                     cartItem.add(item);
+                } else {
+                    String[] res = req.getParameterValues("goodsList");
+                    item = new OrderItem();
+                    for (String re : res) {
+                        item.setItemId(Integer.parseInt(re.split(",")[0]));
+                        item.setTitle(re.split(",")[1]);
+                        item.setNum(Integer.parseInt(re.split(",")[2]));
+                        item.setOrderId(order.getOrderId());
+                        item.setPrice(new BigDecimal(itemService.getItemPriceById(re.split(",")[0])));
+                        cartItem.add(item);
+                    }
                 }
                 boolean flag = orderService.createOrder(order);
                 //订单创建完成吧订单号存入session
