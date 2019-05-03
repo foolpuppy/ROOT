@@ -17,12 +17,13 @@ public class Shipping implements Serializable {
     private String receiverDistrict;
     private String receiverAddress;
     private String receiverZip;
+    private String currLoc;
     private String createTime;
 
     public Shipping() {
     }
 
-    public Shipping(String id, String orderId, String receiverName, String receiverTel, String receiverState, String receiverCity, String receiverDistrict, String receiverAddress, String receiverZip, String createTime) {
+    public Shipping(String id, String orderId, String receiverName, String receiverTel, String receiverState, String receiverCity, String receiverDistrict, String receiverAddress, String receiverZip, String currLoc, String createTime) {
         this.id = id;
         this.orderId = orderId;
         this.receiverName = receiverName;
@@ -32,7 +33,16 @@ public class Shipping implements Serializable {
         this.receiverDistrict = receiverDistrict;
         this.receiverAddress = receiverAddress;
         this.receiverZip = receiverZip;
+        this.currLoc = currLoc;
         this.createTime = createTime;
+    }
+
+    public String getCurrLoc() {
+        return currLoc;
+    }
+
+    public void setCurrLoc(String currLoc) {
+        this.currLoc = currLoc;
     }
 
     public String getId() {

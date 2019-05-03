@@ -51,14 +51,14 @@
       </ul>
       <div class="layui-tab-content" >
         <div class="layui-tab-item layui-show layui-tab-item1">
-          <div><img id="img" src="res/static/img/new1.jpg"><br><br><a href="" class="modify-hader" style="color: red">修改头像</a></div>
+          <div><img id="img" src=""></div>
 
           <div class="layui-tab-item1-info">
             <div class="layui-form-item">
               <div class="layui-inline">
                   <label  class="layui-form-label">用户ID</label>
                    <div class="layui-input-inline">
-                  <label id="id" class="layui-form-label" name="userid">000000000</label>
+                  <label id="id" class="layui-form-label" name="userid" style="text-align: left;"></label>
                 </div>
               </div>
             </div>
@@ -66,35 +66,24 @@
               <div class="layui-inline">
                   <label  class="layui-form-label">手机号</label>
                    <div class="layui-input-inline">
-                  <label id="phone" class="layui-form-label" name="phone">135******64</label>
+                  <label id="phone" class="layui-form-label" name="phone" style="text-align: left;"></label>
                 </div>
               </div>
             </div>
              <div class="layui-form-item">
               <div class="layui-inline">
                   <label class="layui-form-label">姓名</label>
-                   <div class="layui-input-inline">
-                  <input id="username" type="text" name="username"  class="layui-input username" readonly="readonly">
-                </div>
-                <a href="#" class="modify-username" style="color: red">修改</a>
+                  <div class="layui-input-inline">
+                      <label id="username" class="layui-form-label" name="username" style="text-align: left;"></label>
+                  </div>
               </div>
             </div>
             <div class="layui-form-item">
               <div class="layui-inline">
                   <label class="layui-form-label">邮箱</label>
-                   <div class="layui-input-inline">
-                    <input type="text" id="email" name="email"  class="layui-input" readonly="readonly">
-                </div>
-                <a href="#" class="modify-email" style="color: red">修改</a>
-              </div>
-            </div>
-            <div class="layui-form-item">
-              <div class="layui-inline">
-                  <label class="layui-form-label">密码</label>
-                   <div class="layui-input-inline">
-                  <input type="text" name="password" id="password" class="layui-input" readonly="readonly">
-                </div>
-                <a href="#" class="modify-password" style="color: red">修改</a>
+                  <div class="layui-input-inline">
+                      <label id="email" class="layui-form-label" name="email" style="text-align: left;"></label>
+                  </div>
               </div>
             </div>
         </div>
@@ -158,16 +147,16 @@
       $(function(){
           var userTel = $.cookie("userTel");
           $.ajax({
-              url : "GetUserInfo",
+              url : "userInfo",
               type : "post",
               data : {"userTel":userTel },
+              dataType: "json",
               success : function(data) {
-                  $("#img").prop("src" ,img);
-                  $("#id").val(id);
-                  $("#phone").val(phone);
-                  $("#username").val(username);
-                  $("#password").val(password);
-                  $("#email").val(email);
+                  $("#img").prop("src" ,data.avatarPath);
+                  $("#id").html(data.userId);
+                  $("#phone").html(data.tel);
+                  $("#username").html(data.userName);
+                  $("#email").html(data.email);
               }
           });
       })
@@ -189,7 +178,7 @@ layui.use('element', function(){
 </script>
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
 
   layui.define(['layer'],function(exports){
   var layer = layui.layer;
@@ -359,7 +348,7 @@ layui.use('element', function(){
     })
 });
 
-</script>
+</script>-->
 
 </body>
 </html>

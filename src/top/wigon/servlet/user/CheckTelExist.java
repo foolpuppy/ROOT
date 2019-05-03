@@ -26,6 +26,7 @@ public class CheckTelExist extends HttpServlet {
         /**
          * 判断电话号是否存在在数据库
          */
+        resp.setContentType("text/plain; charset=UTF-8;");
         resp.getWriter().write(isExist ? "1" : "0");
     }
 }

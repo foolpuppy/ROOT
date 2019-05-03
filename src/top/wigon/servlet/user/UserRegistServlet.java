@@ -44,7 +44,6 @@ public class UserRegistServlet extends HttpServlet {
                 resp.sendRedirect("register.html");
             }
         } else {
-            //TODO 手机号已存在
         }
     }
 

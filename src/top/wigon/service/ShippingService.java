@@ -1,6 +1,9 @@
 package top.wigon.service;
 
+import top.wigon.entity.Package;
 import top.wigon.entity.Shipping;
+
+import java.util.List;
 
 /**
  * @author L
@@ -10,8 +13,19 @@ import top.wigon.entity.Shipping;
 public interface ShippingService {
     /**
      * 添加物流信息
+     *
      * @param shipping
      * @return
      */
     Boolean add(Shipping shipping);
+
+    /**
+     * 订单号取物流信息
+     *
+     * @param order_id
+     * @return
+     */
+    List<Package> getShippingInfoByOrderId(String order_id);
+
+    List<Package> getShippingInfoByUserId(String order_id);
 }

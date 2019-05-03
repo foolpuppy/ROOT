@@ -80,13 +80,13 @@
                 <div class="top_tab">   
                   <img id="img" src="res/static/img/new1.jpg">
                   <div class="user">
-                    <p id="username">用户1</p><br>
-                    <a href="consumer_info.html">修改个人信息>></a>
+                    <p id="username"></p><br>
+                    <a href="consumer_info.html">查看个人信息>></a>
                   </div>
                   <div class="info">
-                    <p id="id">用户ID：000000000</p><br>
-                    <p id="phone">绑定手机：135******64</p><br>
-                    <p id="email">绑定邮箱：101*******@q*.com
+                    <p id="id"></p><br>
+                    <p id="phone"></p><br>
+                    <p id="email"></p>
                   </div>
                 </div>
                 <hr>
@@ -96,7 +96,7 @@
                       <div class="mycart">
                         <span class="iconfont icon-gouwu"></span>
                         <div class="mycart-info">
-                          <p>购物车中的订单</p>  <br>
+                          <p>我的购物车</p>  <br>
                           <a href="shopcart.html">查看购物车></a>
                         </div>
                       </div>
@@ -171,15 +171,16 @@
   $(function(){
     var userTel = $.cookie("userTel");
     $.ajax({
-      url : "GetUserInfo",
+      url : "userInfo",
       type : "post",
       data : {"userTel":userTel },
+      dataType: "json",
       success : function(data) {
-        $("#img").prop("src" ,img);
-        $("#username").val(username);
-        $("#id").val("用户ID"+id);
-        $("#phone").val("用户电话"+phone);
-        $("#email").val("用户邮箱"+email);
+          $("#img").prop("src" ,data.avatarPath);
+          $("#username").html(data.userName);
+          $("#id").html("用户ID："+data.userId);
+          $("#phone").html("用户电话："+data.tel);
+          $("#email").html("用户邮箱："+data.email);
       }
     });
   })

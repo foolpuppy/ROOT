@@ -1,185 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>待收货</title>
-  <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
-  <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
-  <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="res/layui/layui.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta charset="UTF-8">
+    <title>待收货</title>
+    <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
+    <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="res/static/js/util/jquery.cookie.js"></script>
+    <script type="text/javascript" src="res/layui/layui.js"></script>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 </head>
 <body>
 
-  <div class="site-nav-bg">
+<div class="site-nav-bg">
     <div class="site-nav w1200">
-      <p class="sn-back-home">
-        <i class="layui-icon layui-icon-home"></i>
-        <a href="index.html">首页</a>
-      </p>
-      <div class="sn-quick-menu">
-        <div class="login"><a href="consumer_center.html">个人中心</a></div>
-        <div class="sp-cart"><a href="shopcart.html">购物车</a><span id="cart-num">0</span></div>
-      </div>
+        <p class="sn-back-home">
+            <i class="layui-icon layui-icon-home"></i>
+            <a href="index.html">首页</a>
+        </p>
+        <div class="sn-quick-menu">
+            <div class="login"><a href="consumer_center.html">个人中心</a></div>
+            <div class="sp-cart"><a href="shopcart.html">购物车</a><span id="cart-num">0</span></div>
+        </div>
     </div>
-  </div>
+</div>
 
 
-
-  <div class="header">
+<div class="header">
     <div class="headerLayout w1200">
-      <div class="headerCon">
-        <h1 class="mallLogo">
-          <a href="#" title="母婴商城">
-            <img src="res/static/img/logo.png">
-          </a>
-        </h1>
-        <div class="mallSearch">
-          <form action="search_list.html" class="layui-form" novalidate>
-            <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入需要的商品">
-            <button class="layui-btn" lay-submit lay-filter="formDemo">
-                <i class="layui-icon layui-icon-search"></i>
-            </button>
-            <input type="hidden" name="" value="">
-          </form>
+        <div class="headerCon">
+            <h1 class="mallLogo">
+                <a href="#" title="母婴商城">
+                    <img src="res/static/img/logo.png">
+                </a>
+            </h1>
+            <div class="mallSearch">
+                <form action="search_list.html" class="layui-form" novalidate>
+                    <input type="text" name="title" required lay-verify="required" autocomplete="off"
+                           class="layui-input" placeholder="请输入需要的商品">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">
+                        <i class="layui-icon layui-icon-search"></i>
+                    </button>
+                    <input type="hidden" name="" value="">
+                </form>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 
-  <div class="content content-nav-base shopcart-content">
+<div class="content content-nav-base shopcart-content">
     <div class="main-nav">
-      <div class="inner-cont0">
-        <div class="inner-cont1 w1200">
-          <div class="inner-cont2">
-            <a href="shopcart.html" >购物车</a>
-            <a href="package.html" class="active">待收货</a>
-            <a href="all_order.html" >所有订单</a>
-          </div>
+        <div class="inner-cont0">
+            <div class="inner-cont1 w1200">
+                <div class="inner-cont2">
+                    <a href="shopcart.html">购物车</a>
+                    <a href="package.html" class="active">待收货</a>
+                    <a href="all_order.html">所有订单</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
     <div class="banner-bg w1200">
-      <h3>夏季清仓</h3>
-      <p>宝宝被子、宝宝衣服3折起</p>
+        <h3>夏季清仓</h3>
+        <p>宝宝被子、宝宝衣服3折起</p>
     </div>
     <div class="cart w1200">
-      <div class="cart-table-th">
-        <div class="th th-chk">
-          <div class="th-inner">
-            订单编号
-          </div>
+        <div class="cart-table-th">
+            <div class="th th-chk">
+                <div class="th-inner">
+                    订单编号
+                </div>
+            </div>
+            <div class="th th-item" style="margin-left: 50px;">
+                <div class="th-inner">
+                    商品
+                </div>
+            </div>
+            <div class="th th-amount" style="margin-left: -50px;">
+                <div class="th-inner">
+                    数量
+                </div>
+            </div>
+            <div class="th th-sum">
+                <div class="th-inner">
+                    物流信息
+                </div>
+            </div>
+            <div class="th " style="float: right;margin-right: 100px;">
+                <div class="th-inner">
+                    交易状态
+                </div>
+            </div>
         </div>
-        <div class="th th-item" style="margin-left: 50px;">
-          <div class="th-inner">
-            商品
-          </div>
+        <div class="OrderList">
+            <div class="order-content" id="list-cont">
+            </div>
         </div>
-        <div class="th th-amount" style="margin-left: -50px;">
-          <div class="th-inner">
-            数量
-          </div>
-        </div>
-        <div class="th th-sum">
-          <div class="th-inner">
-            物流信息
-          </div>
-        </div>
-        <div class="th " style="float: right;margin-right: 100px;">
-          <div class="th-inner">
-            交易状态
-          </div>
-        </div>  
-      </div>
-      <div class="OrderList">
-        <div class="order-content" id="list-cont">
-        </div>
-      </div>
 
-      <div class="FloatBarHolder layui-clear">
-       
-      </div>
+        <div class="FloatBarHolder layui-clear">
+
+        </div>
     </div>
-  </div>
+</div>
 
-  <script>
+<script>
     getCartNum();
-    function getCartNum(){  //获取购物车中商品数量
-      var index = 0;
-      for(var i=0;i<30;i++)
-      {
-        if($.cookie(i.toString()) == null)
-        {
-          continue;
+
+    function getCartNum() {  //获取购物车中商品数量
+        var index = 0;
+        for (var i = 0; i < 30; i++) {
+            if ($.cookie(i.toString()) == null) {
+                continue;
+            } else {
+                index++;
+            }
         }
-        else
-        {
-          index++;
-        }
-      }
-      $("#cart-num").html(index);
+        $("#cart-num").html(index);
     }
-  </script>
-  <script type="text/html" id="demo">
+</script>
+<script type="text/html" id="demo">
     {{# layui.each(d.packageList,function(index,item){}}
-      <ul class="item-content layui-clear">
+    <ul class="item-content layui-clear">
         <li class="th th-chk" style="width: 125px;margin-left: 20px;">
-          <span style="color: gray;">{{item.orderid}}</span>
-          <span style="color: gray;">时间：{{item.time}}</span>
+            <span style="color: gray;">{{item.orderid}}</span>
+            <!--          <span style="color: gray;">时间：{{item.time}}</span>-->
         </li>
         <li class="th th-item" style="width: 400px;margin-left: 100px;">
-          <div class="item-cont">
-            <a href="{{item.href}}"><img src="{{item.img}}" alt=""></a>
-            <div class="text">
-              <div class="title">{{item.title}}</div>
-              <p><span>{{item.category}}</span><br>
-                <span>商品ID：</span><span class="goodsid">{{item.goodsid}}</span><br>
-                <span>已付款：</span><span >{{item.totalprice}}</span><br>
-              </p>
+            <div class="item-cont">
+                <a href="{{item.href}}"><img src="{{item.imgPath}}" alt=""></a>
+                <div class="text">
+                    <div class="title">{{item.itemTitle}}</div>
+                    <p><span>{{item.itemCategory}}</span><br>
+                        <span>商品ID：</span><span class="goodsid">{{item.itemId}}</span><br>
+                        <span>已付款：</span><span>{{item.payment}}</span><br>
+                    </p>
 
+                </div>
             </div>
-          </div>
         </li>
         <li class="th " style="margin-left: -100px;">
-          <p>1</p>
+            <p>{{item.itemNums}}</p>
         </li>
         <li class="th th-sum" style="margin-left: 10px;color: gray;">
-          <div>
-            {{item.packageInfo}}
-          </div>
+            <div>
+                {{item.currLoc}}
+            </div>
         </li>
         <li class="th " style="float: right;margin-right: 100px;color: red">
-          <span >{{item.status}}</span>
+            <span>{{item.orderState}}</span>
         </li>
-      </ul>
+    </ul>
     {{# }); }}
-  </script>
+</script>
 
 
-
-
-  <script type="text/javascript">
+<script type="text/javascript">
     layui.config({
-      base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
+        base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
     }).use(['mm', 'carousel'], function () {
-      var carousel = layui.carousel,
-              mm = layui.mm;
-      var html = demo.innerHTML;
-      var listCont = document.getElementById('list-cont');
-      mm.request({
-        url: 'json/order.json',
-        success : function(res) {
-          console.log(res);
-          listCont.innerHTML = mm.renderHtml(html, res);
-        },
-        error: function(res) {
-          console.log(res);
-        }
-      })
+        var carousel = layui.carousel,
+            mm = layui.mm;
+        var html = demo.innerHTML;
+        var listCont = document.getElementById('list-cont');
+        mm.request({
+            url: 'getUserShippingByUserid',
+            success: function (res) {
+                console.log(res);
+                listCont.innerHTML = mm.renderHtml(html, res);
+            },
+            error: function (res) {
+                console.log(res);
+            }
+        })
 
     });
-  </script>
+</script>
 </body>
 </html>

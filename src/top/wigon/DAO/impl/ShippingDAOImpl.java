@@ -2,10 +2,14 @@ package top.wigon.DAO.impl;
 
 import top.wigon.DAO.ShippingDAO;
 import top.wigon.common.DBUtils;
+import top.wigon.common.Pack2Entity;
+import top.wigon.entity.Package;
 import top.wigon.entity.Shipping;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,6 +19,8 @@ import java.util.Map;
  **/
 public class ShippingDAOImpl implements ShippingDAO {
     private final String tableName = "tb_shipping";
+    private final String QUERY_SHIPPING_INFO_BY_USERID = "SELECT\ttb_order.order_id,tb_order.order_state,\ttb_order.user_id,\ttb_order.payment,\ttb_order.shipping_name,\ttb_order.shipping_code,\ttb_order.gmt_create,\ttb_order.gmt_modified,\ttb_order_item.item_num,\ttb_item.item_category,\ttb_order_item.item_title,\ttb_order_item.item_price,\ttb_order_item.total_fee,\ttb_order_item.item_id,\ttb_desc.item_image_path ,  tb_shipping.current_location FROM\ttb_order\tLEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id\tJOIN tb_desc ON tb_order_item.item_id = tb_desc.item_id\tJOIN tb_item ON tb_order_item.item_id = tb_item.item_id \tleft JOIN tb_shipping on tb_shipping.order_id=tb_order.order_id WHERE\ttb_order.order_id IN ( SELECT order_id FROM tb_order WHERE user_id = ? )";
+    private final String QUERY_SHIPPING_INFO_BY_ORDERID = "SELECT\ttb_order.order_id,tb_order.order_state,\ttb_order.user_id,\ttb_order.payment,\ttb_order.shipping_name,\ttb_order.shipping_code,\ttb_order.gmt_create,\ttb_order.gmt_modified,\ttb_order_item.item_num,\ttb_item.item_category,\ttb_order_item.item_title,\ttb_order_item.item_price,\ttb_order_item.total_fee,\ttb_order_item.item_id,\ttb_desc.item_image_path ,  tb_shipping.current_location FROM\ttb_order\tLEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id\tJOIN tb_desc ON tb_order_item.item_id = tb_desc.item_id\tJOIN tb_item ON tb_order_item.item_id = tb_item.item_id \tleft JOIN tb_shipping on tb_shipping.order_id=tb_order.order_id WHERE\ttb_order.order_id =?";
 
     @Override
     public Shipping findByEntity(Shipping shipping) {
@@ -67,6 +73,9 @@ public class ShippingDAOImpl implements ShippingDAO {
         valueMap.put("receiver_district", shipping.getReceiverDistrict());
         valueMap.put("receiver_address", shipping.getReceiverAddress());
         valueMap.put("receiver_zip", shipping.getReceiverZip());
+        if (shipping.getCurrLoc() != null) {
+            valueMap.put("current_location", shipping.getCurrLoc());
+        }
         return valueMap;
     }
 
@@ -75,5 +84,29 @@ public class ShippingDAOImpl implements ShippingDAO {
         Map<String, Object> pk = new HashMap<>();
         pk.put("id", shipping.getId());
         return pk;
+    }
+
+    @Override
+    public List<Package> getShippingInfoByOrderId(String order_id) {
+        List<Package> items = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.executeQuery(QUERY_SHIPPING_INFO_BY_ORDERID, new Object[]{order_id});
+            items = Pack2Entity.pack2Packages(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
+
+    @Override
+    public List<Package> getShippingInfoByUserId(String user_id) {
+        List<Package> items = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.executeQuery(QUERY_SHIPPING_INFO_BY_USERID, new Object[]{user_id});
+            items = Pack2Entity.pack2Packages(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return items;
     }
 }

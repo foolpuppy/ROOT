@@ -41,23 +41,26 @@ public class CreateOrder extends HttpServlet {
                 ItemServiceImpl itemService = new ItemServiceImpl();
                 List<OrderItem> cartItem = new ArrayList<>();
                 //单个商品
-                OrderItem item = new OrderItem();
-                item.setItemId(Integer.parseInt(req.getParameter("id")));
-                item.setTitle(req.getParameter("title"));
-                item.setNum(Integer.parseInt(req.getParameter("number")));
-                item.setOrderId(order.getOrderId());
-                item.setPrice(new BigDecimal(itemService.getItemPriceById(req.getParameter("id"))));
-                cartItem.add(item);
+                {
+                    OrderItem item = new OrderItem();
+                    item.setItemId(Integer.parseInt(req.getParameter("id")));
+                    item.setTitle(req.getParameter("title"));
+                    item.setNum(Integer.parseInt(req.getParameter("number")));
+                    item.setOrderId(order.getOrderId());
+                    item.setPrice(new BigDecimal(itemService.getItemPriceById(req.getParameter("id"))));
+
+                    cartItem.add(item);
+                }
                 boolean flag = orderService.createOrder(order);
                 //订单创建完成吧订单号存入session
                 if (flag) {
                     req.getSession().removeAttribute("order_no");
                     req.getSession().setAttribute("order_no", order.getOrderId());
-                    //todo 商品加入到数据库
                     OrderItemServiceImpl orderItemService = new OrderItemServiceImpl();
                     orderItemService.add(cartItem);
                     //跳转到用户信息界面
 //                    resp.sendRedirect("confirm_orders.html");
+                    resp.setContentType("text/plain; charset=UTF-8;");
                     resp.getWriter().write("0");
                 }
             } else {

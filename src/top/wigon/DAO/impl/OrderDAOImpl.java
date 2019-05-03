@@ -73,6 +73,20 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
+    public boolean delUserOrder(String order_id, String user_id) {
+        Map<String, Object> whereMap = new HashMap<>();
+        whereMap.put("order_id", order_id);
+        whereMap.put("user_id", user_id);
+        boolean flag = false;
+        try {
+            flag = DBUtils.delete(tableName, whereMap) == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    @Override
     public Map<String, Object> getValMap(Order order) {
         Map<String, Object> valueMap = new HashMap<>();
         valueMap.put("order_id", order.getOrderId());
@@ -87,8 +101,12 @@ public class OrderDAOImpl implements OrderDAO {
         valueMap.put("receive_time", order.getReceiveTime());
         valueMap.put("end_time", order.getEndTime());
         valueMap.put("close_time", order.getCloseTime());
-        valueMap.put("shipping_name", order.getShippingName());
-        valueMap.put("shipping_code", order.getShipingCode());
+        if (order.getShippingName() != null) {
+            valueMap.put("shipping_name", order.getShippingName());
+        }
+        if (order.getShipingCode() != null) {
+            valueMap.put("shipping_code", order.getShipingCode());
+        }
         return valueMap;
     }
 

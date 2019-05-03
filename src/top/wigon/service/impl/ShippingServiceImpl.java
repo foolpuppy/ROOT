@@ -1,8 +1,11 @@
 package top.wigon.service.impl;
 
 import top.wigon.DAO.impl.ShippingDAOImpl;
+import top.wigon.entity.Package;
 import top.wigon.entity.Shipping;
 import top.wigon.service.ShippingService;
+
+import java.util.List;
 
 /**
  * @author L
@@ -15,5 +18,14 @@ public class ShippingServiceImpl implements ShippingService {
     @Override
     public Boolean add(Shipping shipping) {
         return dao.addEntity(shipping);
+    }
+
+    @Override
+    public List<Package> getShippingInfoByOrderId(String order_id) {
+        return dao.getShippingInfoByOrderId(order_id);
+    }
+    @Override
+    public List<Package> getShippingInfoByUserId(String user_id) {
+        return dao.getShippingInfoByUserId(user_id);
     }
 }

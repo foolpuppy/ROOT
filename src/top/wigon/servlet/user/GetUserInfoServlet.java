@@ -26,4 +26,9 @@ public class GetUserInfoServlet extends HttpServlet {
         resp.setContentType("text/plain; charset=UTF-8;");
         resp.getWriter().write(objectMapper.writeValueAsString(userService.getUserByTel((String) req.getSession().getAttribute("user_tel"))));
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
 }

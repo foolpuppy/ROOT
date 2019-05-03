@@ -8,4 +8,5 @@ import top.wigon.entity.Order;
  * @date 2019/4/25 19:06
  **/
 public interface OrderDAO extends BaseDAO<Order> {
+    boolean delUserOrder(String order_id, String user_id);
 }

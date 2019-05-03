@@ -68,4 +68,8 @@ public class OrderServiceImpl implements OrderService {
         return flag;
     }
 
+    public Boolean delUserOrder(String order_id, String user_id) {
+        return dao.delUserOrder(order_id, user_id);
+    }
+
 }

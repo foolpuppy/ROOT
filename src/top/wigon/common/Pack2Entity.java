@@ -1,9 +1,7 @@
 package top.wigon.common;
 
-import top.wigon.entity.Item;
-import top.wigon.entity.ItemDesc;
-import top.wigon.entity.Order;
-import top.wigon.entity.User;
+import top.wigon.entity.*;
+import top.wigon.entity.Package;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -111,6 +109,56 @@ public class Pack2Entity {
             itemDesc.setDesc(String.valueOf(result.get(i).get("item_desc")));
             itemDesc.setCreateTime(result.get(i).get("gmt_create").toString());
             list.add(itemDesc);
+        }
+        return list;
+    }
+    /**
+     * Shipping
+     *
+     * @param result
+     * @return
+     */
+    public static List<Shipping> pack2Shippins(List<Map<String, Object>> result) {
+        List<Shipping> list = new ArrayList<>();
+        Shipping shipping;
+        for (int i = 0; i < result.size(); i++) {
+            shipping = new Shipping();
+            shipping.setOrderId(result.get(i).get("order_id").toString());
+            shipping.setReceiverName(result.get(i).get("receiver_name").toString());
+            shipping.setReceiverTel(result.get(i).get("receiver_tel").toString());
+            shipping.setReceiverState(result.get(i).get("receiver_state").toString());
+            shipping.setReceiverCity(result.get(i).get("receiver_city").toString());
+            shipping.setReceiverDistrict(result.get(i).get("receiver_district").toString());
+            shipping.setReceiverZip(result.get(i).get("receiver_zip").toString());
+            shipping.setReceiverAddress(result.get(i).get("receiver_address").toString());
+            shipping.setCurrLoc(result.get(i).get("current_location").toString());
+            shipping.setCreateTime(result.get(i).get("gmt_create").toString());
+            list.add(shipping);
+        }
+        return list;
+    }
+    /**
+     * Shipping
+     *
+     * @param result
+     * @return
+     */
+    public static List<Package> pack2Packages(List<Map<String, Object>> result) {
+        List<Package> list = new ArrayList<>();
+        Package packageInfo;
+        for (int i = 0; i < result.size(); i++) {
+            packageInfo = new Package();
+            packageInfo.setOrderid(result.get(i).get("order_id").toString());
+            packageInfo.setCurrLoc(result.get(i).get("current_location").toString());
+            packageInfo.setImgPath(result.get(i).get("item_image_path").toString());
+            packageInfo.setItemCategory(result.get(i).get("item_category").toString());
+            packageInfo.setItemId(result.get(i).get("item_id").toString());
+            packageInfo.setItemNums(Integer.parseInt(result.get(i).get("item_num").toString()));
+            packageInfo.setOrderState(result.get(i).get("order_state").toString());
+            packageInfo.setItemTitle(result.get(i).get("item_title").toString());
+            packageInfo.setCurrLoc(result.get(i).get("current_location").toString());
+            packageInfo.setPayment(result.get(i).get("payment").toString());
+            list.add(packageInfo);
         }
         return list;
     }
