@@ -61,7 +61,7 @@ public interface UserService {
      *
      * @return
      */
-    public String getUserIDByTel(String tel);
+    String getUserIDByTel(String tel);
 
     /**
      * 电话号获得该用户的订单信息
@@ -70,7 +70,7 @@ public interface UserService {
      * @param tel
      * @return
      */
-    public String getUserOrderInfoByTel(String tel);
+    String getUserOrderInfoByTel(String tel);
 
     String getUserOrderUnPaidInfoByTel(String tel);
 }

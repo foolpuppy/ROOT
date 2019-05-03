@@ -7,6 +7,9 @@ import java.security.MessageDigest;
  */
 public class MD5Util {
 
+    private static final String[] hexDigits = {"0", "1", "2", "3", "4", "5",
+            "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
+
     private static String byteArrayToHexString(byte[] b) {
         StringBuffer resultSb = new StringBuffer();
         for (int i = 0; i < b.length; i++)
@@ -50,10 +53,6 @@ public class MD5Util {
     public static String MD5EncodeUtf8(String origin) {
         return MD5Encode(origin, "utf-8");
     }
-
-
-    private static final String[] hexDigits = {"0", "1", "2", "3", "4", "5",
-            "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
 
     public static void main(String[] args) {
         System.out.println(MD5EncodeUtf8("cwg"));

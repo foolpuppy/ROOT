@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>商城首页</title>
-    <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
-    <script type="text/javascript" src="res/layui/layui.js"></script>
-    <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="res/static/js/util/jquery.cookie.js"></script>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="res/static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="res/layui/css/layui.css" rel="stylesheet" type="text/css">
+    <script src="res/layui/layui.js" type="text/javascript"></script>
+    <script src="res/static/js/util/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="res/static/js/util/jquery.cookie.js" type="text/javascript"></script>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport">
+    <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
 </head>
 <body id="list-cont">
 <div class="site-nav-bg">
@@ -39,12 +40,12 @@
             </h1>
             <div class="mallSearch">
                 <form action="search_list.html" class="layui-form" novalidate>
-                    <input type="text" name="title" required lay-verify="required" autocomplete="off"
-                           class="layui-input" placeholder="请输入需要的商品">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">
+                    <input autocomplete="off" class="layui-input" lay-verify="required" name="title" placeholder="请输入需要的商品"
+                           required type="text">
+                    <button class="layui-btn" lay-filter="formDemo" lay-submit>
                         <i class="layui-icon layui-icon-search"></i>
                     </button>
-                    <input type="hidden" name="" value="">
+                    <input name="" type="hidden" value="">
                 </form>
             </div>
         </div>
@@ -177,7 +178,7 @@
             <p class="text">
                 <a class="icon1" href="javascript:">7天无理由退换货</a>
                 <a class="icon2" href="javascript:">满99元全场免邮</a>
-                <a class="icon3" style="margin-right: 0" href="javascript:">100%品质保证</a>
+                <a class="icon3" href="javascript:" style="margin-right: 0">100%品质保证</a>
             </p>
         </div>
     </div>
@@ -197,7 +198,7 @@
     </div>
 </div>
 
-<script type="text/html" id="demo">
+<script id="demo" type="text/html">
     {{# layui.each(d.floor.banner.cont,function(index,item){}}
     <div class="item">
         <a href="details.html?id={{item.id}}"><img src="{{item.item_image_path}}"></a>
@@ -209,7 +210,7 @@
     {{# }); }}
 </script>
 
-<script type="text/html" id="demo1">
+<script id="demo1" type="text/html">
     {{# layui.each(d.proct,function(index,item){}}
     <div class="product-item {{item.productItem}} layui-clear">
         <div class="left-title">
@@ -230,7 +231,7 @@
 </script>
 
 
-<script type="text/html" id="demo2">
+<script id="demo2" type="text/html">
     {{# layui.each(d.productList,function(index,item){}}
     <div class="list-item">
         <a href="details.html?id={{item.id}}"><img src="{{item.item_image_path}}"
@@ -335,7 +336,7 @@
             var index = 0;
             for (var i = 0; i < 30; i++) {
                 if ($.cookie(i.toString()) == null) {
-                    continue;
+
                 } else {
                     index++;
                 }

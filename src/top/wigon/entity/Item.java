@@ -19,7 +19,7 @@ public class Item implements Serializable {
     private String item_image_path;
     private String createTime;
     private String modified_time;
-    private  String desc;
+    private String desc;
 
     public Item() {
         this.price = new BigDecimal(0);

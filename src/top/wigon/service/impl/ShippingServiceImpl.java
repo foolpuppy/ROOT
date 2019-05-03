@@ -21,9 +21,15 @@ public class ShippingServiceImpl implements ShippingService {
     }
 
     @Override
+    public Boolean update(Shipping shipping) {
+        return dao.updateEntity(shipping);
+    }
+
+    @Override
     public List<Package> getShippingInfoByOrderId(String order_id) {
         return dao.getShippingInfoByOrderId(order_id);
     }
+
     @Override
     public List<Package> getShippingInfoByUserId(String user_id) {
         return dao.getShippingInfoByUserId(user_id);

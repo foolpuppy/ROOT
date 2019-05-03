@@ -53,8 +53,8 @@ public class CreateOrder extends HttpServlet {
                     cartItem.add(item);
                 } else {
                     String[] res = req.getParameterValues("goodsList");
-                    item = new OrderItem();
                     for (String re : res) {
+                        item = new OrderItem();
                         item.setItemId(Integer.parseInt(re.split(",")[0]));
                         item.setTitle(re.split(",")[1]);
                         item.setNum(Integer.parseInt(re.split(",")[2]));
@@ -63,6 +63,7 @@ public class CreateOrder extends HttpServlet {
                         cartItem.add(item);
                     }
                 }
+                //创建订单同时 触发器插入了数据到物流表
                 boolean flag = orderService.createOrder(order);
                 //订单创建完成吧订单号存入session
                 if (flag) {

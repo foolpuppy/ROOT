@@ -37,6 +37,20 @@ public class CartUtil {
     }
 
     /**
+     * 制作cookie所需value
+     *
+     * @param cartVos 购物车列表
+     * @return 解析为字符串的购物车列表，属性间使用"="相隔，对象间使用"=="相隔
+     */
+    public static String setCookiesVal(List<CartInfo> cartVos) {
+        StringBuffer buffer_2st = new StringBuffer();
+        for (CartInfo item : cartVos) {
+            buffer_2st.append(item.getItemId() + "=" + item.getNum() + "==");
+        }
+        return buffer_2st.toString().substring(0, buffer_2st.toString().length() - 2);
+    }
+
+    /**
      * 获取cookie中的购物车列表
      *
      * @param response
@@ -73,19 +87,5 @@ public class CartUtil {
         }
         return items;
 
-    }
-
-    /**
-     * 制作cookie所需value
-     *
-     * @param cartVos 购物车列表
-     * @return 解析为字符串的购物车列表，属性间使用"="相隔，对象间使用"=="相隔
-     */
-    public static String setCookiesVal(List<CartInfo> cartVos) {
-        StringBuffer buffer_2st = new StringBuffer();
-        for (CartInfo item : cartVos) {
-            buffer_2st.append(item.getItemId() + "=" + item.getNum() + "==");
-        }
-        return buffer_2st.toString().substring(0, buffer_2st.toString().length() - 2);
     }
 }

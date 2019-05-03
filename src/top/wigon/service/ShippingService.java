@@ -19,6 +19,8 @@ public interface ShippingService {
      */
     Boolean add(Shipping shipping);
 
+    Boolean update(Shipping shipping);
+
     /**
      * 订单号取物流信息
      *

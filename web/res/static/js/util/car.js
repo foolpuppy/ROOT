@@ -114,7 +114,7 @@ layui.define(['layer'], function (exports) {
                             }
                             for (var i = 0; i < 30; i++) {
                                 if ($.cookie(i.toString()) == null) {
-                                    continue;
+
                                 } else {
                                     $.cookie(i.toString(), "", {expires: -1});
                                     $("#cart-num").html(0);
@@ -165,7 +165,7 @@ layui.define(['layer'], function (exports) {
                                 success: function (data) {
                                     for (var i = 0; i < 30; i++) {
                                         if ($.cookie(i.toString()) == null) {
-                                            continue;
+
                                         } else {
                                             $.cookie(i.toString(), "", {expires: -1});
                                         }

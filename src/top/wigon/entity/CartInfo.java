@@ -13,14 +13,6 @@ public class CartInfo {
     private int num;
     private String itemId;
 
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
     public CartInfo(String itemId, int num, List<Item> items) {
         this.items = items;
         this.num = num;
@@ -28,6 +20,14 @@ public class CartInfo {
     }
 
     public CartInfo() {
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     public int getNum() {

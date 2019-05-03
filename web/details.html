@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>商品详情</title>
-    <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
-    <script type="text/javascript" src="res/layui/layui.js"></script>
-    <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="res/static/js/util/jquery.cookie.js"></script>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link href="res/static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="res/layui/css/layui.css" rel="stylesheet" type="text/css">
+    <script src="res/layui/layui.js" type="text/javascript"></script>
+    <script src="res/static/js/util/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="res/static/js/util/jquery.cookie.js" type="text/javascript"></script>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport">
+    <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
 </head>
 <body>
 
@@ -38,12 +38,12 @@
             </h1>
             <div class="mallSearch">
                 <form action="search_list.html" class="layui-form" novalidate>
-                    <input type="text" name="title" required lay-verify="required" autocomplete="off"
-                           class="layui-input" placeholder="请输入需要的商品">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">
+                    <input autocomplete="off" class="layui-input" lay-verify="required" name="title" placeholder="请输入需要的商品"
+                           required type="text">
+                    <button class="layui-btn" lay-filter="formDemo" lay-submit>
                         <i class="layui-icon layui-icon-search"></i>
                     </button>
-                    <input type="hidden" name="" value="">
+                    <input name="" type="hidden" value="">
                 </form>
             </div>
         </div>
@@ -56,7 +56,7 @@
         <div class="inner-cont0">
             <div class="inner-cont1 w1200">
                 <div class="inner-cont2">
-                    <a href="" class="active">商品详情</a>
+                    <a class="active" href="">商品详情</a>
                 </div>
             </div>
         </div>
@@ -76,8 +76,8 @@
                     </div>
                     <div class="choose-attrs">
                         <div class="number layui-clear"><span class="title">数&nbsp;&nbsp;&nbsp;&nbsp;量</span>
-                            <div class="number-cont"><span class="cut btn">-</span><input maxlength="4" type="" name=""
-                                                                                          value="1" id="number"><span
+                            <div class="number-cont"><span class="cut btn">-</span><input id="number" maxlength="4" name=""
+                                                                                          type="" value="1"><span
                                     class="add btn">+</span></div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
             <p class="text">
                 <a class="icon1" href="javascript:">7天无理由退换货</a>
                 <a class="icon2" href="javascript:">满99元全场免邮</a>
-                <a class="icon3" style="margin-right: 0" href="javascript:">100%品质保证</a>
+                <a class="icon3" href="javascript:" style="margin-right: 0">100%品质保证</a>
             </p>
         </div>
     </div>
@@ -127,17 +127,17 @@
 </div>
 
 <!--数据模板-->
-<script type="text/html" id="demo">
+<script id="demo" type="text/html">
     {{# layui.each(d.detailList,function(index,item){}}
     <a href=""><img style="width: 402px;height: 402px;" id="goods_img" src="{{item.item_image_path}}"></a>
     {{# }); }}
 </script>
-<script type="text/html" id="demo1">
+<script id="demo1" type="text/html">
     {{# layui.each(d.detailList,function(index,item){}}
     <h4 id="goods_title">{{item.title}} </h4>
     {{# }); }}
 </script>
-<script type="text/html" id="demo2">
+<script id="demo2" type="text/html">
     {{# layui.each(d.detailList,function(index,item){}}
     <p class="reference"><span>分&nbsp;&nbsp;&nbsp;&nbsp;类</span> <span id="category">{{item.category}}</span></p>
     <p class="activity"><span>价&nbsp;&nbsp;&nbsp;&nbsp;格</span><strong id="goods_price" class="price"><i>￥</i>{{item.price}}</strong>
@@ -148,7 +148,7 @@
     </p>
     {{# }); }}
 </script>
-<script type="text/html" id="demo3">
+<script id="demo3" type="text/html">
     {{# layui.each(d.detailList,function(index,item){}}
     {{item.desc}}
     {{# }); }}
@@ -214,7 +214,7 @@
             var index = 0;
             for (var i = 0; i < 30; i++) {
                 if ($.cookie(i.toString()) == null) {
-                    continue;
+
                 } else {
                     index++;
                 }
@@ -271,7 +271,7 @@
                 });
             }
 
-        })
+        });
 
         $(".car-btn").click(function () {
             var img = $("#goods_img").prop("src");
@@ -284,7 +284,7 @@
             for (var i = 0; i < 30; i++) {
                 if ($.cookie(i.toString()) == null) {
                     $.cookie(index.toString(), img + ";" + title + ";" + category + ";" + goodsid + ";" + price + ";" + number + ";" + index);
-                    continue;
+
                 } else {
                     index++;
                 }

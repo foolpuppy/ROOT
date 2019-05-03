@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author L
@@ -30,17 +31,18 @@ public class payOrderNo extends HttpServlet {
         //数据库取得相应订单号的支付信息
         OrderServiceImpl orderService = new OrderServiceImpl();
         ShippingServiceImpl shippingService = new ShippingServiceImpl();
+        req.setCharacterEncoding("UTF-8");
         Shipping shipping = new Shipping();
         shipping.setOrderId(order_no);
-        shipping.setReceiverName(req.getParameter("name"));
-        shipping.setReceiverTel(req.getParameter("tel"));
-        shipping.setReceiverState(req.getParameter("province"));
-        shipping.setReceiverCity(req.getParameter("city"));
-        shipping.setReceiverDistrict(req.getParameter("district"));
-        shipping.setReceiverZip(req.getParameter("zip"));
-        shipping.setReceiverAddress(req.getParameter("address"));
+        shipping.setReceiverName(new String((req.getParameter("name")).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+        shipping.setReceiverTel(new String((req.getParameter("tel")).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+        shipping.setReceiverState(new String((req.getParameter("province")).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+        shipping.setReceiverCity(new String((req.getParameter("city")).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+        shipping.setReceiverDistrict(new String((req.getParameter("district")).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+        shipping.setReceiverZip(new String((req.getParameter("zip")).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+        shipping.setReceiverAddress(new String((req.getParameter("address")).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
         Order order = orderService.getByOrderNo(order_no);
-        shippingService.add(shipping);
+        shippingService.update(shipping);
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id, AlipayConfig.merchant_private_key, "json", AlipayConfig.charset, AlipayConfig.alipay_public_key, AlipayConfig.sign_type);
 

@@ -696,6 +696,7 @@ public class DBUtils {
 
     /**
      * 返回时间戳
+     *
      * @return
      */
     public static String getCurrentTimeMillis() {

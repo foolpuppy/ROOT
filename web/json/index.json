@@ -1,51 +1,232 @@
 {
-  "status":0,
-  "floor":
-    {"bigimg":"res/static/img/s_img1.jpg"
-    ,"banner":
-      {"cont":[{"href":"javascript:","img":"res/static/img/s_img2.jpg","title":"宝宝五彩袜棉质舒服","price":"￥49.00","original":"￥99.00"},{"href":"javascript:","img":"res/static/img/s_img3.jpg","title":"宝宝五彩袜棉质舒服","price":"￥49.00","original":"￥99.00"},{"href":"javascript:","img":"res/static/img/s_img4.jpg","title":"宝宝五彩袜棉质舒服","price":"￥49.00","original":"￥99.00"},{"href":"javascript:","img":"res/static/img/s_img5.jpg","title":"宝宝五彩袜棉质舒服","price":"￥49.00","original":"￥99.00"}]}
-
+  "status": 0,
+  "floor": {
+    "bigimg": "res/static/img/s_img1.jpg",
+    "banner": {
+      "cont": [
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img2.jpg",
+          "title": "宝宝五彩袜棉质舒服",
+          "price": "￥49.00",
+          "original": "￥99.00"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img3.jpg",
+          "title": "宝宝五彩袜棉质舒服",
+          "price": "￥49.00",
+          "original": "￥99.00"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img4.jpg",
+          "title": "宝宝五彩袜棉质舒服",
+          "price": "￥49.00",
+          "original": "￥99.00"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img5.jpg",
+          "title": "宝宝五彩袜棉质舒服",
+          "price": "￥49.00",
+          "original": "￥99.00"
+        }
+      ]
+    }
   },
-  "proct":[{
-    "floorNum": "1F",
-    "productItem":"product-item1",
-    "carImg":"res/static/img/icon_gou.png",
-    "text":"电子产品",
-    "bigImg":"res/static/img/img12.jpg",
-    "imgBox":[{"href":"javascript:","href":"javascript:","img":"res/static/img/s_img7.jpg"},{"href":"javascript:","img":"res/static/img/s_img8.jpg"},{"href":"javascript:","img":"res/static/img/s_img9.jpg"},{"href":"javascript:","img":"res/static/img/s_img10.jpg"},{"href":"javascript:","img":"res/static/img/s_img11.jpg"}]
-  },{
-    "floorNum": "2F",
-    "productItem":"product-item2",
-    "carImg":"res/static/img/icon_gou.png",
-    "text":"服饰衣帽",
-    "bigImg":"res/static/img/img12.jpg",
-    "imgBox":[{"href":"javascript:","img":"res/static/img/s_img7.jpg"},{"href":"javascript:","img":"res/static/img/s_img8.jpg"},{"href":"javascript:","img":"res/static/img/s_img9.jpg"},{"href":"javascript:","img":"res/static/img/s_img10.jpg"},{"href":"javascript:","img":"res/static/img/s_img11.jpg"}]
-  },{
-    "floorNum": "3F",
-    "productItem":"product-item3",
-    "carImg":"res/static/img/icon_gou.png",
-    "text":"化妆用品",
-    "bigImg":"res/static/img/img12.jpg",
-    "imgBox":[{"href":"javascript:","item_image_path":"res/static/img/s_img7.jpg"},{"href":"javascript:","img":"res/static/img/s_img8.jpg"},{"href":"javascript:","img":"res/static/img/s_img9.jpg"},{"href":"javascript:","img":"res/static/img/s_img10.jpg"},{"href":"javascript:","img":"res/static/img/s_img11.jpg"}]
-  }],
-  "productList":[
-      {"href":"javascript:","item_image_path":"res/static/img/more1.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more2.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more3.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more4.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more5.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more1.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more2.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more3.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more4.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more5.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more1.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more2.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more3.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more4.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more5.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more1.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"},
-      {"href":"javascript:","item_image_path":"res/static/img/more2.jpg","title":"时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝","price":"￥100.00"}
-
-    ]
-  }
+  "proct": [
+    {
+      "floorNum": "1F",
+      "productItem": "product-item1",
+      "carImg": "res/static/img/icon_gou.png",
+      "text": "电子产品",
+      "bigImg": "res/static/img/img12.jpg",
+      "imgBox": [
+        {
+          "href": "javascript:",
+          "href": "javascript:",
+          "img": "res/static/img/s_img7.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img8.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img9.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img10.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img11.jpg"
+        }
+      ]
+    },
+    {
+      "floorNum": "2F",
+      "productItem": "product-item2",
+      "carImg": "res/static/img/icon_gou.png",
+      "text": "服饰衣帽",
+      "bigImg": "res/static/img/img12.jpg",
+      "imgBox": [
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img7.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img8.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img9.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img10.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img11.jpg"
+        }
+      ]
+    },
+    {
+      "floorNum": "3F",
+      "productItem": "product-item3",
+      "carImg": "res/static/img/icon_gou.png",
+      "text": "化妆用品",
+      "bigImg": "res/static/img/img12.jpg",
+      "imgBox": [
+        {
+          "href": "javascript:",
+          "item_image_path": "res/static/img/s_img7.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img8.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img9.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img10.jpg"
+        },
+        {
+          "href": "javascript:",
+          "img": "res/static/img/s_img11.jpg"
+        }
+      ]
+    }
+  ],
+  "productList": [
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more1.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more2.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more3.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more4.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more5.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more1.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more2.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more3.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more4.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more5.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more1.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more2.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more3.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more4.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more5.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more1.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    },
+    {
+      "href": "javascript:",
+      "item_image_path": "res/static/img/more2.jpg",
+      "title": "时尚宝宝小黄鸭T恤纯棉耐脏多色可选0-2岁宝宝",
+      "price": "￥100.00"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 package top.wigon.common;
 
-import top.wigon.entity.*;
 import top.wigon.entity.Package;
+import top.wigon.entity.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -112,6 +112,7 @@ public class Pack2Entity {
         }
         return list;
     }
+
     /**
      * Shipping
      *
@@ -137,6 +138,7 @@ public class Pack2Entity {
         }
         return list;
     }
+
     /**
      * Shipping
      *

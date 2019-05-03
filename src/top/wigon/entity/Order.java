@@ -16,7 +16,7 @@ public class Order implements Serializable {
     private BigDecimal postFee;
     private int orderState;
     /**
-     *  订单创建时间
+     * 订单创建时间
      */
 
     private String orderCreateTime;

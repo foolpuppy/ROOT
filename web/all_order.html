@@ -76,7 +76,7 @@
             </div>
             <div class="th th-item" style="margin-left: 50px;">
                 <div class="th-inner">
-                    商品
+                    <商品></商品>
                 </div>
             </div>
             <!--<div class="th th-price" >
@@ -124,7 +124,7 @@
         var index = 0;
         for (var i = 0; i < 30; i++) {
             if ($.cookie(i.toString()) == null) {
-                continue;
+
             } else {
                 index++;
             }
@@ -158,7 +158,7 @@
           <p class="item_num">{{item.item_num}}</p>
         </li>-->
         <li class="th th-sum" style="margin-left: -60px;">
-            <span class="sum">{{item.payment}}</span>
+            <span class="sum">{{item.item_price}}</span>
         </li>
         <li class="th th-op" style="margin-left: 85px;">
             <span class="order_state">{{item.order_state}}</span>
@@ -211,7 +211,7 @@
                 //处理删除事件
                 $(".dele-btn").click(function () {
                     var order_id = $(".dele-btn").attr("name");
-                    var r = confirm("你确定要删除吗")
+                    var r = confirm("你确定要删除吗");
                     if (r) {
                         window.location.href = "delUserOrder?order_no=" + order_id;
                     }

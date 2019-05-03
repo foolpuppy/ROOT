@@ -32,6 +32,8 @@ public class GetUserOrderInfoUnPaid extends HttpServlet {
         content.append(",\"amount\":");
         ObjectMapper mapper = new ObjectMapper();
         JsonNode node = mapper.readTree(JSON);
+        req.getSession().removeAttribute("order_no");
+        req.getSession().setAttribute("order_no", node.findValue("order_id").toString().replace("\"", ""));
         content.append(node.findValue("payment"));
         content.append("}]}");
         resp.setContentType("text/plain; charset=UTF-8;");

@@ -13,13 +13,16 @@ import java.util.List;
 public interface ShippingDAO extends BaseDAO<Shipping> {
     /**
      * 获取物流信息通过订单号
+     *
      * @param order_id
      * @return
      */
 
     List<Package> getShippingInfoByOrderId(String order_id);
+
     /**
      * 获取物流信息通过用户ID
+     *
      * @param user_id
      * @return
      */

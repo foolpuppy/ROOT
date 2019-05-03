@@ -11,6 +11,7 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.nio.charset.StandardCharsets" %>
 <%
     /* *
      * 功能：支付宝服务器同步通知页面
@@ -28,15 +29,15 @@
     Map<String, String> params = new HashMap<String, String>();
     Map<String, String[]> requestParams = request.getParameterMap();
     for (Iterator<String> iter = requestParams.keySet().iterator(); iter.hasNext(); ) {
-        String name = (String) iter.next();
-        String[] values = (String[]) requestParams.get(name);
+        String name = iter.next();
+        String[] values = requestParams.get(name);
         String valueStr = "";
         for (int i = 0; i < values.length; i++) {
             valueStr = (i == values.length - 1) ? valueStr + values[i]
                     : valueStr + values[i] + ",";
         }
         //乱码解决，这段代码在出现乱码时使用
-        valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
+        valueStr = new String(valueStr.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         params.put(name, valueStr);
     }
 
@@ -45,13 +46,13 @@
     //——请在这里编写您的程序（以下代码仅作参考）——
     if (signVerified) {
         //商户订单号
-        String out_trade_no = new String(request.getParameter("out_trade_no").getBytes("ISO-8859-1"), "UTF-8");
+        String out_trade_no = new String(request.getParameter("out_trade_no").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
 
         //支付宝交易号
-        String trade_no = new String(request.getParameter("trade_no").getBytes("ISO-8859-1"), "UTF-8");
+        String trade_no = new String(request.getParameter("trade_no").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
 
         //付款金额
-        String total_amount = new String(request.getParameter("total_amount").getBytes("ISO-8859-1"), "UTF-8");
+        String total_amount = new String(request.getParameter("total_amount").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
 
         out.println("trade_no:" + trade_no + "<br/>out_trade_no:" + out_trade_no + "<br/>total_amount:" + total_amount);
     } else {

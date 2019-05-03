@@ -19,8 +19,8 @@ import java.util.Map;
  **/
 public class ShippingDAOImpl implements ShippingDAO {
     private final String tableName = "tb_shipping";
-    private final String QUERY_SHIPPING_INFO_BY_USERID = "SELECT\ttb_order.order_id,tb_order.order_state,\ttb_order.user_id,\ttb_order.payment,\ttb_order.shipping_name,\ttb_order.shipping_code,\ttb_order.gmt_create,\ttb_order.gmt_modified,\ttb_order_item.item_num,\ttb_item.item_category,\ttb_order_item.item_title,\ttb_order_item.item_price,\ttb_order_item.total_fee,\ttb_order_item.item_id,\ttb_desc.item_image_path ,  tb_shipping.current_location FROM\ttb_order\tLEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id\tJOIN tb_desc ON tb_order_item.item_id = tb_desc.item_id\tJOIN tb_item ON tb_order_item.item_id = tb_item.item_id \tleft JOIN tb_shipping on tb_shipping.order_id=tb_order.order_id WHERE\ttb_order.order_id IN ( SELECT order_id FROM tb_order WHERE user_id = ? )";
-    private final String QUERY_SHIPPING_INFO_BY_ORDERID = "SELECT\ttb_order.order_id,tb_order.order_state,\ttb_order.user_id,\ttb_order.payment,\ttb_order.shipping_name,\ttb_order.shipping_code,\ttb_order.gmt_create,\ttb_order.gmt_modified,\ttb_order_item.item_num,\ttb_item.item_category,\ttb_order_item.item_title,\ttb_order_item.item_price,\ttb_order_item.total_fee,\ttb_order_item.item_id,\ttb_desc.item_image_path ,  tb_shipping.current_location FROM\ttb_order\tLEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id\tJOIN tb_desc ON tb_order_item.item_id = tb_desc.item_id\tJOIN tb_item ON tb_order_item.item_id = tb_item.item_id \tleft JOIN tb_shipping on tb_shipping.order_id=tb_order.order_id WHERE\ttb_order.order_id =?";
+    private final String QUERY_SHIPPING_INFO_BY_USERID = "SELECT\ttb_order.order_id,tb_order.order_state,\ttb_order.user_id,\ttb_order.payment,\ttb_order.shipping_name,\ttb_order.shipping_code,\ttb_order.gmt_create,\ttb_order.gmt_modified,\ttb_order_item.item_num,\ttb_item.item_category,\ttb_order_item.item_title,\ttb_order_item.item_price,\ttb_order_item.total_fee,\ttb_order_item.item_id,\ttb_desc.item_image_path ,  tb_shipping.current_location FROM\ttb_order\tLEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id\tJOIN tb_desc ON tb_order_item.item_id = tb_desc.item_id\tJOIN tb_item ON tb_order_item.item_id = tb_item.item_id \tleft JOIN tb_shipping on tb_shipping.order_id=tb_order.order_id WHERE\ttb_order.order_id IN ( SELECT order_id FROM tb_order WHERE user_id = ? ) and tb_order.order_state !=1";
+    private final String QUERY_SHIPPING_INFO_BY_ORDERID = "SELECT\ttb_order.order_id,tb_order.order_state,\ttb_order.user_id,\ttb_order.payment,\ttb_order.shipping_name,\ttb_order.shipping_code,\ttb_order.gmt_create,\ttb_order.gmt_modified,\ttb_order_item.item_num,\ttb_item.item_category,\ttb_order_item.item_title,\ttb_order_item.item_price,\ttb_order_item.total_fee,\ttb_order_item.item_id,\ttb_desc.item_image_path ,  tb_shipping.current_location FROM\ttb_order\tLEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id\tJOIN tb_desc ON tb_order_item.item_id = tb_desc.item_id\tJOIN tb_item ON tb_order_item.item_id = tb_item.item_id \tleft JOIN tb_shipping on tb_shipping.order_id=tb_order.order_id WHERE\ttb_order.order_id =? and tb_order.order_state !=1";
 
     @Override
     public Shipping findByEntity(Shipping shipping) {
@@ -43,8 +43,10 @@ public class ShippingDAOImpl implements ShippingDAO {
     @Override
     public boolean updateEntity(Shipping shipping) {
         boolean flag = false;
+        Map<String, Object> keyMap = new HashMap<>();
+        keyMap.put("order_id", shipping.getOrderId());
         try {
-            flag = DBUtils.update(tableName, getValMap(shipping), getPrimaryKey(shipping)) == 1;
+            flag = DBUtils.update(tableName, getValMap(shipping), keyMap) == 1;
         } catch (SQLException e) {
             e.printStackTrace();
         }
