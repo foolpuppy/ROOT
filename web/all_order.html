@@ -1,243 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>所有订单</title>
-  <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
-  <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
-  <script type="text/javascript" src="res/static/js/util/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="res/static/js/util/jquery.cookie.js"></script>
-  <script type="text/javascript" src="res/layui/layui.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta charset="UTF-8">
+    <title>所有订单</title>
+    <link href="res/static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="res/layui/css/layui.css" rel="stylesheet" type="text/css">
+    <script src="res/static/js/util/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="res/static/js/util/jquery.cookie.js" type="text/javascript"></script>
+    <script src="res/layui/layui.js" type="text/javascript"></script>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport">
+    <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
 </head>
 <body>
 
-  <div class="site-nav-bg">
+<div class="site-nav-bg">
     <div class="site-nav w1200">
-      <p class="sn-back-home">
-        <i class="layui-icon layui-icon-home"></i>
-        <a href="index.html">首页</a>
-      </p>
-      <div class="sn-quick-menu">
-        <div class="login"><a href="consumer_center.html">个人中心</a></div>
-        <div class="sp-cart"><a href="shopcart.html">购物车</a><span id="cart-num">0</span></div>
-      </div>
+        <p class="sn-back-home">
+            <i class="layui-icon layui-icon-home"></i>
+            <a href="index.html">首页</a>
+        </p>
+        <div class="sn-quick-menu">
+            <div class="login"><a href="consumer_center.html">个人中心</a></div>
+            <div class="sp-cart"><a href="shopcart.html">购物车</a><span id="cart-num">0</span></div>
+        </div>
     </div>
-  </div>
+</div>
 
 
-
-  <div class="header">
+<div class="header">
     <div class="headerLayout w1200">
-      <div class="headerCon">
-        <h1 class="mallLogo">
-          <a href="#" title="母婴商城">
-            <img src="res/static/img/logo.png">
-          </a>
-        </h1>
-        <div class="mallSearch">
-          <form action="search_list.html" class="layui-form" novalidate>
-            <input type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入需要的商品">
-            <button class="layui-btn" lay-submit lay-filter="formDemo">
-                <i class="layui-icon layui-icon-search"></i>
-            </button>
-            <input type="hidden" name="" value="">
-          </form>
+        <div class="headerCon">
+            <h1 class="mallLogo">
+                <a href="#" title="母婴商城">
+                    <img src="res/static/img/logo.png">
+                </a>
+            </h1>
+            <div class="mallSearch">
+                <form action="search_list.html" class="layui-form" novalidate>
+                    <input autocomplete="off" class="layui-input" lay-verify="required" name="title" placeholder="请输入需要的商品"
+                           required type="text">
+                    <button class="layui-btn" lay-filter="formDemo" lay-submit>
+                        <i class="layui-icon layui-icon-search"></i>
+                    </button>
+                    <input name="" type="hidden" value="">
+                </form>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 
-  <div class="content content-nav-base shopcart-content">
+<div class="content content-nav-base shopcart-content">
     <div class="main-nav">
-      <div class="inner-cont0">
-        <div class="inner-cont1 w1200">
-          <div class="inner-cont2">
-            <a href="shopcart.html" >购物车</a>
-            <a href="package.html">待收货</a>
-            <a href="all_order.html" class="active">所有订单</a>
-          </div>
+        <div class="inner-cont0">
+            <div class="inner-cont1 w1200">
+                <div class="inner-cont2">
+                    <a href="shopcart.html">购物车</a>
+                    <a href="package.html">待收货</a>
+                    <a class="active" href="all_order.html">所有订单</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
     <div class="banner-bg w1200">
-      <h3>夏季清仓</h3>
-      <p>宝宝被子、宝宝衣服3折起</p>
+        <h3>夏季清仓</h3>
+        <p>宝宝被子、宝宝衣服3折起</p>
     </div>
     <div class="cart w1200">
-      <div class="cart-table-th">
-        <div class="th th-chk">
-          <div class="th-inner">
-            订单编号
-          </div>
+        <div class="cart-table-th">
+            <div class="th th-chk">
+                <div class="th-inner">
+                    订单编号
+                </div>
+            </div>
+            <div class="th th-item" style="margin-left: 50px;">
+                <div class="th-inner">
+                    商品
+                </div>
+            </div>
+            <!--<div class="th th-price" >
+              <div class="th-inner">
+                单价
+              </div>
+            </div>
+            <div class="th th-amount" style="margin-left: -100px;">
+              <div class="th-inner">
+                数量
+              </div>
+            </div>-->
+            <div class="th th-sum" style="margin-left: 85px;">
+                <div class="th-inner">
+                    实付款
+                </div>
+            </div>
+            <div class="th th-op" style="margin-left: 85px;">
+                <div class="th-inner">
+                    交易状态
+                </div>
+            </div>
+            <div class="th th-op" style="margin-left: 85px;">
+                <div class="th-inner">
+                    操作
+                </div>
+            </div>
         </div>
-        <div class="th th-item" style="margin-left: 50px;">
-          <div class="th-inner">
-            商品
-          </div>
-        </div>
-        <div class="th th-price" >
-          <div class="th-inner">
-            单价
-          </div>
-        </div>
-        <div class="th th-amount" style="margin-left: -100px;">
-          <div class="th-inner">
-            数量
-          </div>
-        </div>
-        <div class="th th-sum" style="margin-left: -60px;">
-          <div class="th-inner">
-            实付款
-          </div>
-        </div>
-        <div class="th th-op">
-          <div class="th-inner">
-            交易状态
-          </div>
-        </div>
-        <div class="th th-op">
-          <div class="th-inner">
-            操作
-          </div>
-        </div>
-      </div>
-      <div class="OrderList">
-        <div class="order-content" id="list-cont">
-
-        </div>
-      </div>
-      <div class="FloatBarHolder layui-clear">
-
-      </div>
-    </div>
-  </div>
-
-
-  <script>
-    getCartNum();
-    function getCartNum(){  //获取购物车中商品数量
-      var index = 0;
-      for(var i=0;i<30;i++)
-      {
-        if($.cookie(i.toString()) == null)
-        {
-          continue;
-        }
-        else
-        {
-          index++;
-        }
-      }
-      $("#cart-num").html(index);
-    }
-  </script>
-
-  <script type="text/html" id="demo">
-    {{# layui.each(d.orderList,function(index,item){}}
-      <ul class="item-content layui-clear">
-        <li class="th th-chk" style="width: 125px;margin-left: 20px;">
-          <span id="order_id" style="color: gray;">{{item.order_id}}</span>
-        </li>
-        <li class="th th-item" style="width: 400px;margin-left: 100px;">
-          <div class="item-cont">
-            <img src="{{item.item_image_path}}" alt="">
-            <div class="text">
-              <div class="title" style='height: 50px;overflow: hidden;'>{{item.item_title}}</div>
-              <p><span>{{item.item_category}}</span><br>
-                <span>商品ID：</span><span class="goodsid">{{item.item_id}}</span>
-              </p>
+        <div class="OrderList">
+            <div class="order-content" id="list-cont">
 
             </div>
-          </div>
+        </div>
+        <div class="FloatBarHolder layui-clear">
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    getCartNum();
+
+    function getCartNum() {  //获取购物车中商品数量
+        var index = 0;
+        for (var i = 0; i < 30; i++) {
+            if ($.cookie(i.toString()) == null) {
+                continue;
+            } else {
+                index++;
+            }
+        }
+        $("#cart-num").html(index);
+    }
+</script>
+
+<script id="demo" type="text/html">
+    {{# layui.each(d.orderList,function(index,item){}}
+    <ul class="item-content layui-clear">
+        <li class="th th-chk" style="width: 125px;margin-left: 20px;">
+            <span class="order_id" style="color: gray;">{{item.order_id}}</span>
         </li>
-        <li class="th th-price" style="margin-left: -140px; vertical-align: middle;">
-          <span class="th-su">{{item.item_price}}</span>
+        <li class="th th-item" style="width: 400px;margin-left: 100px;">
+            <div class="item-cont">
+                <img class="item_image_path" src="{{item.item_image_path}}" alt="">
+                <div class="text">
+                    <div class="title" style='height: 50px;overflow: hidden;'>{{item.item_title}}</div>
+                    <p><span class="item_category">{{item.item_category}}</span><br>
+                        <span>商品ID：</span><span class="goodsid">{{item.item_id}}</span>
+                    </p>
+
+                </div>
+            </div>
+        </li>
+        <!--<li class="th th-price" style="margin-left: -140px; vertical-align: middle;">
+          <span class="th-su item_price">{{item.item_price}}</span>
         </li>
         <li class="th th-amount" style="margin-left: -100px;">
-          <p>{{item.item_num}}</p>
-        </li>
+          <p class="item_num">{{item.item_num}}</p>
+        </li>-->
         <li class="th th-sum" style="margin-left: -60px;">
-          <span class="sum">{{item.payment}}</span>
+            <span class="sum">{{item.payment}}</span>
         </li>
-        <li class="th th-op">
-          <span id="order_state">{{item.order_state}}</span>
+        <li class="th th-op" style="margin-left: 85px;">
+            <span class="order_state">{{item.order_state}}</span>
         </li>
-        <li class="th th-op">
-          <span class="dele-btn">删除</span>
+        <li class="th th-op" style="margin-left: 85px;">
+            <span class="dele-btn" name="{{item.order_id}}">删除</span>
         </li>
-      </ul>
+    </ul>
     {{# }); }}
-  </script>
+</script>
 
 
-
-  <script type="text/javascript">
+<script type="text/javascript">
     layui.config({
-      base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
+        base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
     }).use(['mm', 'carousel'], function () {
-      var carousel = layui.carousel,
-              mm = layui.mm;
-      var html = demo.innerHTML;
-      var listCont = document.getElementById('list-cont');
-      mm.request({
-        url: 'orderInfo',
-        success : function(res) {
-            console.log(res);
-            listCont.innerHTML = mm.renderHtml(html, res);
+        var carousel = layui.carousel,
+            mm = layui.mm;
+        var html = demo.innerHTML;
+        var listCont = document.getElementById('list-cont');
+        mm.request({
+            url: 'orderInfo',
+            success: function (res) {
+                console.log(res);
+                listCont.innerHTML = mm.renderHtml(html, res);
 
-          <!--处理订单状态-->
-          var order_state =  $("#order_state").html();
-          var order_id = $("#order_id").html();
-          if(order_state == "1")
-          {
-            $("#order_state").html("<a href='GoPay?order_no="+order_id+"'>请付款</a>");
-          }
-          else if(order_state == "2")
-          {
-            $("#order_state").html("已付款");
-          }
-          else if(order_state == "3")
-          {
-            $("#order_state").html("未发货");
-          }
-          else if(order_state == "4")
-          {
-            $("#order_state").html("已发货");
-          }
-          else if(order_state == "5")
-          {
-            $("#order_state").html("交易成功");
-          }
-          else
-          {
-            $("#order_state").html("交易失败");
-          }
+                <!--处理订单状态-->
+                var order_states = $('.order_state');
+                order_states.each(function () {
+                    var order_state = $(this);
+                    if (order_state.html() == "1") {
+                        order_state.html("请付款");
+                        order_state.click(function () {
+                            window.location.href = 'confirm_orders.html';
+                        })
+                    } else if (order_state.html() == "2") {
+                        order_state.html("已付款");
+                    } else if (order_state.html() == "3") {
+                        order_state.html("未发货");
+                    } else if (order_state.html() == "4") {
+                        order_state.html("已发货");
+                    } else if (order_state.html() == "5") {
+                        order_state.html("交易成功");
+                    } else {
+                        order_state.html("交易失败");
+                    }
+                });
 
-          //处理删除事件
-          $(".dele-btn").click(function () {
-            var order_id = $("#order_id").html();
-            var r = confirm("你确定要删除吗")
-            if(r)
-            {
-              window.location.href = "delUserOrder?order_no="+order_id;
+
+                //处理删除事件
+                $(".dele-btn").click(function () {
+                    var order_id = $(".dele-btn").attr("name");
+                    var r = confirm("你确定要删除吗")
+                    if (r) {
+                        window.location.href = "delUserOrder?order_no=" + order_id;
+                    }
+
+                })
+
+
+            },
+            error: function (res) {
+                console.log(res);
             }
-
-          })
-
-
-
-        },
-          error: function(res) {
-              console.log(res);
-          }
-      })
+        })
 
     });
-  </script>
-
+</script>
 
 
 </body>
