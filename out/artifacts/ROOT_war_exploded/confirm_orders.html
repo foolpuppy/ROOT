@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认订单</title>
+    <link href="res/static/css/main.css" rel="stylesheet" type="text/css">
+    <link href="res/layui/css/layui.css" rel="stylesheet" type="text/css">
+    <script src="res/static/js/util/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="res/static/js/util/jquery.cookie.js" type="text/javascript"></script>
+    <script src="res/layui/layui.js" type="text/javascript"></script>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport">
+    <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+</head>
+<body>
+
+<div class="site-nav-bg">
+    <div class="site-nav w1200">
+        <p class="sn-back-home">
+            <i class="layui-icon layui-icon-home"></i>
+            <a href="index.html">首页</a>
+        </p>
+        <div class="sn-quick-menu">
+            <div class="login"><a href="consumer_center.html">个人中心</a></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="header">
+    <div class="headerLayout w1200">
+        <div class="headerCon">
+            <h1 class="mallLogo">
+                <a href="index.html" title="母婴商城">
+                    <img src="res/static/img/logo.png">
+                </a>
+            </h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="content content-nav-base shopcart-content">
+    <div class="main-nav">
+        <div class="inner-cont0">
+            <div class="inner-cont1 w1200">
+                <div class="inner-cont2">
+                    <a class="active" href="">确认订单信息</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="GoPay" class="layui-form" method="post">
+        <div class=" w1200 user-address" style="margin-top: 40px;">
+            <h3>请填写收货信息</h3>
+            <div class="layui-form-item first-input" style="margin-top: 20px;">
+                <div class="layui-inline">
+                    <label class="layui-form-label">收货人姓名</label>
+                    <div class="layui-input-inline">
+                        <input autocomplete="off" class="layui-input" name="name" required type="tel">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">收货人电话</label>
+                    <div class="layui-input-inline">
+                        <input autocomplete="off" class="layui-input" name="tel" required type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">邮政编码</label>
+                    <div class="layui-input-inline">
+                        <input autocomplete="off" class="layui-input" name="zip" required type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">省份</label>
+                    <div class="layui-input-inline">
+                        <input autocomplete="off" class="layui-input" name="province" required type="tel">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">城市</label>
+                    <div class="layui-input-inline">
+                        <input autocomplete="off" class="layui-input" name="city" required type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">区/县</label>
+                    <div class="layui-input-inline">
+                        <input autocomplete="off" class="layui-input" name="district" required type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">收货地址</label>
+                <div class="layui-input-block">
+                    <input autocomplete="off" class="layui-input" name="address" placeholder="地址具体到门牌号" required
+                           type="text">
+                </div>
+            </div>
+
+        </div>
+        <div class="cart w1200">
+            <div class="cart-table-th">
+                <div class="th th-chk">
+                    <div class="th-inner">
+                        订单编号
+                    </div>
+                </div>
+                <div class="th th-item" style="margin-left: 50px;">
+                    <div class="th-inner">
+                        商品
+                    </div>
+                </div>
+                <div class="th th-price">
+                    <div class="th-inner">
+                        单价
+                    </div>
+                </div>
+                <div class="th th-amount" style="margin-left: -50px;">
+                    <div class="th-inner">
+                        数量
+                    </div>
+                </div>
+                <div class="th th-sum">
+                    <div class="th-inner">
+                        应付款
+                    </div>
+                </div>
+                <div class="th th-op">
+                    <div class="th-inner">
+                        交易状态
+                    </div>
+                </div>
+            </div>
+            <div class="OrderList">
+                <div class="order-content" id="list-cont">
+                    <!---->
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script id="demo" type="text/html">
+    {{# layui.each(d.confirmOrders,function(index,item){}}
+    {{# layui.each(item.orderList,function(index1,item1){}}
+    <ul class="item-content layui-clear">
+        <li class="th th-chk" style="width: 125px;margin-left: 20px;">
+            <span name="goodsid" style="color: gray;">{{item1.order_id}}</span>
+        </li>
+        <li class="th th-item" style="width: 400px;margin-left: 100px;">
+            <div class="item-cont">
+                <img src="{{item1.item_image_path}}" alt="">
+                <div class="text">
+                    <div class="title" style="height: 50px;overflow: hidden;">{{item1.item_title}}</div>
+                    <p><span>{{item1.item_category}}</span><br>
+                        <span>商品ID：</span><span class="goodsid">{{item1.item_id}}</span>
+                    </p>
+
+                </div>
+            </div>
+        </li>
+        <li class="th th-price" style="margin-left: -140px;">
+            <span class="th-su">{{item1.item_price}}</span>
+        </li>
+        <li class="th th-amount" style="margin-left: -50px;">
+            <p>{{item1.item_num}}</p>
+        </li>
+        <li class="th th-sum">
+            <span class="sum">{{item1.item_price}}</span>
+        </li>
+        <li class="th th-op">
+            <span>待付款</span>
+        </li>
+    </ul>
+    {{# }); }}
+
+    <div class="FloatBarHolder layui-clear">
+        <div class="th Settlement">
+            <button class="layui-btn" id="layui-btn-settlement">确认订单</button>
+        </div>
+        <div class="th total">
+            <p>应付款：<span class="pieces-total">{{item.amount}}</span></p>
+        </div>
+    </div>
+    {{# }); }}
+</script>
+
+
+<script type="text/javascript">
+    layui.config({
+        base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
+    }).use(['mm', 'carousel'], function () {
+        var carousel = layui.carousel,
+            mm = layui.mm;
+        var html = demo.innerHTML;
+        var listCont = document.getElementById('list-cont');
+        mm.request({
+            url: 'getUnPaidOrders',
+            success: function (res) {
+                console.log(res);
+                listCont.innerHTML = mm.renderHtml(html, res);
+            },
+            error: function (res) {
+                console.log(res);
+            }
+        })
+
+    });
+</script>
+
+<script>
+    $(function () {
+        if ($.cookie("userTel") == null) {
+            Window.location.href = "login.html";
+        }
+    })
+</script>
+
+</body>
+</html>

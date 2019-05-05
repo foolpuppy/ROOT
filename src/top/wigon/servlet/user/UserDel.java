@@ -1,6 +1,5 @@
 package top.wigon.servlet.user;
 
-import top.wigon.entity.User;
 import top.wigon.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
@@ -19,13 +18,10 @@ import java.io.IOException;
 public class UserDel extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String user_id = req.getParameter("user_id");
+        String userId = req.getParameter("user_id");
         UserServiceImpl userService = new UserServiceImpl();
-        User user = new User();
-        user.setUserId(user_id);
         resp.setContentType("text/html;charset=utf-8");
-        if (userService.userDel(user)) {
-
+        if (userService.userDel(userId)) {
             //todo 用户删除成功
         } else {
             //todo 用户删除失败

@@ -62,7 +62,7 @@ public class test {
 //        System.out.println(JSON);
 //        ItemServiceImpl itemService = new ItemServiceImpl();
 //        System.out.println(itemService.getItemPriceById("1000000265"));
-//        UserDAOIpml userService = new UserDAOIpml();
+//        UserDAOImpl userService = new UserDAOImpl();
 //        System.out.println(userService.getUserOrderUnPaidNumByUserId("15871653387"));
         System.out.println(Arrays.toString("1556872913296".split("\"")));
         String u = "1556872913296";

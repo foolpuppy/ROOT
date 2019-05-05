@@ -1,6 +1,6 @@
 package top.wigon.service.impl;
 
-import top.wigon.DAO.impl.OrderItemDAOImpl;
+import top.wigon.dao.impl.OrderItemDAOImpl;
 import top.wigon.entity.OrderItem;
 import top.wigon.service.OrderItemService;
 

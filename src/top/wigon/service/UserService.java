@@ -36,10 +36,10 @@ public interface UserService {
     /**
      * 删除用户
      *
-     * @param user
+     * @param userId
      * @return
      */
-    Boolean userDel(User user);
+    Boolean userDel(String userId);
 
     /**
      * 检测电话是否已经存在

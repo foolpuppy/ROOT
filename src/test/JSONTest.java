@@ -3,7 +3,7 @@ package test;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import top.wigon.DAO.impl.OrderDAOImpl;
+import top.wigon.dao.impl.OrderDAOImpl;
 import top.wigon.entity.Order;
 
 import java.util.List;

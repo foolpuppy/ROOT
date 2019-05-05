@@ -20,11 +20,11 @@ import java.util.Set;
 
 @WebFilter("/*")
 public class UserIsLogInServlet implements Filter {
-    //未登录不能访问的URL
+    /**
+     * 未登录不允许访问的路径
+     */
     private static final Set<String> NOT_ALLOWED_PATHS = Collections.unmodifiableSet(new HashSet<>(
             Arrays.asList("/confirm_orders.html", "/all_order.html", "/package.html", "/consumer_center.html", "/consumer_info.html")));
-
-    //"/commodity.html",
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;

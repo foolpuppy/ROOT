@@ -24,10 +24,12 @@ public class AlipayConfig {
     public static String alipay_public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArOemhl/eZM0RaTBG/2eCoYlbc8dy3MQe2X4NPh8cylxQ6AUl+DN+qvTr6fWu/SJltCdK8NQA6wE1F8MfMo5Z/TwRqbr1bl/8qYwk86eUEoUPOMOG/UR5fEfcJIIHwYKQ3/Y5ywH0FWhjeOLO552EAAEemRIPAShEHgSMPpTJRKPubbOQhE6xMEf9gTqqvX9plLZkCHFnKnMaV6LImm3dmcI6EM8LTu4dABSLQ/mbmGnvpkczplEFwviQpJQQGZZTsUurhHofp3eUDV0eSRMyjn5O71xQCrC3y2VDr7zeWHqo2mnH+wwl91Jeyyl3HuBrcumn0079a1/i9HSG+z9u7wIDAQAB";
 
     // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-    public static String notify_url = "http://beauty9.xicp.net/notify_url.jsp";
+//    public static String notify_url = "http://beauty9.xicp.net/notify_url.jsp";
+    public static String notify_url = "http://localhost:8080/notify_url.jsp";
 
     // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-    public static String return_url = "http://beauty9.xicp.net/consumer_center.html";
+//    public static String return_url = "http://beauty9.xicp.net/consumer_center.html";
+    public static String return_url = "http://localhost:8080/consumer_center.html";
 
     // 签名方式
     public static String sign_type = "RSA2";

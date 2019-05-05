@@ -3,10 +3,10 @@
 <%@ page import="com.alipay.api.internal.util.AlipaySignature" %>
 <%@ page import="top.wigon.alipay.config.AlipayConfig" %>
 <%@ page import="top.wigon.service.impl.OrderServiceImpl" %>
+<%@ page import="java.nio.charset.StandardCharsets" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.Map" %>
-<%@ page import="java.nio.charset.StandardCharsets" %>
 <%
     /* *
      * 功能：支付宝服务器异步通知页面
@@ -60,7 +60,7 @@
 
         //交易状态
         String trade_status = new String(request.getParameter("trade_status").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
-
+        System.err.println("trade_status : " + trade_status);
         if (trade_status.equals("TRADE_FINISHED")) {
             //判断该笔订单是否在商户网站中已经做过处理
             //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序

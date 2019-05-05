@@ -1,7 +1,7 @@
 package top.wigon.service.impl;
 
-import top.wigon.DAO.impl.ItemDAOImpl;
-import top.wigon.DAO.impl.ItemDescImpl;
+import top.wigon.dao.impl.ItemDAOImpl;
+import top.wigon.dao.impl.ItemDescImpl;
 import top.wigon.entity.Item;
 import top.wigon.entity.ItemDesc;
 import top.wigon.service.ItemService;

@@ -18,7 +18,7 @@ public class DBUtils {
     /**
      * the pattern of limit
      */
-    private static final Pattern sLimitPattern =
+    private static final Pattern S_LIMIT_PATTERN =
             Pattern.compile("\\s*\\d+\\s*(,\\s*\\d+\\s*)?");
 
     /**
@@ -589,7 +589,7 @@ public class DBUtils {
             throw new IllegalArgumentException(
                     "HAVING clauses are only permitted when using a groupBy clause");
         }
-        if (!isEmpty(limit) && !sLimitPattern.matcher(limit).matches()) {
+        if (!isEmpty(limit) && !S_LIMIT_PATTERN.matcher(limit).matches()) {
             throw new IllegalArgumentException("invalid LIMIT clauses:" + limit);
         }
 

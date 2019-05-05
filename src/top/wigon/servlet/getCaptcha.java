@@ -19,6 +19,51 @@ import java.util.Random;
 @WebServlet("/getCaptcha")
 public class getCaptcha extends HttpServlet {
 
+    /**
+     * 随机字符字典
+     */
+    private static final char[] CHARS = {'2', '3', '4', '5', '6', '7', '8',
+            '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
+            'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm',
+            'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    /**
+     * 随机数
+     */
+    private static Random random = new Random();
+
+    /**
+     * 获取4位随机数
+     *
+     * @return
+     */
+    private static String getRandomString() {
+        StringBuffer buffer = new StringBuffer();
+        for (int i = 0; i < 4; i++) {
+            buffer.append(CHARS[random.nextInt(CHARS.length)]);
+        }
+        return buffer.toString();
+    }
+
+    /**
+     * 获取随机数颜色
+     *
+     * @return
+     */
+    private static Color getRandomColor() {
+        return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
+    }
+
+    /**
+     * 返回某颜色的反色
+     *
+     * @param c
+     * @return
+     */
+    private static Color getReverseColor(Color c) {
+        return new Color(255 - c.getRed(), 255 - c.getGreen(), 255 - c.getBlue());
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 设置页面不缓存
@@ -67,51 +112,5 @@ public class getCaptcha extends HttpServlet {
         ImageIO.write(bi, "JPEG", resp.getOutputStream());
         //输出图片到页面
 
-    }
-
-    /**
-     * 随机字符字典
-     */
-    private static final char[] CHARS = {'2', '3', '4', '5', '6', '7', '8',
-            '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
-            'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm',
-            'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-
-    /**
-     * 随机数
-     */
-    private static Random random = new Random();
-
-    /**
-     * 获取4位随机数
-     *
-     * @return
-     */
-    private static String getRandomString() {
-        StringBuffer buffer = new StringBuffer();
-        for (int i = 0; i < 4; i++) {
-            buffer.append(CHARS[random.nextInt(CHARS.length)]);
-        }
-        return buffer.toString();
-    }
-
-    /**
-     * 获取随机数颜色
-     *
-     * @return
-     */
-    private static Color getRandomColor() {
-        return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
-    }
-
-    /**
-     * 返回某颜色的反色
-     *
-     * @param c
-     * @return
-     */
-    private static Color getReverseColor(Color c) {
-        return new Color(255 - c.getRed(), 255 - c.getGreen(), 255 - c.getBlue());
     }
 }

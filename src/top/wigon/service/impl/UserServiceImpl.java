@@ -1,7 +1,7 @@
 package top.wigon.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import top.wigon.DAO.impl.UserDAOIpml;
+import top.wigon.dao.impl.UserDAOImpl;
 import top.wigon.entity.User;
 import top.wigon.service.UserService;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * @date 2019/4/25 9:46
  **/
 public class UserServiceImpl implements UserService {
-    private UserDAOIpml dao = new UserDAOIpml();
+    private UserDAOImpl dao = new UserDAOImpl();
 
     @Override
     public Boolean userLoginByphone(User user) {
@@ -44,11 +44,13 @@ public class UserServiceImpl implements UserService {
     /**
      * 删除用户通过Uid
      *
-     * @param user
+     * @param userId
      * @return
      */
     @Override
-    public Boolean userDel(User user) {
+    public Boolean userDel(String userId) {
+        User user = new User();
+        user.setUserId(userId);
         return dao.deleteEntity(user);
     }
 
@@ -100,9 +102,13 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    public int getUserOrderUnPaidNumByUserId(String user_id) throws SQLException, JsonProcessingException {
-        return dao.getUserOrderUnPaidNumByUserId(user_id);
+    public int getUserOrderUnPaidNumByUserId(String userId) throws SQLException, JsonProcessingException {
+        return dao.getUserOrderUnPaidNumByUserId(userId);
 
+    }
+
+    public boolean setUserRoleTypeById(String userId, String roleType) {
+        return dao.changeRoleTypeById(userId, roleType);
     }
 
 }

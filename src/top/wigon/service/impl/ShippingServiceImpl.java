@@ -1,6 +1,6 @@
 package top.wigon.service.impl;
 
-import top.wigon.DAO.impl.ShippingDAOImpl;
+import top.wigon.dao.impl.ShippingDAOImpl;
 import top.wigon.entity.Package;
 import top.wigon.entity.Shipping;
 import top.wigon.service.ShippingService;
