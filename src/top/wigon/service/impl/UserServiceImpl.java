@@ -7,6 +7,7 @@ import top.wigon.service.UserService;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author L
@@ -109,6 +110,14 @@ public class UserServiceImpl implements UserService {
 
     public boolean setUserRoleTypeById(String userId, String roleType) {
         return dao.changeRoleTypeById(userId, roleType);
+    }
+
+    public List<User> getUserByRole(String role) {
+        return dao.getUserByRole(role);
+    }
+
+    public List<User> getUserByRole(String role, Map<String, Object> whereMap) {
+        return dao.getUserByRole(role, whereMap);
     }
 
 }

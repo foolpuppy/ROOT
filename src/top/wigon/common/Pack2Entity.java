@@ -27,7 +27,7 @@ public class Pack2Entity {
             user = new User();
             user.setUserId(result.get(i).get("user_id").toString());
             user.setUserName(result.get(i).get("username").toString());
-            user.setPassword(result.get(i).get("password").toString());
+            user.setPassword(result.get(i).get("password") == null ? "" : result.get(i).get("password").toString());
             user.setTel(String.valueOf(result.get(i).get("tel").toString()));
             user.setEmail(String.valueOf(result.get(i).get("email")));
             user.setAvatarPath(String.valueOf(result.get(i).get("avatar_path")) == null ? "res/avatar/avatar.jpg" : result.get(i).get("avatar_path").toString());

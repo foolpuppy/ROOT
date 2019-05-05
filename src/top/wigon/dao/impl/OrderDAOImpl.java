@@ -1,8 +1,8 @@
 package top.wigon.dao.impl;
 
-import top.wigon.dao.OrderDAO;
 import top.wigon.common.DBUtils;
 import top.wigon.common.Pack2Entity;
+import top.wigon.dao.OrderDAO;
 import top.wigon.entity.Order;
 
 import java.sql.SQLException;
@@ -42,7 +42,7 @@ public class OrderDAOImpl implements OrderDAO {
         Map<String, Object> valueMap = getValMap(order);
         boolean flag = false;
         try {
-            flag = DBUtils.insert(tableName, valueMap) > 0;
+            flag = DBUtils.insert(tableName, valueMap) == 1;
         } catch (SQLException e) {
             e.printStackTrace();
             System.err.println("订单添加失败");
@@ -155,7 +155,7 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     /**
-     * 更新订单状态
+     * 更新订单状态为已支付
      *
      * @param order_id
      * @param state
@@ -164,6 +164,7 @@ public class OrderDAOImpl implements OrderDAO {
     public boolean updateOrderState(String order_id, int state) throws SQLException {
         Map<String, Object> valueMap = new HashMap<>();
         valueMap.put("order_state", state);
+        valueMap.put("payment_time", DBUtils.getCurrDateTime());
         Map<String, Object> whereMap = new HashMap<>();
         whereMap.put("order_id", order_id);
         return DBUtils.update(tableName, valueMap, whereMap) == 0;

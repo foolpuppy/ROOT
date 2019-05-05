@@ -97,7 +97,7 @@ public class ItemDAOImpl implements ItemDAO {
     public List<Item> findByCondition(Map<String, Object> keyword) {
         List<Item> items = new ArrayList<>();
         try {
-            List<Map<String, Object>> result = DBUtils.queryLikeMult(ITEM_JOIN_DESC, keyword);
+            List<Map<String, Object>> result = DBUtils.queryLikeMultLimit(ITEM_JOIN_DESC, keyword);
 
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {
@@ -116,7 +116,7 @@ public class ItemDAOImpl implements ItemDAO {
     public List<Item> findByConditionCols(Map<String, Object> keyword, int cols) {
         List<Item> items = new ArrayList<>();
         try {
-            List<Map<String, Object>> result = DBUtils.queryLikeMult(ITEM_JOIN_DESC, keyword, cols);
+            List<Map<String, Object>> result = DBUtils.queryLikeMultLimit(ITEM_JOIN_DESC, keyword, cols);
 
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {

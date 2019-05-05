@@ -334,8 +334,8 @@ public class DBUtils {
      * @return List<Map < String, Object>>
      * @throws SQLException
      */
-    public static List<Map<String, Object>> queryLikeMult(String sql,
-                                                          Map<String, Object> whereMap) throws Exception {
+    public static List<Map<String, Object>> queryLikeMultLimit(String sql,
+                                                               Map<String, Object> whereMap) throws Exception {
         StringBuffer SQL = new StringBuffer();
         SQL.append(sql);
         if (whereMap != null && whereMap.size() > 0) {
@@ -393,8 +393,8 @@ public class DBUtils {
      * @return List<Map < String, Object>>
      * @throws SQLException
      */
-    public static List<Map<String, Object>> queryLikeMult(String sql,
-                                                          Map<String, Object> whereMap, int cols) throws Exception {
+    public static List<Map<String, Object>> queryLikeMultLimit(String sql,
+                                                               Map<String, Object> whereMap, int cols) throws Exception {
         StringBuffer SQL = new StringBuffer();
         SQL.append(sql);
         if (whereMap != null && whereMap.size() > 0) {

@@ -32,7 +32,7 @@
     <div class="headerLayout w1200">
         <div class="headerCon">
             <h1 class="mallLogo">
-                <a href="#" title="母婴商城">
+                <a href="#" title="极品商城">
                     <img src="res/static/img/logo.png">
                 </a>
             </h1>
@@ -162,7 +162,7 @@
             <span class="sum">{{item.item_price}}</span>
         </li>
         <li class="th th-op" style="margin-left: 85px;">
-            <span class="order_state">{{item.order_state}}</span>
+            <span class="order_state ">{{item.order_state}}</span>
         </li>
         <li class="th th-op" style="margin-left: 85px;">
             <span class="dele-btn" name="{{item.order_id}}">删除</span>
@@ -192,6 +192,7 @@
                     var order_state = $(this);
                     if (order_state.html() == "1") {
                         order_state.html("请付款");
+                        order_state.css("color", "red");
                         order_state.click(function () {
                             window.location.href = 'confirm_orders.html';
                         })

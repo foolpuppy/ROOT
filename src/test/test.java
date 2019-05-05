@@ -1,6 +1,6 @@
 package test;
 
-import java.util.Arrays;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,9 +64,12 @@ public class test {
 //        System.out.println(itemService.getItemPriceById("1000000265"));
 //        UserDAOImpl userService = new UserDAOImpl();
 //        System.out.println(userService.getUserOrderUnPaidNumByUserId("15871653387"));
-        System.out.println(Arrays.toString("1556872913296".split("\"")));
-        String u = "1556872913296";
-        System.out.println(u.replace("\"", ""));
+//        System.out.println(Arrays.toString("1556872913296".split("\"")));
+//        String u = "1556872913296";
+//        System.out.println(u.replace("\"", ""));
+        BigDecimal a = new BigDecimal(500);
+        int b = Integer.parseInt(String.valueOf(a));
+        System.out.println(b);
 
     }
 }
