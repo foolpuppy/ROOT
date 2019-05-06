@@ -22,7 +22,7 @@ public class UserLoginServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=utf-8");
-        if (req.getSession().getAttribute("verify").equals(req.getParameter("verifiCode"))) {
+        if (String.valueOf(req.getSession().getAttribute("verify")).equals(req.getParameter("verifiCode"))) {
             resp.setContentType("text/html;charset=utf-8");
             String tel = req.getParameter("phone");
             String password = req.getParameter("password");
