@@ -17,6 +17,7 @@ import java.util.Map;
  * @date 2019/4/25 19:13
  **/
 public class ItemDAOImpl implements ItemDAO {
+
     private final String tableName = "tb_item";
     private final String ITEM_JOIN_DESC = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t1.item_desc,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id and t2.item_state=1";
     private final String DAILY_RECOMMEND = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t1.item_desc,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id WHERE t2.item_price< ? and t2.item_price> ? and t2.item_state=1 Limit ?";
@@ -97,7 +98,7 @@ public class ItemDAOImpl implements ItemDAO {
     public List<Item> findByCondition(Map<String, Object> keyword) {
         List<Item> items = new ArrayList<>();
         try {
-            List<Map<String, Object>> result = DBUtils.queryLikeMultLimit(ITEM_JOIN_DESC, keyword);
+            List<Map<String, Object>> result = DBUtils.queryLikeMultLimit(ITEM_JOIN_DESC, keyword, false);
 
             items = Pack2Entity.pack2items(result);
         } catch (Exception e) {
@@ -169,4 +170,6 @@ public class ItemDAOImpl implements ItemDAO {
         return vmap;
 
     }
+
+
 }

@@ -1,4 +1,4 @@
-package top.wigon.servlet;
+package top.wigon.servlet.common;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;

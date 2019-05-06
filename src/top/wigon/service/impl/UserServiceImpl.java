@@ -120,4 +120,12 @@ public class UserServiceImpl implements UserService {
         return dao.getUserByRole(role, whereMap);
     }
 
+    public int getUserRoleById(String userId) {
+        return dao.getUserRoleType(userId);
+    }
+
+    public String getShopIdByUserId(String userId) {
+        return dao.getShopIdByUserId(userId);
+    }
+
 }

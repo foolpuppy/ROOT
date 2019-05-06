@@ -21,12 +21,7 @@ public class DelUserOrder extends HttpServlet {
         String orderToDel = req.getParameter("order_no");
         String currentUserId = (String) req.getSession().getAttribute("user_id");
         OrderServiceImpl orderService = new OrderServiceImpl();
-        if (orderService.delUserOrder(orderToDel, currentUserId)) {
-            resp.setContentType("text/plain; charset=UTF-8;");
-            resp.getWriter().write("删除成功");
-        } else {
-            resp.getWriter().write("删除失败");
-        }
+        orderService.delUserOrder(orderToDel, currentUserId);
         resp.sendRedirect("all_order.html");
     }
 

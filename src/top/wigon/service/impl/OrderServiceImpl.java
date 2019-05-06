@@ -72,4 +72,10 @@ public class OrderServiceImpl implements OrderService {
         return dao.delUserOrder(order_id, user_id);
     }
 
+    public Boolean delOrderByOrderId(String orderId) {
+        Order order = new Order();
+        order.setOrderId(orderId);
+        return dao.deleteEntity(order);
+    }
+
 }

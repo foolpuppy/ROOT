@@ -329,19 +329,20 @@ public class DBUtils {
      * 执行sql通过 Map<String, Object>限定查询条件模糊查询
      * 注意 这是多表
      *
-     * @param sql      执行的语SQL句
-     * @param whereMap where条件
+     * @param sql        执行的语SQL句
+     * @param whereMap   where条件
+     * @param startWith2 是否从第直接用AND连接条件
      * @return List<Map < String, Object>>
      * @throws SQLException
      */
     public static List<Map<String, Object>> queryLikeMultLimit(String sql,
-                                                               Map<String, Object> whereMap) throws Exception {
+                                                               Map<String, Object> whereMap, Boolean startWith2) throws Exception {
         StringBuffer SQL = new StringBuffer();
         SQL.append(sql);
         if (whereMap != null && whereMap.size() > 0) {
             Iterator<String> iterator = whereMap.keySet().iterator();
             //i=1就 会从第一个WherMap 开始 添加条件
-            int i = 0;
+            int i = startWith2 ? 1 : 0;
             while (iterator.hasNext()) {
                 String key = iterator.next();
                 SQL.append(i == 0 ? " where " : " ");

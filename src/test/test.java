@@ -1,6 +1,5 @@
 package test;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,9 +66,12 @@ public class test {
 //        System.out.println(Arrays.toString("1556872913296".split("\"")));
 //        String u = "1556872913296";
 //        System.out.println(u.replace("\"", ""));
-        BigDecimal a = new BigDecimal(500);
-        int b = Integer.parseInt(String.valueOf(a));
-        System.out.println(b);
+//        BigDecimal a = new BigDecimal(500);
+//        int b = Integer.parseInt(String.valueOf(a));
+//        System.out.println(b);
+        StringBuilder SQL = new StringBuilder();
+        SQL.append("SELECT tb_user.user_id,tb_user.username,tb_user.tel,tb_user.email,tb_user.role_type,tb_user.gmt_create FROM tb_user WHERE role_type IN (?) ");
+        System.out.println("SELECT tb_user.user_id,tb_user.username,tb_user.tel,tb_user.email,tb_user.role_type,tb_user.gmt_create FROM tb_user WHERE role_type IN (?) ".replace("?", "1,2"));
 
     }
 }

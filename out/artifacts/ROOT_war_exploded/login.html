@@ -62,13 +62,13 @@
                             </div>
                         </div>
                         <div class="layui-inline veri-code">
-                            <div class="layui-input-inline">
+                            <div style="width: 195px; display: inline-block;">
                                 <input autocomplete="off" class="layui-input" id="pnum" lay-verify="required"
                                        name="verifiCode"
-                                       placeholder="请输入验证码" type="text"></div>
-                            <div class="layui-input-block" style="margin-left: 70px;">
-                                <img alt="验证码" id="captcha" onclick="updateCaptcha()" src="getCaptcha">
+                                       placeholder="请输入验证码" type="text">
                             </div>
+                            <img style="width: 100px;height: 36px; border-width: 1px;" alt="验证码" id="captcha"
+                                 onclick="updateCaptcha()" src="getCaptcha">
                         </div>
                     </div>
                     <div class="layui-form-item login-btn">

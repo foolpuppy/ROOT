@@ -57,17 +57,19 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public boolean updateItemDesc(String Desc, String id) {
+    public boolean updateItemDesc(String Desc, String itemId) {
         ItemDesc desc = new ItemDesc();
         desc.setDesc(Desc);
+        desc.setItemId(itemId);
         return Ddao.updateEntity(desc);
 
     }
 
     @Override
-    public boolean updateItemImage(String newImagePath, String id) {
+    public boolean updateItemImage(String newImagePath, String itemId) {
         ItemDesc desc = new ItemDesc();
         desc.setImagePath(newImagePath);
+        desc.setItemId(itemId);
         return Ddao.updateEntity(desc);
     }
 
@@ -84,4 +86,7 @@ public class ItemServiceImpl implements ItemService {
         return dao.findByEntity(item).getPrice().toString();
     }
 
+    public boolean updateItem(Item item) {
+        return dao.updateEntity(item);
+    }
 }

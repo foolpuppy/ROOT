@@ -1,4 +1,4 @@
-package top.wigon.servlet.Search;
+package top.wigon.servlet.search;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

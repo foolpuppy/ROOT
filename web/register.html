@@ -83,12 +83,13 @@
                             </div>
                         </div>
                         <div class="layui-inline veri-code">
-                            <div class="layui-input-inline">
+                            <div style="width: 245px; display: inline-block;">
                                 <input autocomplete="off" class="layui-input" id="pnum" lay-verify="required"
                                        name="pnum"
                                        placeholder="请输入验证码" type="text">
-                                <input class="layui-btn" id="find" type="button" value="验证码"/>
                             </div>
+                            <img style="width: 150px;height: 36px;" alt="验证码" id="captcha" onclick="updateCaptcha()"
+                                 src="getCaptcha">
                         </div>
                         <div class="layui-form-item login-btn">
                             <div class="layui-input-block">
@@ -133,7 +134,13 @@
 </div>
 <script type="text/javascript">
 
+    function updateCaptcha() {
+        random = new Date().getTime() + '' + Math.floor(Math.random() * Math.pow(10, 8));
+        $('#captcha').attr('src', '/getCaptcha?rand=' + random);
+    }
+
     $(function () {
+
         var username_error = "";
         var phone_error = "";
         var email_error = "";

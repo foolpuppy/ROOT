@@ -28,7 +28,10 @@ public class UserDAOImpl implements UserDAO {
     private final String QUERY_ALL_ORDER_INFO = "SELECT tb_order.order_id,tb_order.user_id,tb_order.payment,tb_order.payment_type,tb_order.post_fee,tb_order.order_state,tb_order.create_time,tb_order.update_time,tb_order.payment_time,tb_order.consign_time,tb_order.receive_time,tb_order.end_time,tb_order.close_time,tb_order.shipping_name,tb_order.shipping_code,tb_order.gmt_create,tb_order.gmt_modified,tb_order_item.item_num,tb_item.item_category,tb_order_item.item_title,tb_order_item.item_price,tb_order_item.total_fee,tb_order_item.item_id,tb_desc.item_image_path FROM tb_order LEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id JOIN tb_desc on tb_order_item.item_id=tb_desc.item_id join tb_item on  tb_order_item.item_id=tb_item.item_id WHERE tb_order.order_id in (SELECT order_id from tb_order where user_id = (select user_id from tb_user where tel=?))";
     private final String QUERY_USER_UNPAID_NUMS = "SELECT COUNT(1) num FROM tb_order WHERE user_id=? AND order_state=1 ";
     private final String CHANGE_ROLETYPE = "UPDATE tb_user SET role_type =? WHERE user_id=?";
-    private final String QUER_USER_BY_ROLE = "SELECT tb_user.user_id, tb_user.username, tb_user.tel, tb_user.email, tb_user.avatar_path, tb_user.role_type, tb_user.gmt_create, tb_user.gmt_modified FROM tb_user where role_type in (?)";
+    private final String QUERY_USER_BY_ROLE_LIKE = "SELECT tb_user.user_id,tb_user.username,tb_user.tel,tb_user.email,tb_user.role_type,tb_user.gmt_create FROM tb_user WHERE role_type IN (?) ";
+    private final String GET_USER_ROLE_TYPE = "SELECT role_type FROM tb_user WHERE user_id=?";
+    private static final String GET_SHOP_ID_BY_USERID = "SELECT shop_id from tb_shop where user_id=?";
+
 
     /**
      * 特殊处理 用手机号唯一标识用户
@@ -174,7 +177,9 @@ public class UserDAOImpl implements UserDAO {
             } else {
                 role = "0,1";
             }
-            List<Map<String, Object>> result = DBUtils.queryLikeMultLimit(QUER_USER_BY_ROLE, whereMap);
+            StringBuilder SQL = new StringBuilder();
+            SQL.append(QUERY_USER_BY_ROLE_LIKE.replace("?", role));
+            List<Map<String, Object>> result = DBUtils.queryLikeMultLimit(SQL.toString(), whereMap, true);
             users = Pack2Entity.pack2users(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -190,11 +195,31 @@ public class UserDAOImpl implements UserDAO {
             } else {
                 role = "0,1";
             }
-            List<Map<String, Object>> result = DBUtils.executeQuery(QUER_USER_BY_ROLE, new Object[]{role});
+            List<Map<String, Object>> result = DBUtils.executeQuery(QUERY_USER_BY_ROLE_LIKE, new Object[]{role});
             users = Pack2Entity.pack2users(result);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return users;
+    }
+
+    public int getUserRoleType(String userId) {
+        int roleType = 0;
+        try {
+            roleType = Integer.parseInt(String.valueOf(DBUtils.executeQuery(GET_USER_ROLE_TYPE, new Object[]{userId}).get(0).get("role_type")));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return roleType;
+    }
+
+    public String getShopIdByUserId(String userId) {
+        String shopId = null;
+        try {
+            shopId = String.valueOf(DBUtils.executeQuery(GET_SHOP_ID_BY_USERID, new Object[]{userId}).get(0).get("shop_id"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return shopId;
     }
 }

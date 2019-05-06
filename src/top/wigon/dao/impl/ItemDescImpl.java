@@ -80,7 +80,7 @@ public class ItemDescImpl implements ItemDescDAO {
     @Override
     public Map<String, Object> getPrimaryKey(ItemDesc itemDesc) {
         Map<String, Object> pk = new HashMap<>();
-        pk.put("id", itemDesc.getId());
+        pk.put("item_id", itemDesc.getItemId());
         return pk;
     }
 }

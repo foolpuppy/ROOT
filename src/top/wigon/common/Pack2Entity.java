@@ -30,7 +30,7 @@ public class Pack2Entity {
             user.setPassword(result.get(i).get("password") == null ? "" : result.get(i).get("password").toString());
             user.setTel(String.valueOf(result.get(i).get("tel").toString()));
             user.setEmail(String.valueOf(result.get(i).get("email")));
-            user.setAvatarPath(String.valueOf(result.get(i).get("avatar_path")) == null ? "res/avatar/avatar.jpg" : result.get(i).get("avatar_path").toString());
+            user.setAvatarPath(result.get(i).get("avatar_path") == null ? "res/avatar/default.png" : result.get(i).get("avatar_path").toString());
             user.setRoleType(String.valueOf(result.get(i).get("role_type")));
             user.setCreateTime(result.get(i).get("gmt_create").toString());
             list.add(user);
