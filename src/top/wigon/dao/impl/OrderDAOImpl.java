@@ -6,10 +6,7 @@ import top.wigon.dao.OrderDAO;
 import top.wigon.entity.Order;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author L
@@ -18,6 +15,8 @@ import java.util.Map;
  **/
 public class OrderDAOImpl implements OrderDAO {
     private final String tableName = "tb_order";
+    private final String GET_ALL_ORDERS = "SELECT tb_order.order_id,tb_order.user_id,tb_order.payment,tb_order.order_state,tb_order.shipping_name,tb_order.shipping_code FROM tb_order";
+    private final String GET_MY_ORDERS = "SELECT\ttb_order.order_id,\ttb_order.user_id,tb_order.order_state,tb_order.payment,\ttb_order.shipping_name,\ttb_order.shipping_code,\ttb_item.item_category,\ttb_order_item.item_title,\ttb_order_item.item_price,\ttb_order_item.total_fee,\ttb_order_item.item_id,\ttb_item.shop_id,\ttb_desc.item_image_path FROM\ttb_order\tLEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id\tJOIN tb_desc ON tb_order_item.item_id = tb_desc.item_id\tJOIN tb_item ON tb_order_item.item_id = tb_item.item_id WHERE\ttb_order.order_id IN ( SELECT tb_order.order_id FROM tb_order LEFT JOIN tb_order_item ON tb_order.order_id = tb_order_item.order_id\tJOIN tb_desc ON tb_order_item.item_id = tb_desc.item_id\tJOIN tb_item ON tb_order_item.item_id = tb_item.item_id  WHERE shop_id=(SELECT shop_id from tb_shop where user_id=?) )";
 
     @Override
     public Order findByEntity(Order order) {
@@ -104,8 +103,8 @@ public class OrderDAOImpl implements OrderDAO {
         if (order.getShippingName() != null) {
             valueMap.put("shipping_name", order.getShippingName());
         }
-        if (order.getShipingCode() != null) {
-            valueMap.put("shipping_code", order.getShipingCode());
+        if (order.getshippingCode() != null) {
+            valueMap.put("shipping_code", order.getshippingCode());
         }
         return valueMap;
     }
@@ -117,6 +116,11 @@ public class OrderDAOImpl implements OrderDAO {
         return pk;
     }
 
+    /**
+     * 获取订单List
+     *
+     * @return
+     */
     public List<Order> getAllOrders() {
         List<Order> items = new ArrayList<>();
         try {
@@ -128,6 +132,11 @@ public class OrderDAOImpl implements OrderDAO {
         return items;
     }
 
+    /**
+     * 通过订单编号获取订单
+     * @param no
+     * @return
+     */
     public Order getByOrderNo(String no) {
         Order order = new Order();
         order.setOrderId(no);
@@ -142,12 +151,24 @@ public class OrderDAOImpl implements OrderDAO {
         return Pack2Entity.pack2orders(result).get(0);
     }
 
+    /**
+     * 通过订单号获取该订单应付款（适用于订单有多个商品的情况）
+     * @param order_no
+     * @return
+     * @throws Exception
+     */
     public String getItemOrderTotalMoney(String order_no) throws Exception {
         Map<String, Object> whereMap = new HashMap<>();
         whereMap.put("order_id", order_no);
         return (String) DBUtils.queryMult("SELECT SUM(item_num*item_price) payment FROM `tb_order_item` ", whereMap).get(0).get("payment");
     }
 
+    /**
+     * 订单付款金额
+     * @param order_no
+     * @return
+     * @throws Exception
+     */
     public String getOrderTotalMoney(String order_no) throws Exception {
         Map<String, Object> whereMap = new HashMap<>();
         whereMap.put("order_id", order_no);
@@ -168,5 +189,88 @@ public class OrderDAOImpl implements OrderDAO {
         Map<String, Object> whereMap = new HashMap<>();
         whereMap.put("order_id", order_id);
         return DBUtils.update(tableName, valueMap, whereMap) == 0;
+    }
+
+    /**
+     * 通过用户ID 模糊查询该id店铺的订单  分页 限制行数
+     *
+     * @param userId
+     * @param whereMap
+     * @param page
+     * @param limit
+     * @return
+     */
+    public List<Order> getMyOrders(String userId, Map<String, Object> whereMap, int page, int limit) {
+        List<Order> orderList = new ArrayList<>();
+        try {
+            StringBuilder SQL = new StringBuilder();
+            SQL.append(GET_MY_ORDERS.replace("?", userId));
+            if (whereMap != null && whereMap.size() > 0) {
+                Iterator<String> iterator = whereMap.keySet().iterator();
+                //i=1就 会从第一个WherMap 开始 添加条件
+                int i = 0;
+                while (iterator.hasNext()) {
+                    String key = iterator.next();
+                    SQL.append(i == 0 ? " where " : " ");
+                    SQL.append(i == 0 ? " " : " OR ");
+                    SQL.append(key + " like '%" + whereMap.get(key) + "%'");
+                    i++;
+                }
+                SQL.append("LIMIT " + (page == -1 ? 100 : (page - 1) * limit + " , " + limit));
+                List<Map<String, Object>> result = DBUtils.executeQuery(SQL.toString(), null);
+                orderList = Pack2Entity.pack2orders(result);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return orderList;
+    }
+
+    public List<Order> getMyOrders(String userId, int page, int limit) {
+        List<Order> users = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.executeQuery(GET_MY_ORDERS.replace("?", userId) + " Limit " + (page == -1 ? 100 : (page - 1) * limit + " , " + limit), null);
+            users = Pack2Entity.pack2orders(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
+    public List<Order> getAllOrders(Map<String, Object> whereMap, int page, int limit) {
+        List<Order> orderList = new ArrayList<>();
+        try {
+            StringBuilder SQL = new StringBuilder();
+            SQL.append(GET_ALL_ORDERS);
+            if (whereMap != null && whereMap.size() > 0) {
+                Iterator<String> iterator = whereMap.keySet().iterator();
+                //i=1就 会从第一个WherMap 开始 添加条件
+                int i = 0;
+                while (iterator.hasNext()) {
+                    String key = iterator.next();
+                    SQL.append(i == 0 ? " where " : " ");
+                    SQL.append(i == 0 ? " " : " OR ");
+                    SQL.append(key + " like '%" + whereMap.get(key) + "%'");
+                    i++;
+                }
+                SQL.append("LIMIT " + (page == -1 ? 100 : (page - 1) * limit + " , " + limit));
+                List<Map<String, Object>> result = DBUtils.executeQuery(SQL.toString(), null);
+                orderList = Pack2Entity.pack2orders(result);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return orderList;
+    }
+
+    public List<Order> getAllOrders(int page, int limit) {
+        List<Order> users = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.executeQuery(GET_ALL_ORDERS + " Limit " + (page == -1 ? 100 : (page - 1) * limit + " , " + limit), null);
+            users = Pack2Entity.pack2orders(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
     }
 }

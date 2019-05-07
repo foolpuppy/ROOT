@@ -112,12 +112,12 @@ public class UserServiceImpl implements UserService {
         return dao.changeRoleTypeById(userId, roleType);
     }
 
-    public List<User> getUserByRole(String role) {
-        return dao.getUserByRole(role);
+    public List<User> getUserByRole(String role, int page, int limit) {
+        return dao.getUserByRole(role, page, limit);
     }
 
-    public List<User> getUserByRole(String role, Map<String, Object> whereMap) {
-        return dao.getUserByRole(role, whereMap);
+    public List<User> getUserByRole(String role, Map<String, Object> whereMap, int page, int limit) {
+        return dao.getUserByRole(role, whereMap, page, limit);
     }
 
     public int getUserRoleById(String userId) {

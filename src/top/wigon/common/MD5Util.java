@@ -4,6 +4,7 @@ import java.security.MessageDigest;
 
 /**
  * Created by geely
+ * 用于字符串转加密
  */
 public class MD5Util {
 

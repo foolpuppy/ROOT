@@ -1,5 +1,7 @@
 package top.wigon.servlet.common;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -25,32 +29,34 @@ public class Uploader extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String UPLOAD_DIR = "img";
         String applicationPath = getServletContext().getRealPath("");
-        //String uploadPath = applicationPath + File.separator + UPLOAD_DIR;
         String uploadPath = applicationPath + File.separator + UPLOAD_DIR;
-        System.out.println("uploadPath:" + uploadPath);
         File fileUploadDirectory = new File(uploadPath);
         if (!fileUploadDirectory.exists()) {
             fileUploadDirectory.mkdirs();
         }
-        System.out.println("upload directory path:" + fileUploadDirectory.getAbsolutePath());
-        String fileName;
+        String fileName = "";
         for (Part part : req.getParts()) {
-            //fileName = extractFileName(part);
-            fileName = String.valueOf(UUID.randomUUID()).substring(0, 10);
+            fileName = UUID.randomUUID().toString().substring(0, 8) + extractFileName(part);
             part.write(uploadPath + File.separator + fileName);
         }
+//        System.out.println("上传成功:" + fileUploadDirectory.getAbsolutePath() +File.separator+ fileName);
         StringBuilder content = new StringBuilder();
-        content.append("{\n" +
-                "  \"code\": 0\n" +
-                "  ,\"msg\": \"\"\n" +
-                "  ,\"data\": {\n" +
-                "    \"src\":");
-        content.append(fileUploadDirectory.getAbsolutePath());
-        content.append("  }\n" +
-                "}");
+       /* content.append("{");
+        content.append("code: 0");
+        content.append(",msg: \"\"");
+        content.append(",data: {");
+        content.append("src:");
+        content.append("/img/").append(fileName);
+        content.append("  }}");*/
+        Map<String, Object> map2 = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
+        map.put("code", 0);
+        map.put("msg", "");
+        map.put("data", map2);
+        map2.put("src", "img\\" + fileName);
         resp.setContentType("text/plain; charset=UTF-8;");
-        resp.getWriter().write(content.toString());
-
+        ObjectMapper objectMapper = new ObjectMapper();
+        resp.getWriter().write(objectMapper.writeValueAsString(map));
     }
 
     private String extractFileName(Part part) {

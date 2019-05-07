@@ -6,6 +6,7 @@ import top.wigon.service.OrderService;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author L
@@ -78,4 +79,21 @@ public class OrderServiceImpl implements OrderService {
         return dao.deleteEntity(order);
     }
 
+    public List<Order> getMyOrders(String userId, Map<String, Object> whereMap, int page, int limit) {
+        return dao.getMyOrders(userId, whereMap, page, limit);
+    }
+
+    public List<Order> getMyOrders(String userId, int page, int limit) {
+        return dao.getMyOrders(userId, page, limit);
+    }
+
+    public List<Order> getAllOrders(Map<String, Object> whereMap, int page, int limit) {
+        return dao.getAllOrders(whereMap, page, limit);
+    }
+
+    public List<Order> getAllOrders(int page, int limit) {
+        return dao.getAllOrders(page, limit);
+
+
+    }
 }

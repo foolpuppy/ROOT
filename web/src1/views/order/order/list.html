@@ -1,0 +1,121 @@
+<title>订单管理</title>
+
+<div class="layui-card layadmin-header">
+    <div class="layui-breadcrumb" lay-filter="breadcrumb">
+        <a lay-href="">主页</a>
+        <a><cite>订单</cite></a>
+        <a><cite>订单管理</cite></a>
+    </div>
+</div>
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto" lay-filter="layadmin-useradmin-formlist">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <div class="layui-input-block">
+                        <input autocomplete="off" class="layui-input" id="search" name="search" placeholder="请输入订单ID"
+                               type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-admin" lay-filter="LAY-order-search" lay-submit>
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <div style="padding-bottom: 10px;">
+                <!--                <button class="layui-btn layuiadmin-btn-useradmin" data-type="batchdel">删除</button>-->
+                <!--<button class="layui-btn layuiadmin-btn-useradmin" data-type="add">添加</button>-->
+            </div>
+
+            <table id="LAY-order-manage" lay-filter="LAY-order-manage"></table>
+            <script id="roleTpl" type="text/html">
+                {{#  if(d.orderState == '1'){ }}
+                未付款
+                {{#  } else if(d.orderState == '2'){ }}
+                已付款
+                {{#  } else if(d.orderState == '3'){ }}
+                未发货
+                {{#  } else if(d.orderState == '4'){ }}
+                已发货
+                {{#  } else if(d.orderState == '5'){ }}
+                交易成功
+                {{#  } else { }}
+                交易失败
+                {{#  } }}
+            </script>
+            <script id="table-useradmin-consign" type="text/html">
+                <button class="layui-btn layui-btn-normal layui-btn-xs" lay-event="consign"><i
+                        class="layui-icon layui-icon-edit"></i>发货
+                </button>
+            </script>
+            <script id="table-useradmin-webuser" type="text/html">
+                <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i
+                        class="layui-icon layui-icon-delete"></i>删除
+                </button>
+            </script>
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.use('order', layui.factory('order')).use(['admin', 'order', 'table'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , view = layui.view
+            , table = layui.table
+            , form = layui.form;
+
+        form.render(null, 'layadmin-userfront-formlist');
+
+        //监听搜索
+        form.on('submit(LAY-order-search)', function (data) {
+            var field = data.field;
+            //执行重载
+            table.reload('LAY-order-manage', {
+                where: field
+            });
+
+            //事件
+            var active = {
+                batchdel: function () {
+                    var checkStatus = table.checkStatus('LAY-order-manage')
+                        , checkData = checkStatus.data; //得到选中的数据
+
+                    if (checkData.length === 0) {
+                        return layer.msg('请选择数据');
+                    }
+
+
+                    layer.confirm('确定删除吗？', function (index) {
+                        var arr = [];//存储id的数组
+                        checkData.forEach(function (item) {
+                            arr.push(item.orderId);
+                        });
+                        //执行 Ajax 后重载
+                        $.ajax({
+                            url: "../multiDelOrders",
+                            type: "post",
+                            data: {"arr": arr},
+                            dataType: "json",
+                            success: function () {
+                            }
+                        });
+                        table.reload('LAY-order-manage');
+                        layer.msg('已删除');
+                    });
+                }
+            };
+
+            $('.layui-btn .layuiadmin-btn-useradmin').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+        });
+    })
+</script>
+

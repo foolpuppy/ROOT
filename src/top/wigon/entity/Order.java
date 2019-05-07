@@ -41,13 +41,13 @@ public class Order implements Serializable {
      * 物流公司以及物流号
      */
     private String shippingName;
-    private String shipingCode;
+    private String shippingCode;
     private String createTime;
 
     public Order() {
     }
 
-    public Order(String orderId, String userId, BigDecimal payment, int paymentType, BigDecimal postFee, int orderState, String orderCreateTime, String paymentTime, String consignTime, String receiveTime, String endTime, String closeTime, String shippingName, String shipingCode, String createTime) {
+    public Order(String orderId, String userId, BigDecimal payment, int paymentType, BigDecimal postFee, int orderState, String orderCreateTime, String paymentTime, String consignTime, String receiveTime, String endTime, String closeTime, String shippingName, String shippingCode, String createTime) {
         this.orderId = orderId;
         this.userId = userId;
         this.payment = payment;
@@ -61,7 +61,7 @@ public class Order implements Serializable {
         this.endTime = endTime;
         this.closeTime = closeTime;
         this.shippingName = shippingName;
-        this.shipingCode = shipingCode;
+        this.shippingCode = shippingCode;
         this.createTime = createTime;
     }
 
@@ -169,12 +169,12 @@ public class Order implements Serializable {
         this.shippingName = shippingName;
     }
 
-    public String getShipingCode() {
-        return shipingCode;
+    public String getshippingCode() {
+        return shippingCode;
     }
 
-    public void setShipingCode(String shipingCode) {
-        this.shipingCode = shipingCode;
+    public void setshippingCode(String shippingCode) {
+        this.shippingCode = shippingCode;
     }
 
     public String getCreateTime() {

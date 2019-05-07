@@ -14,6 +14,7 @@ import java.util.Properties;
  * @author L
  * @version 1.0
  * @date 2019/4/18 11:49
+ * 阿里巴巴Druid 数据库连接池
  **/
 public class DBConnectionPool {
     private static Logger logger = Logger.getLogger(DBConnectionPool.class);

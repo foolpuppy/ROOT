@@ -6,6 +6,7 @@ import java.math.BigDecimal;
  * @author L
  * @version 1.0
  * @date 2019/4/28 13:03
+ * 本工具类用于BigDecimal 数据类型的数据添加
  **/
 public class BigDecimalUtil {
     public static BigDecimal add(double a, double b) {

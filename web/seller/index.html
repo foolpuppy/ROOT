@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>极品商城-店铺管理系统</title>
+    <meta content="webkit" name="renderer">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+          name="viewport">
+    <link href="layui/css/layui.css" media="all" rel="stylesheet">
+    <script src="layui/jquery-3.3.1.min.js"></script>
+    <script src="layui/jquery.cookie.js"></script>
+    <script>
+        /^http(s*):\/\//.test(location.href) || alert('请先部署到 localhost 下再访问');
+    </script>
+</head>
+<body>
+<div id="LAY_app"></div>
+<script src="layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '../src1/' //指定 layuiAdmin 项目路径，本地开发用 src，线上用 dist
+        , version: '1.2.1'
+    }).use('index');
+</script>
+<script>
+    $(function () {
+        if ($.cookie("userTel") == null) {
+            window.location.href = "../login.html";
+        }
+    })
+</script>
+</body>
+</html>
+
+

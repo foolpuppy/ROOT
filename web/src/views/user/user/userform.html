@@ -1,0 +1,85 @@
+<div class="layui-form" lay-filter="layuiadmin-form-useradmin" style="padding: 20px 0 0 0;">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline">
+            <script template type="text/html">
+                <input type="text" name="username" value="{{ d.params.userName || '' }}" lay-verify="required"
+                       placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                <input type="hidden" name="userId" value="{{ d.params.userId || '' }}">
+            </script>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">手机号码</label>
+        <div class="layui-input-inline">
+            <script template type="text/html">
+                <input type="text" name="phone" value="{{ d.params.tel || '' }}" lay-verify="phone" placeholder="请输入号码"
+                       autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">邮箱</label>
+        <div class="layui-input-inline">
+            <script template type="text/html">
+                <input type="text" name="email" value="{{ d.params.email || '' }}" lay-verify="email"
+                       placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-inline">
+            <script template type="text/html">
+                <input type="password" name="password" value="" lay-verify="required" placeholder="请输入密码"
+                       autocomplete="off" class="layui-input">
+            </script>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">头像</label>
+        <div class="layui-input-inline">
+            <script template type="text/html">
+                <input type="text" name="avatarPath" value="{{ d.params.avatarPath || '' }}" lay-verify="required"
+                       placeholder="请上传图片" autocomplete="off" class="layui-input">
+            </script>
+        </div>
+        <button class="layui-btn" id="layuiadmin-upload-useradmin" style="float: left;" type="button">上传图片</button>
+    </div>
+    <div class="layui-form-item" lay-filter="role">
+        <label class="layui-form-label">选择角色</label>
+        <div class="layui-input-block">
+            <script template type="text/html">
+                <input type="radio" name="role" value="0" title="注册用户" {{ d.params.roleType=== '0' ? 'checked' : '' }}>
+                <input type="radio" name="role" value="1" title="商家" {{ d.params.roleType=== '1' ? 'checked' : '' }}>
+            </script>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-inline">
+            <input class="layui-btn" lay-filter="LAY-user-front-submit" lay-submit type="button" value="确认">
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.use(['admin', 'form', 'upload'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , upload = layui.upload;
+
+        //上传头像
+        upload.render({
+            elem: '#layuiadmin-upload-useradmin'
+            , url: '../upload'
+            , accept: 'images'
+            , method: 'get'
+            , acceptMime: 'image/*'
+            , done: function (res) {
+                $(this.item).prev("div").children("input").val(res.data.src)
+            }
+        });
+    })
+</script>

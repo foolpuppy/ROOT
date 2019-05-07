@@ -12,6 +12,7 @@ import java.util.Map;
  * @author L
  * @version 1.0
  * @date 2019/4/25 10:51
+ * 结果集转换为实体类
  **/
 public class Pack2Entity {
     /**
@@ -58,8 +59,10 @@ public class Pack2Entity {
             item.setState(Integer.parseInt(result.get(i).get("item_state").toString()));
             item.setShopId(Integer.parseInt(result.get(i).get("shop_id").toString()));
             item.setItem_image_path(String.valueOf(result.get(i).get("item_image_path")));
-            item.setCreateTime(result.get(i).get("gmt_create").toString());
-            item.setDesc(result.get(i).get("item_desc").toString());
+            if (result.get(i).get("gmt_create") != null) {
+                item.setCreateTime(result.get(i).get("gmt_create").toString());
+            }
+            item.setDesc(result.get(i).get("item_desc") == null ? "空" : result.get(i).get("item_desc").toString());
             item.setModified_time(String.valueOf(result.get(i).get("gmt_modified") == null ? "" : result.get(i).get("gmt_modified")));
             list.add(item);
 
@@ -67,6 +70,12 @@ public class Pack2Entity {
         return list;
     }
 
+    /**
+     * 返回订单实体
+     *
+     * @param result
+     * @return
+     */
     public static List<Order> pack2orders(List<Map<String, Object>> result) {
         List<Order> list = new ArrayList<>();
         Order order;
@@ -76,17 +85,17 @@ public class Pack2Entity {
             order.setOrderId(result.get(i).get("order_id").toString());
             order.setUserId(result.get(i).get("user_id").toString());
             order.setPayment(new BigDecimal(String.valueOf(result.get(i).get("payment") == null ? 0 : result.get(i).get("payment"))));
-            order.setPaymentType(Integer.parseInt(result.get(i).get("payment_type").toString()));
+            order.setPaymentType(Integer.parseInt(result.get(i).get("payment_type") == null ? "0" : result.get(i).get("payment_type").toString()));
             order.setPostFee(new BigDecimal(String.valueOf(result.get(i).get("post_fee") == null ? 0 : result.get(i).get("post_fee"))));
-            order.setOrderState(Integer.parseInt(result.get(i).get("order_state").toString()));
+            order.setOrderState(Integer.parseInt(result.get(i).get("order_state") == null ? "-1" : result.get(i).get("order_state").toString()));
             order.setOrderCreateTime(String.valueOf(result.get(i).get("create_time")));
             order.setPaymentTime(String.valueOf(result.get(i).get("payment_time")));
             order.setConsignTime(String.valueOf(result.get(i).get("consign_time")));
             order.setReceiveTime(String.valueOf(result.get(i).get("receive_time")));
             order.setEndTime(String.valueOf(result.get(i).get("end_time")));
             order.setCloseTime(String.valueOf(result.get(i).get("close_time")));
-            order.setCloseTime(String.valueOf(result.get(i).get("shipping_name")));
-            order.setShipingCode(String.valueOf(result.get(i).get("shipping_code")));
+            order.setShippingName(String.valueOf(result.get(i).get("shipping_name")));
+            order.setshippingCode(String.valueOf(result.get(i).get("shipping_code")));
             list.add(order);
         }
         return list;
@@ -114,7 +123,7 @@ public class Pack2Entity {
     }
 
     /**
-     * Shipping
+     * 转换为物流信息
      *
      * @param result
      * @return
@@ -140,7 +149,7 @@ public class Pack2Entity {
     }
 
     /**
-     * Shipping
+     * 包装为包裹信息
      *
      * @param result
      * @return

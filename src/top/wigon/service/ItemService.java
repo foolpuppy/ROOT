@@ -19,6 +19,14 @@ public interface ItemService {
     Boolean itemAdd(Item item);
 
     /**
+     * 通过商品ID删除
+     *
+     * @param itemId
+     * @return
+     */
+    Boolean itemDel(String itemId);
+
+    /**
      * 关键字商品标题模糊查询
      *
      * @param item

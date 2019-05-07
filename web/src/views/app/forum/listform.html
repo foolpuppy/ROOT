@@ -1,0 +1,57 @@
+<form class="layui-form" id="layuiadmin-form-list" lay-filter="layuiadmin-form-list" style="padding: 20px 30px 0 0;">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-block">
+            <input autocomplete="off" class="layui-input" lay-verify="required" name="poster" placeholder="请输入用户名"
+                   type="text">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">发帖内容</label>
+        <div class="layui-input-block">
+            <textarea autocomplete="off" class="layui-textarea" lay-verify="required" name="content"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">置顶</label>
+        <div class="layui-input-block">
+            <input lay-filter="switch" lay-skin="switch" lay-text="ON|OFF" lay-verify="required" name="switch"
+                   type="checkbox">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">头像</label>
+        <div class="layui-input-inline">
+            <input autocomplete="off" class="layui-input" name="avatar" placeholder="请上传图片" type="text">
+        </div>
+        <button class="layui-btn" id="layuiadmin-upload-list" style="float: left;" type="button">上传图片</button>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-block">
+            <input class="layui-btn" lay-filter="layuiadmin-app-forum-submit" lay-submit type="button" value="确认">
+        </div>
+    </div>
+</form>
+
+<script>
+    layui.use(['admin', 'form', 'upload'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , view = layui.view
+            , table = layui.table
+            , form = layui.form
+            , upload = layui.upload;
+
+        upload.render({
+            elem: '#layuiadmin-upload-list'
+            , url: './json/upload/demo.js'
+            , accept: 'images'
+            , method: 'get'
+            , acceptMime: 'image/*'
+            , done: function (res) {
+                $(this.item).prev("div").children("input").val(res.data.src)
+            }
+        });
+    })
+</script>

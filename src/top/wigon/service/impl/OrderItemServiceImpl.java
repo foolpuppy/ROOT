@@ -19,6 +19,11 @@ public class OrderItemServiceImpl implements OrderItemService {
         return dao.addEntity(orderItem);
     }
 
+    /**
+     * 否无车内商品抓插入订单
+     *
+     * @param orderItemList
+     */
     public void add(List<OrderItem> orderItemList) {
         orderItemList.forEach(item -> dao.addEntity(item));
     }

@@ -25,6 +25,13 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
+    public Boolean itemDel(String itemId) {
+        Item item = new Item();
+        item.setId(itemId);
+        return dao.deleteEntity(item);
+    }
+
+    @Override
     public List<Item> findItemsByName(Item item) {
         Map<String, Object> keyword = dao.getConditionValMap(item);
         return dao.findByCondition(keyword);
@@ -34,6 +41,7 @@ public class ItemServiceImpl implements ItemService {
     public List<Item> findItemsByCategoryCols(String category, int cols) {
         Map<String, Object> keyword = new HashMap<>();
         keyword.put("item_category", category);
+        keyword.put("item_state", 1);
         List<Item> result = dao.findByConditionCols(keyword, cols);
         return result;
     }
@@ -88,5 +96,21 @@ public class ItemServiceImpl implements ItemService {
 
     public boolean updateItem(Item item) {
         return dao.updateEntity(item);
+    }
+
+    public List<Item> getMyItems(String userId, Map<String, Object> whereMap, int page, int limit) {
+        return dao.getMyItems(userId, whereMap, page, limit);
+    }
+
+    public List<Item> getMyItems(String userId, int page, int limit) {
+        return dao.getMyItems(userId, page, limit);
+    }
+
+    public List<Item> getAll(Map<String, Object> whereMap, int page, int limit) {
+        return dao.getAllItems(whereMap, page, limit);
+    }
+
+    public List<Item> getAll(int page, int limit) {
+        return dao.getAllItems(page, limit);
     }
 }

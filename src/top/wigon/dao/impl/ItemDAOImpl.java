@@ -1,15 +1,12 @@
 package top.wigon.dao.impl;
 
-import top.wigon.dao.ItemDAO;
 import top.wigon.common.DBUtils;
 import top.wigon.common.Pack2Entity;
+import top.wigon.dao.ItemDAO;
 import top.wigon.entity.Item;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author L
@@ -20,7 +17,9 @@ public class ItemDAOImpl implements ItemDAO {
 
     private final String tableName = "tb_item";
     private final String ITEM_JOIN_DESC = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t1.item_desc,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id and t2.item_state=1";
-    private final String DAILY_RECOMMEND = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t1.item_desc,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id WHERE t2.item_price< ? and t2.item_price> ? and t2.item_state=1 Limit ?";
+    private final String DAILY_RECOMMEND = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t1.item_desc,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id,t2.gmt_create,t2.gmt_modified FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id WHERE t2.item_price < ? and t2.item_price> ? and t2.item_state=1 Limit ?";
+    private final String GET_MY_ITEMS = "SELECT t1.id,t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t1.item_desc,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id and t2.item_state=1 WHERE shop_id=(SELECT shop_id from tb_shop where user_id=?)";
+    private final String GET_ALL_ITEMS = "SELECT t2.item_id,t2.item_title,t1.item_image_path,t2.item_category,t1.item_desc,t2.item_price,t2.item_stock,t2.item_state,t2.shop_id FROM tb_item t2 LEFT JOIN tb_desc t1 ON t1.item_id = t2.item_id ";
 
     @Override
     public Item findByEntity(Item item) {
@@ -95,6 +94,12 @@ public class ItemDAOImpl implements ItemDAO {
         return pk;
     }
 
+    /**
+     * 条件查询
+     *
+     * @param keyword
+     * @return
+     */
     public List<Item> findByCondition(Map<String, Object> keyword) {
         List<Item> items = new ArrayList<>();
         try {
@@ -108,7 +113,7 @@ public class ItemDAOImpl implements ItemDAO {
     }
 
     /**
-     * 显示行数
+     * 限制返回行数
      *
      * @param keyword
      * @param cols
@@ -127,8 +132,9 @@ public class ItemDAOImpl implements ItemDAO {
     }
 
     /**
-     * 显示行数
+     * 价格限制查询 限制返回条数
      */
+
     public List<Item> getDailyRecommend(int highPrice, int lowPrice, int cols) {
         List<Item> items = new ArrayList<>();
         try {
@@ -142,6 +148,11 @@ public class ItemDAOImpl implements ItemDAO {
         return items;
     }
 
+    /**
+     * 返回所有商品
+     *
+     * @return
+     */
     public List<Item> getAllItems() {
         List<Item> items = new ArrayList<>();
         try {
@@ -171,5 +182,113 @@ public class ItemDAOImpl implements ItemDAO {
 
     }
 
+    /**
+     * 通过UserId 分页查询
+     *
+     * @param userId
+     * @param page
+     * @param limit
+     * @return
+     */
+    public List<Item> getMyItems(String userId, int page, int limit) {
+        List<Item> items = new ArrayList<>();
+        try {
+            StringBuilder SQL = new StringBuilder();
+            SQL.append(GET_MY_ITEMS.replace("?", userId));
+            SQL.append("limit " + (page == -1 ? 100 : (page - 1) * limit + " , " + limit));
+            List<Map<String, Object>> result = DBUtils.executeQuery(SQL.toString(), null);
+            items = Pack2Entity.pack2items(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
 
+    /**
+     * 通过UserId 模糊 分页查询
+     *
+     * @param userId
+     * @param whereMap
+     * @param page
+     * @param limit
+     * @return
+     */
+    public List<Item> getMyItems(String userId, Map<String, Object> whereMap, int page, int limit) {
+        List<Item> items = new ArrayList<>();
+        try {
+            StringBuilder SQL = new StringBuilder();
+            SQL.append(GET_MY_ITEMS.replace("?", userId));
+            if (whereMap != null && whereMap.size() > 0) {
+                Iterator<String> iterator = whereMap.keySet().iterator();
+                //i=1就 会从第一个WherMap 开始 添加条件
+                int i = 1;
+                while (iterator.hasNext()) {
+                    String key = iterator.next();
+                    SQL.append(i == 0 ? " where " : " ");
+                    SQL.append(i == 0 || i == 1 ? " and ( " : " OR ");
+                    SQL.append(key + " like '%" + whereMap.get(key) + "%'");
+                    i++;
+                }
+                SQL.append(") LIMIT " + (page == -1 ? 100 : (page - 1) * limit + " , " + limit));
+                List<Map<String, Object>> result = DBUtils.executeQuery(SQL.toString(), null);
+                items = Pack2Entity.pack2items(result);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
+
+    /**
+     * 条件模糊查询
+     *
+     * @param whereMap
+     * @param page
+     * @param limit
+     * @return
+     */
+    public List<Item> getAllItems(Map<String, Object> whereMap, int page, int limit) {
+        List<Item> items = new ArrayList<>();
+        try {
+            StringBuilder SQL = new StringBuilder();
+            SQL.append(GET_ALL_ITEMS);
+            if (whereMap != null && whereMap.size() > 0) {
+                Iterator<String> iterator = whereMap.keySet().iterator();
+                //i=1就 会从第一个WherMap 开始 添加条件
+                int i = 0;
+                while (iterator.hasNext()) {
+                    String key = iterator.next();
+                    SQL.append(i == 0 ? " where " : " ");
+                    SQL.append(i == 0 ? " " : " OR ");
+                    SQL.append(key + " like '%" + whereMap.get(key) + "%'");
+                    i++;
+                }
+                SQL.append("LIMIT " + (page == -1 ? limit : (page - 1) * limit + " , " + limit));
+                List<Map<String, Object>> result = DBUtils.executeQuery(SQL.toString(), null);
+                items = Pack2Entity.pack2items(result);
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return items;
+    }
+
+    /**
+     * 分页查询所有商品
+     *
+     * @param page
+     * @param limit
+     * @return
+     */
+    public List<Item> getAllItems(int page, int limit) {
+        List<Item> users = new ArrayList<>();
+        try {
+            List<Map<String, Object>> result = DBUtils.executeQuery(GET_ALL_ITEMS + " Limit " + (page == -1 ? 100 : (page - 1) * limit + " , " + limit), null);
+            users = Pack2Entity.pack2items(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
 }
