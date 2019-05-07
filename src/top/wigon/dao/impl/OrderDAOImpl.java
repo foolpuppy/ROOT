@@ -134,6 +134,7 @@ public class OrderDAOImpl implements OrderDAO {
 
     /**
      * 通过订单编号获取订单
+     *
      * @param no
      * @return
      */
@@ -153,6 +154,7 @@ public class OrderDAOImpl implements OrderDAO {
 
     /**
      * 通过订单号获取该订单应付款（适用于订单有多个商品的情况）
+     *
      * @param order_no
      * @return
      * @throws Exception
@@ -165,6 +167,7 @@ public class OrderDAOImpl implements OrderDAO {
 
     /**
      * 订单付款金额
+     *
      * @param order_no
      * @return
      * @throws Exception
