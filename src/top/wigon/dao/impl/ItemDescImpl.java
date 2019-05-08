@@ -37,7 +37,6 @@ public class ItemDescImpl implements ItemDescDAO {
 
     @Override
     public Boolean addEntity(ItemDesc itemDesc) {
-        //todo 添加商品描述
         return false;
     }
 

@@ -43,7 +43,6 @@ public class AddItemServlet extends HttpServlet {
         ItemServiceImpl itemService = new ItemServiceImpl();
         boolean login = itemService.itemAdd(item);
         if (login) {
-            //todo 商品添加成功
             req.getRequestDispatcher("index.jsp").forward(req, resp);
         } else {
 
