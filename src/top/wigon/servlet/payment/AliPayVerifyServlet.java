@@ -101,7 +101,6 @@ public class AliPayVerifyServlet extends HttpServlet {
             //AlipayConfig.logResult(sWord);
         }
 
-        //TODO 验签失败 BUG
         orderService.updateOrderState(Order_no, 2);
         resp.sendRedirect("consumer_center.html");
     }

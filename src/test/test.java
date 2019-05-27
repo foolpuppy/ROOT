@@ -1,5 +1,9 @@
 package test;
 
+import org.apache.log4j.Logger;
+import top.wigon.common.DBConnectionPool;
+import top.wigon.common.DBUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,8 +13,8 @@ import java.util.Map;
  * @date 2019/4/24 18:56
  **/
 public class test {
-    public static void main(String[] args) throws Exception {
-        Map<String, Object> val = new HashMap<>();
+	public static void main(String[] args) throws Exception {
+		Map<String, Object> val = new HashMap<>();
 //        val.put("now", DBUtils.getCurrDateTime());
 //        System.out.println(new java.sql.Timestamp(new java.util.Date().getTime()));
 //        System.out.println(DBUtils.getCurrDateTime());
@@ -69,9 +73,5 @@ public class test {
 //        BigDecimal a = new BigDecimal(500);
 //        int b = Integer.parseInt(String.valueOf(a));
 //        System.out.println(b);
-        StringBuilder SQL = new StringBuilder();
-        SQL.append("SELECT tb_user.user_id,tb_user.username,tb_user.tel,tb_user.email,tb_user.role_type,tb_user.gmt_create FROM tb_user WHERE role_type IN (?) ");
-        System.out.println("SELECT tb_user.user_id,tb_user.username,tb_user.tel,tb_user.email,tb_user.role_type,tb_user.gmt_create FROM tb_user WHERE role_type IN (?) ".replace("?", "1,2"));
-
-    }
+	}
 }
