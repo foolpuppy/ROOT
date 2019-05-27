@@ -1,11 +1,11 @@
 {
-    "code";
+    "code"
 :
     0
-        , "msg";
+        , "msg"
 :
     ""
-        , "data";
+        , "data"
 :
     [{
         "name": "shop"

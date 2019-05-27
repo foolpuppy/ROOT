@@ -212,7 +212,7 @@
 
                 //处理删除事件
                 $(".dele-btn").click(function () {
-                    var order_id = $(".dele-btn").attr("name");
+                    var order_id = $(this).attr("name");
                     var r = confirm("你确定要删除吗");
                     if (r) {
                         window.location.href = "delUserOrder?order_no=" + order_id;

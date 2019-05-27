@@ -55,4 +55,5 @@ public class MD5Util {
     public static String MD5EncodeUtf8(String origin) {
         return MD5Encode(origin, "utf-8");
     }
+
 }
