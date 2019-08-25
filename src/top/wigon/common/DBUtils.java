@@ -523,8 +523,7 @@ public class DBUtils {
      * @param bindArgs 绑定的参数
      * @return List<Map < String, Object>>结果集对象
      * @throws SQLException SQL执行异常
-     */
-    public static List<Map<String, Object>> executeQuery(String sql, Object[] bindArgs) throws SQLException {
+     */    public static List<Map<String, Object>> executeQuery(String sql, Object[] bindArgs) throws SQLException {
         List<Map<String, Object>> datas;
         Connection connection = null;
         PreparedStatement preparedStatement = null;
